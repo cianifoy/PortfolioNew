@@ -3,37 +3,130 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ciani Foy — Portfolio</title>
+    <title>Ciani Foy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Outfit:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <a class="logo" href="index.html">Ciani Foy</a>
+      <a class="logo" href="index.html" aria-label="Ciani Foy">
+        <img src="assets/logo.jpg" alt="Ciani Foy" />
+      </a>
       <nav class="nav" aria-label="Primary">
-        <a href="index.html" aria-current="page">Home</a>
+        <a href="index.html" aria-current="page">Work</a>
+        <a href="work.html">Passion</a>
         <a href="about.html">About</a>
-        <a href="work.html">Work</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero">
-        <h1 class="brand reveal">Ciani Foy</h1>
-        <p class="lede reveal reveal-delay-1">
-          Designer and developer building clear, thoughtful digital experiences.
-        </p>
-        <a class="cta reveal reveal-delay-2" href="work.html">View work →</a>
+      <section class="hero-intro" aria-label="Introduction">
+        <h1>
+          Hi, I'm Ciani. I'm a
+          <span class="hero-role" id="hero-role">UX/UI Designer</span><span
+            class="hero-cursor"
+            aria-hidden="true"
+            >|</span
+          >
+        </h1>
+      </section>
+
+      <section class="project-grid" aria-label="Selected projects">
+        <a class="project" href="teachers-lounge.html">
+          <img src="assets/teachers-lounge.png" alt="" />
+          <span class="project-title">Teachers' Lounge</span>
+        </a>
+        <a class="project" href="oracle-health.html">
+          <img src="assets/oracle-health.png" alt="" />
+          <span class="project-title">Oracle Health</span>
+        </a>
+        <a class="project" href="anchor.html">
+          <img src="assets/anchor.png" alt="" />
+          <span class="project-title">Anchor</span>
+        </a>
+        <a class="project" href="glossier-app.html">
+          <img src="assets/glossier.png" alt="" />
+          <span class="project-title">Glossier App</span>
+        </a>
+        <a class="project" href="dexter.html">
+          <img src="assets/dexter.jpg" alt="" />
+          <span class="project-title">Dexter</span>
+        </a>
+        <a class="project" href="old-navy.html">
+          <img src="assets/old-navy.jpg" alt="" />
+          <span class="project-title">Old Navy HamNav Subcategories</span>
+        </a>
+        <a class="project" href="gap-power-reviews.html">
+          <img src="assets/gap.png" alt="" />
+          <span class="project-title">Gap Inc. Power Reviews</span>
+        </a>
+        <a class="project" href="client-work.html">
+          <img src="assets/client-work.jpg" alt="" />
+          <span class="project-title">Client Work</span>
+        </a>
+        <a class="project" href="dr-teals.html">
+          <img src="assets/dr-teals.jpg" alt="" />
+          <span class="project-title">Dr Teal's Package Design</span>
+        </a>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>© 2026 Ciani Foy</p>
+      <p>Ciani Foy © 2026. All Rights Reserved.</p>
+      <div class="social-links">
+        <a
+          href="https://www.linkedin.com/in/cianifoy/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          LinkedIn
+        </a>
+        <a href="mailto:cianifoy@gmail.com" aria-label="Email">Email</a>
+      </div>
     </footer>
+    <script>
+      (() => {
+        const roles = [
+          "UX/UI Designer",
+          "Product Designer",
+          "Visual Designer",
+        ];
+        const el = document.getElementById("hero-role");
+        if (!el) return;
+
+        let roleIndex = 0;
+        let charIndex = roles[0].length;
+        let deleting = false;
+
+        const tick = () => {
+          const current = roles[roleIndex];
+
+          if (!deleting && charIndex === current.length) {
+            setTimeout(() => {
+              deleting = true;
+              tick();
+            }, 2400);
+            return;
+          }
+
+          if (deleting && charIndex === 0) {
+            deleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+          }
+
+          charIndex += deleting ? -1 : 1;
+          el.textContent = roles[roleIndex].slice(0, charIndex);
+          setTimeout(tick, deleting ? 90 : 160);
+        };
+
+        setTimeout(tick, 1500);
+      })();
+    </script>
   </body>
 </html>

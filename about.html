@@ -7,36 +7,236 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&family=Outfit:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="about-page">
+    <div class="about-motifs" aria-hidden="true">
+      <img class="motif motif-stamps" src="assets/about/stamps-motif.png" alt="" />
+      <img class="motif motif-flower" src="assets/about/hydrangea-motif.png" alt="" />
+    </div>
     <header class="site-header">
-      <a class="logo" href="index.html">Ciani Foy</a>
+      <a class="logo" href="index.html" aria-label="Ciani Foy">
+        <img src="assets/logo.jpg" alt="Ciani Foy" />
+      </a>
       <nav class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
+        <a href="index.html">Work</a>
+        <a href="work.html">Passion</a>
         <a href="about.html" aria-current="page">About</a>
-        <a href="work.html">Work</a>
       </nav>
     </header>
 
-    <main>
-      <h1 class="page-title reveal">About</h1>
-      <div class="page-body reveal reveal-delay-1">
-        <p>
-          I’m a designer and developer focused on simple interfaces and careful
-          craft. I care about clarity, pacing, and making things feel considered.
+    <main class="about">
+      <section class="about-intro">
+        <div class="about-copy">
+          <h1 class="page-title">Hello!</h1>
+          <div class="page-body">
+            <p>
+              My name is Ciani Foy and I am a UX/UI designer with a background in
+              Human-Computer Interaction and Communication Design. I am
+              passionate about all aspects of design, but specifically accessible
+              interfaces and a seamless digital experience.
+            </p>
+            <p>
+              At the center of UX design, I aim to empathize with users,
+              understand their core needs, and solve problems that will
+              positively impact their experience with the cultivated product.
+            </p>
+            <p>
+              Additionally, I work in a variety of other mediums including
+              branding, digital art, photography, and fashion design.
+            </p>
+            <p><strong>Fun Facts About Me:</strong></p>
+            <ul class="fun-facts">
+              <li>🏔 I love hiking and being surrounded by nature</li>
+              <li>☕️ My drink of choice will always be a chai latte</li>
+              <li>
+                ✈️ I love to travel and immerse myself in cultures outside of my
+                own
+              </li>
+            </ul>
+          </div>
+        </div>
+        <figure class="about-portrait">
+          <img src="assets/about/portrait.jpg" alt="Ciani Foy" />
+        </figure>
+      </section>
+
+      <section class="about-section">
+        <h2 class="about-heading about-heading--center">Design DNA</h2>
+        <figure class="about-dna">
+          <img
+            src="assets/about/design-dna.png"
+            alt="Design DNA visual summarizing design values and influences"
+          />
+        </figure>
+      </section>
+
+      <section class="about-section">
+        <h2 class="about-heading">Travel Diary</h2>
+        <p class="about-lede">
+          A collection of some of the places I have traveled to.
         </p>
-        <p>
-          Currently open to new projects and collaborations.
+        <div class="travel-grid">
+          <figure>
+            <img src="assets/about/travel-1.jpg" alt="Paris, France" loading="lazy" />
+            <figcaption>Paris, France</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/about/travel-2.jpg" alt="Positano, Italy" loading="lazy" />
+            <figcaption>Positano, Italy</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/about/travel-3.jpg" alt="Barcelona, Spain" loading="lazy" />
+            <figcaption>Barcelona, Spain</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/about/travel-4.jpg" alt="Naples, Italy" loading="lazy" />
+            <figcaption>Naples, Italy</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/about/travel-5.jpg" alt="Procida, Italy" loading="lazy" />
+            <figcaption>Procida, Italy</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/about/travel-6.jpg" alt="Barcelona, Spain" loading="lazy" />
+            <figcaption>Barcelona, Spain</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/about/travel-7.jpg" alt="Milan, Italy" loading="lazy" />
+            <figcaption>Milan, Italy</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/about/travel-8.jpg" alt="Montserrat, Spain" loading="lazy" />
+            <figcaption>Montserrat Spain</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/about/travel-9.jpg" alt="Sorrento, Italy" loading="lazy" />
+            <figcaption>Sorrento, Italy</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/about/travel-10.jpg" alt="Valletta, Malta" loading="lazy" />
+            <figcaption>Valleta, Malta</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/about/travel-11.jpg" alt="Accra, Ghana" loading="lazy" />
+            <figcaption>Accra, Ghana</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/about/travel-12.jpg" alt="Seoul, South Korea" loading="lazy" />
+            <figcaption>Seoul, South Korea</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <h2 class="about-heading">Experience</h2>
+        <p class="about-lede">
+          <a class="resume-link" href="assets/about/Ciani-Foy-Resume_2026.pdf"
+            >💌 Download Resume</a
+          >
         </p>
-      </div>
+
+        <div class="experience-list">
+          <details>
+            <summary>Oracle</summary>
+            <div class="experience-body">
+              <p>UX Design Intern, 2025</p>
+              <p>
+                Skills: Prototyping, wireframing, user flows, user research,
+                interaction design
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Children's National Hospital</summary>
+            <div class="experience-body">
+              <p>Associate Graphic Designer, 2024</p>
+              <p>
+                Skills: Typography, Layout Design, Web Design, Graphic Design,
+                Adobe Creative Cloud, HTML/CSS, and WordPress
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Gap Inc.</summary>
+            <div class="experience-body">
+              <p>• User Experience Designer, 2022 — 2023</p>
+              <p>• User Experience Design Intern, 2021</p>
+              <p>
+                Skills: User Interface Design, Usability Testing, Wireframing,
+                Prototyping, Responsive Web Design
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Elon University Global Education Center</summary>
+            <div class="experience-body">
+              <p>Communication Design Intern, 2018 – 2021</p>
+              <p>
+                Skills: Visual Design, Adobe Photoshop, Adobe Illustrator, Adobe
+                InDesign, Typography, Marketing, Social Media
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Live Oak Communications Agency</summary>
+            <div class="experience-body">
+              <p>• Branding Executive, 2020</p>
+              <p>• Creative Content Producer, 2019 – 2020</p>
+              <p>
+                Skills: Creative Strategy, Visual Design, Art Direction,
+                Campaigns, Email Marketing, Branding
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="about-section about-contact">
+        <h2 class="about-heading">Let's work together!</h2>
+        <form
+          class="contact-form"
+          action="mailto:cianifoy@gmail.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <label>
+            Name
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Subject
+            <input type="text" name="subject" required />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
     </main>
 
     <footer class="site-footer">
-      <p>© 2026 Ciani Foy</p>
+      <p>Ciani Foy © 2026. All Rights Reserved.</p>
+      <div class="social-links">
+        <a
+          href="https://www.linkedin.com/in/cianifoy/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          LinkedIn
+        </a>
+        <a href="mailto:cianifoy@gmail.com" aria-label="Email">Email</a>
+      </div>
     </footer>
   </body>
 </html>
