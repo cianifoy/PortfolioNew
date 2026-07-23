@@ -6,13 +6,35 @@
     <title>Glossier App — Ciani Foy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Outfit:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Outfit:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .case-longform {
+        font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
+      }
+
+      .reading-progress-bar {
+        background: #f4c2c2;
+      }
+
+      .case-longform .case-cover {
+        max-width: none;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    </style>
   </head>
   <body>
+    <div class="reading-progress" aria-hidden="true">
+      <div class="reading-progress-bar" id="reading-progress-bar"></div>
+    </div>
     <header class="site-header">
       <a class="logo" href="index.html" aria-label="Ciani Foy">
         <img src="assets/logo.jpg" alt="Ciani Foy" />
@@ -24,67 +46,474 @@
       </nav>
     </header>
 
-    <main class="case">
-      <div class="case-nav">
-        <a href="anchor.html">← Anchor</a>
-        <a href="index.html">Back to Work</a>
-        <a href="dexter.html">Dexter →</a>
-      </div>
-
+    <main class="case case-longform">
       <header class="case-header">
         <h1 class="case-title">Glossier App</h1>
-        <p class="case-summary">A mobile app concept for Glossier that deepens community engagement, enhances shopping, and stays true to the brand’s values of inclusivity, simplicity, and digital-first connection.</p>
-        <dl class="case-meta">
-          <div>
-            <dt>Role</dt>
-            <dd>End-to-end product design</dd>
-          </div>
-          <div>
-            <dt>Team</dt>
-            <dd>Independent concept project</dd>
-          </div>
-        </dl>
       </header>
 
       <figure class="case-cover">
-        <img src="assets/glossier.png" alt="Glossier App cover" />
+        <img src="assets/glossier/cover.webp" alt="Glossier App cover" />
       </figure>
 
-      <div class="case-body">
-        <section class="case-section">
-          <h2>Opportunity</h2>
-          <p>An app enables personalized engagement through notifications, loyalty, and exclusive content—while streamlining purchase flows and unlocking richer personalization from behavioral data.</p>
-        </section>
-        <section class="case-section">
-          <h2>Process</h2>
-          <p>Personas, user flows from browse to checkout, wireframes, a responsive design system with tokens, AR try-on exploration, rewards concepts, and usability testing shaped the final experience.</p>
-        </section>
-        <section class="case-section">
-          <h2>Reflection</h2>
-          <p>This project challenged me to build a design system from scratch and refine auto layout and prototyping skills while staying faithful to Glossier’s brand identity.</p>
-        </section>
-      </div>
+      <p class="case-summary">
+        Glossier is a modern beauty brand that has gained widespread recognition
+        for its minimalist approach to skincare and makeup. Founded in 2014,
+        Glossier quickly became known for its direct-to-consumer model,
+        utilizing social media and online communities to engage with customers.
+        Its product offerings range from skincare essentials to makeup products,
+        with an emphasis on enhancing natural beauty. The brand’s focus on
+        inclusivity, user-generated content, and fostering a loyal online
+        community has solidified its position as a standout in the beauty
+        industry.
+      </p>
 
-      <div class="case-gallery">
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/1d84229d-d4cd-44ad-b22e-d531a691474a/CoverWallGlossier.png?format=1500w" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/a980e0d4-a07a-49a7-a502-5a9c43c10dc6/Moodboard.png?format=1500w" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/f36059fe-e7aa-4bc5-a6f6-aa1db5247c0c/Glossier+Flow+Chart+%283%29.jpg?format=1500w" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/a8cfad3d-c127-449a-b558-bd1194893264/Frame+70.jpg?format=1500w" alt="" loading="lazy" />
-      </div>
+      <dl class="case-meta case-meta-four">
+        <div>
+          <dt>Role</dt>
+          <dd>UI/UX Designer</dd>
+        </div>
+        <div>
+          <dt>Tools</dt>
+          <dd>Figma, Adobe Photoshop, &amp; Adobe Illustrator</dd>
+        </div>
+        <div>
+          <dt>Duration</dt>
+          <dd>3 weeks</dd>
+        </div>
+        <div>
+          <dt>Year</dt>
+          <dd>2025</dd>
+        </div>
+      </dl>
 
-      <div class="case-nav case-nav-bottom">
-        <a href="anchor.html">← Anchor</a>
-        <a href="index.html">Back to Work</a>
-        <a href="dexter.html">Dexter →</a>
-      </div>
+      <section class="case-section">
+        <h2>Problem Statement</h2>
+        <p>
+          How might we design a mobile app for Glossier that deepens community
+          engagement, enhances the shopping experience, and stays true to the
+          brand’s values of inclusivity, simplicity, and digital-first
+          connection?
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>Why would Glossier benefit from an app experience?</h2>
+        <ul class="case-list">
+          <li>
+            <strong>Enhanced Customer Engagement:</strong> A mobile app allows
+            for more personalized interactions with Glossier's customers.
+            Through features such as push notifications, loyalty program, and
+            exclusive in-app content, Glossier can keep its community engaged
+            and informed about new products, promotions, and brand events.
+          </li>
+          <li>
+            <strong>Streamlined Shopping Experience:</strong> A mobile app would
+            streamline the shopping process by offering a faster and more
+            intuitive platform for purchasing products.
+          </li>
+          <li>
+            <strong>Access to Exclusive Features:</strong> Glossier could use
+            the app to offer exclusive content and products to app users,
+            creating a sense of exclusivity that would incentivize app
+            downloads.
+          </li>
+          <li>
+            <strong>Data Insights for Better Personalization:</strong> A mobile
+            app would allow Glossier to collect valuable data on user behavior
+            and preferences. This data could be used to personalize product
+            recommendations, improve marketing strategies, and create a more
+            tailored experience for each user. With a deeper understanding of
+            their customers, Glossier could refine its product offerings and
+            deliver more targeted content.
+          </li>
+        </ul>
+      </section>
+
+      <section class="case-section">
+        <h2>User Personas</h2>
+        <p>
+          Two personas were created – Chloe Love and Amarie Davis – to outline
+          the behaviors, frustrations, and needs of the Glossier customer when
+          it comes to a makeup/beauty app experience.
+        </p>
+        <div
+          class="case-carousel"
+          data-carousel
+          tabindex="0"
+          aria-roledescription="carousel"
+          aria-label="User personas"
+        >
+          <div class="case-carousel-viewport">
+            <ul class="case-carousel-track">
+              <li class="case-carousel-slide is-active" data-carousel-slide>
+                <img
+                  src="assets/glossier/persona-2.webp"
+                  alt="Persona: Chloe Love"
+                  loading="lazy"
+                />
+              </li>
+              <li class="case-carousel-slide" data-carousel-slide>
+                <img
+                  src="assets/glossier/persona-1.webp"
+                  alt="Persona: Amarie Davis"
+                  loading="lazy"
+                />
+              </li>
+            </ul>
+          </div>
+          <button
+            type="button"
+            class="case-carousel-btn case-carousel-btn-prev"
+            data-carousel-prev
+            aria-label="Previous persona"
+          >
+            <span aria-hidden="true">‹</span>
+          </button>
+          <button
+            type="button"
+            class="case-carousel-btn case-carousel-btn-next"
+            data-carousel-next
+            aria-label="Next persona"
+          >
+            <span aria-hidden="true">›</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Design Process</h2>
+        <h3>Mood Board</h3>
+        <p>
+          Glossier has one main shade – its famous pink. To pull other colors
+          for their app, I created a mood board based off of photos from their
+          social media or previous product campaigns.
+        </p>
+        <figure class="case-figure">
+          <img
+            src="assets/glossier/moodboard.webp"
+            alt="Glossier mood board"
+            loading="lazy"
+          />
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h3>Typography</h3>
+        <div class="case-figure-stack">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/glossier/typography-1.webp"
+            data-lightbox-alt="Glossier typography exploration"
+            aria-label="Open Glossier typography exploration image"
+          >
+            <img
+              src="assets/glossier/typography-1.webp"
+              alt="Glossier typography exploration"
+              loading="lazy"
+            />
+          </button>
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/glossier/typography-2.webp"
+            data-lightbox-alt="Glossier typography system"
+            aria-label="Open Glossier typography system image"
+          >
+            <img
+              src="assets/glossier/typography-2.webp"
+              alt="Glossier typography system"
+              loading="lazy"
+            />
+          </button>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>User Flow</h2>
+        <p>
+          I created a user flow to map out the customer journey of Glossier’s
+          new mobile application from browse to checkout.
+        </p>
+        <figure class="case-figure">
+          <img
+            src="assets/glossier/user-flow.webp"
+            alt="Glossier app user flow from browse to checkout"
+            loading="lazy"
+          />
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>Wireframes</h2>
+        <h3>Low-Fi Wireframes</h3>
+        <figure class="case-figure">
+          <img
+            src="assets/glossier/wireframes.webp"
+            alt="Low-fidelity Glossier app wireframes"
+            loading="lazy"
+          />
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h3>Component Library</h3>
+        <p>
+          Creating wireframes not only helped me visualize what the app would
+          look like, but it helped me determine what components I wanted to
+          create and add to the design library. While creating the different
+          components, I made sure to stay true to Glossier’s current brand
+          identity.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <figure class="case-figure">
+          <img
+            src="assets/glossier/feature.webp"
+            alt="Glossier AR try-on feature"
+            loading="lazy"
+          />
+        </figure>
+        <h2>Feature Highlight</h2>
+        <p>Glossier AR Try-On technology</p>
+      </section>
+
+      <section class="case-section">
+        <figure class="case-figure">
+          <img
+            src="assets/glossier/prototype.webp"
+            alt="Glossier app prototype screens"
+            loading="lazy"
+          />
+          <figcaption>
+            Testing with users to gain insights on the overall design,
+            interactions, and interest in an app experience
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>Prototype</h2>
+        <div class="case-embed">
+          <iframe
+            title="Glossier Mobile App prototype"
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fq1MP42QcgQkaQYbgrL5mKS%2FGlossier-Mobile-App%3Fnode-id%3D279-11244%26page-id%3D125%253A2925%26scaling%3Dscale-down%26starting-point-node-id%3D279%253A11244"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Future Iterations</h2>
+        <p>
+          Designing out what the offers and rewards page would look like. In the
+          future this would be considered a big value prop for customers and
+          allow opportunity to introduce what a rewards system would look like
+          for Glossier.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>Learnings &amp; Takeaways</h2>
+        <p>
+          Through this project I challenged myself to create my own responsive
+          design system from scratch. I learned how to integrate variables and
+          tokens, and apply them across my designs.
+        </p>
+        <p>
+          Furthermore, while working on these designs I was able to refine my
+          auto layout and prototyping skills, which made me more confident as a
+          designer.
+        </p>
+      </section>
     </main>
+
+    <section class="work-index" aria-label="Work navigation">
+      <div class="work-index-bar">
+        <a href="index.html">Back to Work</a>
+        <p class="work-index-pager">
+          <a href="anchor.html">prev</a>
+          <span>/</span>
+          <a href="dexter.html">next</a>
+        </p>
+      </div>
+      <div class="project-grid work-index-grid">
+        <a class="project" href="teachers-lounge.html">
+          <img src="assets/teachers-lounge.png" alt="" />
+          <span class="project-title">Teachers' Lounge</span>
+        </a>
+        <a class="project" href="oracle-health.html">
+          <img src="assets/oracle-health.png" alt="" />
+          <span class="project-title">Oracle Health</span>
+        </a>
+        <a class="project" href="anchor.html">
+          <img src="assets/anchor.png" alt="" />
+          <span class="project-title">Anchor</span>
+        </a>
+        <a class="project" href="glossier-app.html">
+          <img src="assets/glossier.png" alt="" />
+          <span class="project-title">Glossier App</span>
+        </a>
+        <a class="project" href="dexter.html">
+          <img src="assets/dexter.jpg" alt="" />
+          <span class="project-title">Dexter</span>
+        </a>
+        <a class="project" href="old-navy.html">
+          <img src="assets/old-navy.jpg" alt="" />
+          <span class="project-title">Old Navy HamNav Subcategories</span>
+        </a>
+        <a class="project" href="gap-power-reviews.html">
+          <img src="assets/gap.png" alt="" />
+          <span class="project-title">Gap Inc. Power Reviews</span>
+        </a>
+        <a class="project" href="client-work.html">
+          <img src="assets/client-work.jpg" alt="" />
+          <span class="project-title">Client Work</span>
+        </a>
+        <a class="project" href="dr-teals.html">
+          <img src="assets/dr-teals.jpg" alt="" />
+          <span class="project-title">Dr Teal's Package Design</span>
+        </a>
+      </div>
+    </section>
+
+    <div
+      class="lightbox"
+      id="lightbox"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image preview"
+    >
+      <button
+        type="button"
+        class="lightbox-close"
+        data-lightbox-close
+        aria-label="Close"
+      >
+        ×
+      </button>
+      <img class="lightbox-image" id="lightbox-image" src="" alt="" />
+    </div>
 
     <footer class="site-footer">
       <p>Ciani Foy © 2026. All Rights Reserved.</p>
       <div class="social-links">
-        <a href="https://www.linkedin.com/in/cianifoy/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a
+          href="https://www.linkedin.com/in/cianifoy/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >LinkedIn</a
+        >
         <a href="mailto:cianifoy@gmail.com">Email</a>
       </div>
     </footer>
+    <script>
+      (() => {
+        const bar = document.getElementById("reading-progress-bar");
+        if (!bar) return;
+
+        const update = () => {
+          const scrollTop = window.scrollY || document.documentElement.scrollTop;
+          const height =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+          const progress = height > 0 ? Math.min(scrollTop / height, 1) : 0;
+          bar.style.transform = `scaleX(${progress})`;
+        };
+
+        update();
+        window.addEventListener("scroll", update, { passive: true });
+        window.addEventListener("resize", update);
+      })();
+
+      (() => {
+        document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+          const track = carousel.querySelector(".case-carousel-track");
+          const slides = [...carousel.querySelectorAll("[data-carousel-slide]")];
+          const prevBtn = carousel.querySelector("[data-carousel-prev]");
+          const nextBtn = carousel.querySelector("[data-carousel-next]");
+          if (!track || slides.length < 2) return;
+
+          let index = 0;
+
+          const goTo = (next) => {
+            index = (next + slides.length) % slides.length;
+            track.style.transform = `translateX(-${index * 100}%)`;
+            slides.forEach((slide, i) => {
+              slide.classList.toggle("is-active", i === index);
+            });
+          };
+
+          prevBtn?.addEventListener("click", () => goTo(index - 1));
+          nextBtn?.addEventListener("click", () => goTo(index + 1));
+
+          let touchStartX = 0;
+          carousel.addEventListener(
+            "touchstart",
+            (event) => {
+              touchStartX = event.changedTouches[0].screenX;
+            },
+            { passive: true }
+          );
+          carousel.addEventListener(
+            "touchend",
+            (event) => {
+              const delta = event.changedTouches[0].screenX - touchStartX;
+              if (Math.abs(delta) < 40) return;
+              goTo(delta < 0 ? index + 1 : index - 1);
+            },
+            { passive: true }
+          );
+
+          carousel.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowLeft") goTo(index - 1);
+            if (event.key === "ArrowRight") goTo(index + 1);
+          });
+        });
+      })();
+
+      (() => {
+        const lightbox = document.getElementById("lightbox");
+        const image = document.getElementById("lightbox-image");
+        if (!lightbox || !image) return;
+
+        const open = (src, alt) => {
+          image.src = src;
+          image.alt = alt || "";
+          lightbox.hidden = false;
+          document.body.style.overflow = "hidden";
+        };
+
+        const close = () => {
+          lightbox.hidden = true;
+          image.src = "";
+          document.body.style.overflow = "";
+        };
+
+        document.querySelectorAll("[data-lightbox-trigger]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            open(btn.dataset.lightboxSrc, btn.dataset.lightboxAlt);
+          });
+        });
+
+        lightbox.addEventListener("click", (event) => {
+          if (
+            event.target === lightbox ||
+            event.target.hasAttribute("data-lightbox-close")
+          ) {
+            close();
+          }
+        });
+
+        window.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !lightbox.hidden) close();
+        });
+      })();
+    </script>
   </body>
 </html>

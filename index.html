@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Outfit:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..700&family=Outfit:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -94,7 +94,8 @@
       (() => {
         const roles = [
           "UX/UI Designer",
-          "Product Designer",
+          "Photographer",
+          "Tea Lover",
           "Visual Designer",
         ];
         const el = document.getElementById("hero-role");
@@ -111,7 +112,7 @@
             setTimeout(() => {
               deleting = true;
               tick();
-            }, 2400);
+            }, 3000);
             return;
           }
 
@@ -122,10 +123,10 @@
 
           charIndex += deleting ? -1 : 1;
           el.textContent = roles[roleIndex].slice(0, charIndex);
-          setTimeout(tick, deleting ? 90 : 160);
+          setTimeout(tick, deleting ? 130 : 220);
         };
 
-        setTimeout(tick, 1500);
+        setTimeout(tick, 1800);
       })();
     </script>
   </body>

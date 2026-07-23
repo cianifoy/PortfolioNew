@@ -3,16 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Teachers&#x27; Lounge — Ciani Foy</title>
+    <title>Teachers' Lounge — Ciani Foy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Outfit:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Outfit:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Prefer Proxima Nova when available via Adobe Fonts / system */
+      .case-longform {
+        font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
+      }
+    </style>
   </head>
   <body>
+    <div class="reading-progress" aria-hidden="true">
+      <div class="reading-progress-bar" id="reading-progress-bar"></div>
+    </div>
     <header class="site-header">
       <a class="logo" href="index.html" aria-label="Ciani Foy">
         <img src="assets/logo.jpg" alt="Ciani Foy" />
@@ -24,72 +36,465 @@
       </nav>
     </header>
 
-    <main class="case">
-      <div class="case-nav">
-        <a href="dr-teals.html">← Dr Teal&#x27;s Package Design</a>
-        <a href="index.html">Back to Work</a>
-        <a href="oracle-health.html">Oracle Health →</a>
-      </div>
-
+    <main class="case case-longform">
       <header class="case-header">
-        <h1 class="case-title">Teachers&#x27; Lounge</h1>
-        <p class="case-summary">Teachers’ Lounge is an application where teachers help teachers. It meets educators where they are in an always-accessible digital community designed to facilitate mentorship among K–12 educators in a way that is supportive, collaborative, and approachable.</p>
-        <dl class="case-meta">
-          <div>
-            <dt>Role</dt>
-            <dd>Domain over discover page, mentorship matching, library, and profile creation</dd>
-          </div>
-          <div>
-            <dt>Team</dt>
-            <dd>2 UX Researchers and 1 UX Designer</dd>
-          </div>
-        </dl>
+        <h1 class="case-title">Teachers' Lounge</h1>
+        <p class="case-award">
+          🏆 1st Place Prize at the University of Michigan School of Information
+          Exposition ‘26, in the category of Life-changing Education.
+        </p>
       </header>
 
       <figure class="case-cover">
-        <img src="assets/teachers-lounge.png" alt="Teachers&#x27; Lounge cover" />
+        <button
+          type="button"
+          class="case-cover-trigger"
+          data-lightbox-trigger
+          data-lightbox-src="assets/teachers-lounge/cover.png"
+          data-lightbox-alt="Teachers' Lounge cover"
+          aria-label="Open Teachers' Lounge cover image"
+        >
+          <img
+            src="assets/teachers-lounge/cover.png"
+            alt="Teachers' Lounge cover"
+          />
+        </button>
       </figure>
 
-      <div class="case-body">
-        <p class="case-award">1st Place Prize at the University of Michigan School of Information Exposition ‘26, in the category of Life-changing Education.</p>
-        <section class="case-section">
-          <h2>Problem</h2>
-          <p>44% of new teachers exit the profession within 5 years. How might we facilitate informal mentorship for early career K-12 teachers to increase retention and job satisfaction in the field?</p>
-        </section>
-        <section class="case-section">
-          <h2>Approach</h2>
-          <p>Rather than attempting to solve structural problems embedded in the education system, this project seeks to identify specific, addressable burdens that contribute to burnout and attrition for newly graduated K–12 teachers.</p>
-        </section>
-        <section class="case-section">
-          <h2>Research</h2>
-          <p>We conducted a literature review, digital ethnography, interviews with early career and experienced teachers, a MaxDiff survey to prioritize features, and usability testing to gather product feedback.</p>
-        </section>
-        <section class="case-section">
-          <h2>Key insight</h2>
-          <p>Teacher burnout is driven by administrative misalignment, lack of support, and isolation. Early career teachers need more preparation and guidance in the first months of teaching.</p>
-        </section>
+      <p class="case-summary">
+        Teachers’ Lounge is an application where teachers help teachers. It
+        meets teachers where they are in an always-accessible digital community
+        designed to facilitate mentorship among K–12 educators in a way that is
+        supportive, collaborative, and approachable.
+      </p>
+
+      <dl class="case-meta case-meta-four">
+        <div>
+          <dt>Tools</dt>
+          <dd>Figma and Figjam</dd>
+        </div>
+        <div>
+          <dt>Duration</dt>
+          <dd>3.5 months (2026)</dd>
+        </div>
+        <div>
+          <dt>Contributions</dt>
+          <dd>
+            Domain over discover page, mentorship matching, library, and profile
+            creation.
+          </dd>
+        </div>
+        <div>
+          <dt>Collaborators</dt>
+          <dd>2 UX Researchers and 1 UX Designer</dd>
+        </div>
+      </dl>
+
+      <section class="case-section">
+        <h2>Problem Statement</h2>
+        <p>
+          <strong>44%</strong> of new teachers exit the profession within 5
+          years. How might we facilitate informal mentorship for early career
+          K-12 teachers to increase retention and job satisfaction in the field?
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>Challenge &amp; Goals</h2>
+        <p>
+          While systemic issues such as compensation, policy, and institutional
+          support play a central role, these factors are often slow to change
+          and outside the scope of individual schools or designers to address
+          directly.
+        </p>
+        <p>
+          This project is motivated by the need to understand and alleviate the
+          daily, compounding burdens that contribute to burnout, diminished job
+          satisfaction, and ultimately attrition which newly graduated K–12
+          teachers experience. Rather than attempting to solve structural
+          problems embedded in the education system, this project seeks to
+          identify specific, addressable burdens and design a supportive digital
+          community around them.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>Research Methods</h2>
+        <p>
+          For our research, we conducted a preliminary literature review to
+          understand the problem scope, a digital ethnography to comprehend
+          teacher sentiment in their profession, interviews from early career and
+          experienced teachers, a MaxDiff survey to prioritize features, and
+          usability testing to gather feedback on the product.
+        </p>
+        <figure class="case-figure">
+          <img
+            src="assets/teachers-lounge/frame-2.png"
+            alt="Research methods overview"
+            loading="lazy"
+          />
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>Key Findings</h2>
+        <div class="case-findings">
+          <article class="finding-row">
+            <img
+              class="finding-icon"
+              src="assets/teachers-lounge/icon-1.png"
+              alt=""
+              loading="lazy"
+            />
+            <div class="finding-copy">
+              <h3>
+                Teacher Burnout Driven by Administrative Burden, Classroom
+                Behavior, Lack of Support, and Mental Health
+              </h3>
+              <p>
+                Teacher burnout is not just about workload. It is driven by
+                administrative misalignment, lack of support, and isolation.
+                Administration plays a key role in defining the school
+                environment and teacher experience.
+              </p>
+              <blockquote>
+                “I felt very lucky that the principal I worked under was
+                absolutely amazing. Leadership makes a huge difference. It
+                creates the whole community, from adults down to children.” –
+                P11, over 20 years teaching
+              </blockquote>
+            </div>
+          </article>
+          <article class="finding-row">
+            <img
+              class="finding-icon"
+              src="assets/teachers-lounge/icon-2.png"
+              alt=""
+              loading="lazy"
+            />
+            <div class="finding-copy">
+              <h3>Early Career Teachers Need More Support</h3>
+              <p>
+                Current gaps in mentorship include preparation and support in
+                the first few months of teaching and guidance in lessening
+                administrative burden.
+              </p>
+              <blockquote>
+                “Balancing learning curriculum, learning how to teach, and
+                learning classroom management all at once was overwhelming.” –
+                P8, former teacher
+              </blockquote>
+            </div>
+          </article>
+          <article class="finding-row">
+            <img
+              class="finding-icon"
+              src="assets/teachers-lounge/icon-3.png"
+              alt=""
+              loading="lazy"
+            />
+            <div class="finding-copy">
+              <h3>Positive Mentoring Relationships Are Impactful</h3>
+              <p>
+                Environments that foster positive mentoring relationships and
+                improve well-being for teachers are supportive, collaborative,
+                and approachable.
+              </p>
+              <blockquote>
+                “There were just teachers who saw me...as a brand new
+                23-year-old person who needed help and guidance, and so they did
+                it because…teachers inherently recognize that, and they reach
+                out to fill that need.” – P9, retired after over 20 years
+                teaching
+              </blockquote>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Design Concept: A Novel Social Network</h2>
+        <p>
+          No social network or centralized hub is currently dedicated to serving
+          teachers. This creates a clear opportunity to build a digital community
+          where educators can: seek advice, share experiences, find resources,
+          and build meaningful connections. Teachers’ Lounge is exclusive to
+          only teachers where they can have transparent, supportive conversations.
+        </p>
+        <p><strong>Core Platform Needs &amp; Design Requirements:</strong></p>
+        <ul class="case-list">
+          <li>
+            Center platform interaction around advice, support, and accessible
+            resources
+          </li>
+          <li>
+            Engagement-based peer matching, experience-based mentor/mentee
+            matching
+          </li>
+          <li>
+            Develop community guidelines around respect, professionalism, and
+            confidentiality
+          </li>
+        </ul>
+        <figure class="case-figure">
+          <img
+            src="assets/teachers-lounge/social-overview.png"
+            alt="Teachers' Lounge social platform overview"
+            loading="lazy"
+          />
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h3>Facilitating Conversation</h3>
+        <p>
+          The Threads page serves as a public hub where the user’s experience is
+          customized through interests they selected during the onboarding
+          process. The user can peruse the threads of these selected topics
+          through the scrollable navigation at the top of the page, or explore
+          the mixed personalized topics in "My Feed".
+        </p>
+        <p>
+          While creating a post, we included the option of posting anonymously,
+          so the platform provides a safe outlet for teachers to seek advice on
+          sensitive matters (such as burnout or administrative friction) without
+          the risk of professional exposure.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h3>Discovering Resources &amp; Mentor Matching</h3>
+        <p>
+          The main goal of our platform is to foster community but also to
+          provide mentorship. Mentorship is not one size fits all and we designed
+          our platform to represent the various needs of our teacher population.
+          On the Discover page you will find resources such as lesson plans,
+          highlighted podcast episodes, and trending discussions.
+        </p>
+        <p>
+          In the Grow Your Lounge, users will find opportunities to connect with
+          teachers who are recommended to them based on their years of experience
+          and credentials, recommended peers based on engagement on the platform,
+          recommended mentors who have similar years of experience, and mentees
+          who are looking for someone more senior.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h3>Organized Library</h3>
+        <p>
+          The Library is where our users will find their saved resources from
+          the Discover page along with posts from the Threads page. Additionally,
+          in the Library there is filtering based on the type of resource such as
+          lesson plans, activities, and posts. Another section of our Library is
+          the Boards where teachers can organize collections of resources.
+        </p>
+      </section>
+
+      <div class="case-phones">
+        <figure>
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/b122cff0-f31f-4e9a-825f-92c5b0f603b9/ThreadsPort2.gif"
+            alt="Threads page prototype"
+            loading="lazy"
+          />
+        </figure>
+        <figure>
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/3a82b9a1-fcdb-4dbf-b89c-942e7e958b6c/DiscoverPort_Small.gif"
+            alt="Discover page prototype"
+            loading="lazy"
+          />
+        </figure>
+        <figure>
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/fa89e5b8-f41a-4145-a25a-68f3d47db262/LibraryPort.gif"
+            alt="Library page prototype"
+            loading="lazy"
+          />
+        </figure>
       </div>
 
-      <div class="case-gallery">
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/38712694-758b-4bde-882c-3630f9fca988/Cover+Image.png?format=1500w" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/3a82b9a1-fcdb-4dbf-b89c-942e7e958b6c/DiscoverPort_Small.gif" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/fa89e5b8-f41a-4145-a25a-68f3d47db262/LibraryPort.gif" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/b122cff0-f31f-4e9a-825f-92c5b0f603b9/ThreadsPort2.gif" alt="" loading="lazy" />
-      </div>
+      <section class="case-section">
+        <h2>Impact: What Teachers Are Saying</h2>
+        <div class="case-quotes">
+          <img
+            src="assets/teachers-lounge/quote-1.png"
+            alt="Teacher quote"
+            loading="lazy"
+          />
+          <img
+            src="assets/teachers-lounge/quote-2.png"
+            alt="Teacher quote"
+            loading="lazy"
+          />
+          <img
+            src="assets/teachers-lounge/quote-3.png"
+            alt="Teacher quote"
+            loading="lazy"
+          />
+        </div>
+      </section>
 
-      <div class="case-nav case-nav-bottom">
-        <a href="dr-teals.html">← Dr Teal&#x27;s Package Design</a>
-        <a href="index.html">Back to Work</a>
-        <a href="oracle-health.html">Oracle Health →</a>
-      </div>
+      <section class="case-section">
+        <h2>Next Steps &amp; Reflection</h2>
+        <p>The next step in our team’s journey includes technical feasibility. We want to:</p>
+        <ul class="case-list">
+          <li>
+            Build a secure database to support user profiles, contextual
+            personalization, and mentorship matching.
+          </li>
+          <li>
+            Design for iOS, Android, and web to ensure accessibility and
+            flexibility across teacher workflows.
+          </li>
+          <li>
+            Implement strong data protections, user verification, and clear
+            privacy controls to support safe engagement.
+          </li>
+          <li>
+            Develop an initial, functional prototype, leveraging vibe coding
+            tools such as Claude Code and Figma MCP for rapid iteration.
+          </li>
+        </ul>
+        <p class="case-credit">
+          Credit: Kate Lilly, Nithya Duggaraju, and Ilana Mermelstein
+        </p>
+      </section>
     </main>
+
+
+      <section class="work-index" aria-label="Work navigation">
+        <div class="work-index-bar">
+          <a href="index.html">Back to Work</a>
+          <p class="work-index-pager">
+            <a href="dr-teals.html">prev</a>
+            <span>/</span>
+            <a href="oracle-health.html">next</a>
+          </p>
+        </div>
+        <div class="project-grid work-index-grid">
+        <a class="project" href="teachers-lounge.html">
+          <img src="assets/teachers-lounge.png" alt="" />
+          <span class="project-title">Teachers' Lounge</span>
+        </a>
+        <a class="project" href="oracle-health.html">
+          <img src="assets/oracle-health.png" alt="" />
+          <span class="project-title">Oracle Health</span>
+        </a>
+        <a class="project" href="anchor.html">
+          <img src="assets/anchor.png" alt="" />
+          <span class="project-title">Anchor</span>
+        </a>
+        <a class="project" href="glossier-app.html">
+          <img src="assets/glossier.png" alt="" />
+          <span class="project-title">Glossier App</span>
+        </a>
+        <a class="project" href="dexter.html">
+          <img src="assets/dexter.jpg" alt="" />
+          <span class="project-title">Dexter</span>
+        </a>
+        <a class="project" href="old-navy.html">
+          <img src="assets/old-navy.jpg" alt="" />
+          <span class="project-title">Old Navy HamNav Subcategories</span>
+        </a>
+        <a class="project" href="gap-power-reviews.html">
+          <img src="assets/gap.png" alt="" />
+          <span class="project-title">Gap Inc. Power Reviews</span>
+        </a>
+        <a class="project" href="client-work.html">
+          <img src="assets/client-work.jpg" alt="" />
+          <span class="project-title">Client Work</span>
+        </a>
+        <a class="project" href="dr-teals.html">
+          <img src="assets/dr-teals.jpg" alt="" />
+          <span class="project-title">Dr Teal's Package Design</span>
+        </a>
+        </div>
+      </section>
+
+    <div
+      class="lightbox"
+      id="lightbox"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image preview"
+    >
+      <button type="button" class="lightbox-close" data-lightbox-close aria-label="Close">
+        ×
+      </button>
+      <img class="lightbox-image" id="lightbox-image" src="" alt="" />
+    </div>
 
     <footer class="site-footer">
       <p>Ciani Foy © 2026. All Rights Reserved.</p>
       <div class="social-links">
-        <a href="https://www.linkedin.com/in/cianifoy/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a
+          href="https://www.linkedin.com/in/cianifoy/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >LinkedIn</a
+        >
         <a href="mailto:cianifoy@gmail.com">Email</a>
       </div>
     </footer>
+    <script>
+      (() => {
+        const bar = document.getElementById("reading-progress-bar");
+        if (!bar) return;
+
+        const update = () => {
+          const scrollTop = window.scrollY || document.documentElement.scrollTop;
+          const height =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+          const progress = height > 0 ? Math.min(scrollTop / height, 1) : 0;
+          bar.style.transform = `scaleX(${progress})`;
+        };
+
+        update();
+        window.addEventListener("scroll", update, { passive: true });
+        window.addEventListener("resize", update);
+      })();
+
+      (() => {
+        const lightbox = document.getElementById("lightbox");
+        const image = document.getElementById("lightbox-image");
+        if (!lightbox || !image) return;
+
+        const open = (src, alt) => {
+          image.src = src;
+          image.alt = alt || "";
+          lightbox.hidden = false;
+          document.body.style.overflow = "hidden";
+        };
+
+        const close = () => {
+          lightbox.hidden = true;
+          image.src = "";
+          document.body.style.overflow = "";
+        };
+
+        document.querySelectorAll("[data-lightbox-trigger]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            open(btn.dataset.lightboxSrc, btn.dataset.lightboxAlt);
+          });
+        });
+
+        lightbox.addEventListener("click", (event) => {
+          if (
+            event.target === lightbox ||
+            event.target.hasAttribute("data-lightbox-close")
+          ) {
+            close();
+          }
+        });
+
+        window.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !lightbox.hidden) close();
+        });
+      })();
+    </script>
   </body>
 </html>
