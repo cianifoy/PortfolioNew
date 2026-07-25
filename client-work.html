@@ -6,13 +6,28 @@
     <title>Client Work — Ciani Foy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Outfit:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Outfit:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .case-longform {
+        font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
+      }
+
+      .reading-progress-bar {
+        background: #44b4d4;
+      }
+    </style>
   </head>
   <body>
+    <div class="reading-progress" aria-hidden="true">
+      <div class="reading-progress-bar" id="reading-progress-bar"></div>
+    </div>
     <header class="site-header">
       <a class="logo" href="index.html" aria-label="Ciani Foy">
         <img src="assets/logo.jpg" alt="Ciani Foy" />
@@ -24,60 +39,261 @@
       </nav>
     </header>
 
-    <main class="case">
-<header class="case-header">
-        <h1 class="case-title">Client Work</h1>
-        <p class="case-summary">A selection of freelance work spanning iconography, print, branding, and web design for labs, residential businesses, authors, consulting firms, and startups.</p>
-        <dl class="case-meta">
-          <div>
-            <dt>Role</dt>
-            <dd>Freelance design</dd>
-          </div>
-          <div>
-            <dt>Team</dt>
-            <dd>Multiple clients</dd>
-          </div>
-        </dl>
-      </header>
-
-      <figure class="case-cover">
-        <img src="assets/client-work.jpg" alt="Client Work cover" />
-      </figure>
-
-      <div class="case-body">
-        <section class="case-section">
-          <h2>Children’s National Hospital</h2>
-          <p>Iconography created for the Developing Brain Research lab at Children’s National Hospital for the FY 2024 annual report.</p>
-        </section>
-        <section class="case-section">
-          <h2>RKW Residential</h2>
-          <p>Brochure one-pager created to promote business offerings and successes for potential new clients.</p>
-        </section>
-        <section class="case-section">
-          <h2>Book &amp; branding</h2>
-          <p>Book cover design for Blossoming Into Righteousness by Katrina Womack, plus logo work for Avanza Consulting and website templates for Patient Honey.</p>
-        </section>
-      </div>
-
-      <div class="case-gallery">
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/9cae7f71-bd43-4222-9793-88d2cb929471/CNARMockup.jpg?format=1500w" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/e2a74f18-e459-457a-bede-4ef27ca2d11b/Mockup1_portfolio.png?format=1500w" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/4b551014-4167-4acb-88a5-8187dc5d9ad8/BIRmockup.png?format=1500w" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/a65a5b18-554f-47d4-8105-ef0394ddd694/AngyBusinessCard.jpg?format=1500w" alt="" loading="lazy" />
-      </div>
-</main>
-
-
-      <section class="work-index" aria-label="Work navigation">
-        <div class="work-index-bar">
-          <a href="index.html">Back to Work</a>
-          <p class="work-index-pager">
-            <a href="gap-power-reviews.html">prev</a>
-            <span>/</span>
-            <a href="dr-teals.html">next</a>
-          </p>
+    <main class="case case-longform">
+      <section class="case-section">
+        <h2>Children’s National Hospital</h2>
+        <p>
+          Iconography created for the Developing Brain Research lab at the
+          Children’s National Hospital. Original designs requested for the FY
+          2024 annual report.
+        </p>
+        <div class="case-icon-grid">
+          <img
+            src="assets/client-work/icon-grants.webp"
+            alt="Grants icon"
+            loading="lazy"
+          />
+          <img
+            src="assets/client-work/icon-research-focus.webp"
+            alt="Research focus icon"
+            loading="lazy"
+          />
+          <img
+            src="assets/client-work/icon-staff.webp"
+            alt="Staff icon"
+            loading="lazy"
+          />
+          <img
+            src="assets/client-work/icon-publication.webp"
+            alt="Publication icon"
+            loading="lazy"
+          />
+          <img
+            src="assets/client-work/icon-proposal.webp"
+            alt="Proposal icon"
+            loading="lazy"
+          />
+          <img
+            src="assets/client-work/icon-research-t32.webp"
+            alt="Research T32 icon"
+            loading="lazy"
+          />
         </div>
-        <div class="project-grid work-index-grid">
+        <figure class="case-figure">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/client-work/cnar-mockup.webp"
+            data-lightbox-alt="Children’s National Hospital annual report mockup"
+            aria-label="Open Children’s National Hospital mockup"
+          >
+            <img
+              src="assets/client-work/cnar-mockup.webp"
+              alt="Children’s National Hospital annual report mockup"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>RKW Residential</h2>
+        <p>
+          Brochure one-pager created for RKW Residential to promote their
+          business offerings and successes for potential new clients.
+        </p>
+        <div class="case-figure-stack">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/client-work/rkw-mockup-1.webp"
+            data-lightbox-alt="RKW Residential brochure mockup"
+            aria-label="Open RKW Residential brochure mockup"
+          >
+            <img
+              src="assets/client-work/rkw-mockup-1.webp"
+              alt="RKW Residential brochure mockup"
+              loading="lazy"
+            />
+          </button>
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/client-work/rkw-mockup-2.webp"
+            data-lightbox-alt="RKW Residential brochure detail"
+            aria-label="Open RKW Residential brochure detail"
+          >
+            <img
+              src="assets/client-work/rkw-mockup-2.webp"
+              alt="RKW Residential brochure detail"
+              loading="lazy"
+            />
+          </button>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Blossoming Into Righteousness</h2>
+        <p>
+          Book cover design for Blossoming Into Righteousness by Katrina Womack.
+          Additionally, I manage the social media marketing and book promotion.
+        </p>
+        <figure class="case-figure">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/client-work/bir-mockup.webp"
+            data-lightbox-alt="Blossoming Into Righteousness book cover mockup"
+            aria-label="Open book cover mockup"
+          >
+            <img
+              src="assets/client-work/bir-mockup.webp"
+              alt="Blossoming Into Righteousness book cover mockup"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>Avanza Consulting</h2>
+        <p>
+          Avanza Consulting is a firm that specializes in web design, custom web
+          development, and social media marketing. I created their business logo
+          design. *Design of business card was not designed by me, only the
+          logo.
+        </p>
+        <figure class="case-figure">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/client-work/avanza-logo.webp"
+            data-lightbox-alt="Avanza Consulting logo"
+            aria-label="Open Avanza Consulting logo"
+          >
+            <img
+              src="assets/client-work/avanza-logo.webp"
+              alt="Avanza Consulting logo"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+        <div class="case-figure-stack">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/client-work/avanza-card-1.webp"
+            data-lightbox-alt="Avanza Consulting business card front"
+            aria-label="Open Avanza business card front"
+          >
+            <img
+              src="assets/client-work/avanza-card-1.webp"
+              alt="Avanza Consulting business card front"
+              loading="lazy"
+            />
+          </button>
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/client-work/avanza-card-2.webp"
+            data-lightbox-alt="Avanza Consulting business card back"
+            aria-label="Open Avanza business card back"
+          >
+            <img
+              src="assets/client-work/avanza-card-2.webp"
+              alt="Avanza Consulting business card back"
+              loading="lazy"
+            />
+          </button>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>patient honey</h2>
+        <p>
+          Patient Honey is a startup that specializes in creating beautiful
+          dentist websites. As a freelance web designer, I have created and
+          launched website templates for their clients and contributed to their
+          overall design system.
+        </p>
+        <div class="case-phone-row">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/client-work/patient-honey-1.webp"
+            data-lightbox-alt="Patient Honey website template mockup 1"
+            aria-label="Open Patient Honey mockup 1"
+          >
+            <img
+              src="assets/client-work/patient-honey-1.webp"
+              alt="Patient Honey website template mockup 1"
+              loading="lazy"
+            />
+          </button>
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/client-work/patient-honey-2.webp"
+            data-lightbox-alt="Patient Honey website template mockup 2"
+            aria-label="Open Patient Honey mockup 2"
+          >
+            <img
+              src="assets/client-work/patient-honey-2.webp"
+              alt="Patient Honey website template mockup 2"
+              loading="lazy"
+            />
+          </button>
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/client-work/patient-honey-3.webp"
+            data-lightbox-alt="Patient Honey website template mockup 3"
+            aria-label="Open Patient Honey mockup 3"
+          >
+            <img
+              src="assets/client-work/patient-honey-3.webp"
+              alt="Patient Honey website template mockup 3"
+              loading="lazy"
+            />
+          </button>
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/client-work/patient-honey-4.webp"
+            data-lightbox-alt="Patient Honey website template mockup 4"
+            aria-label="Open Patient Honey mockup 4"
+          >
+            <img
+              src="assets/client-work/patient-honey-4.webp"
+              alt="Patient Honey website template mockup 4"
+              loading="lazy"
+            />
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <section class="work-index" aria-label="Work navigation">
+      <div class="work-index-bar">
+        <a href="index.html">Back to Work</a>
+        <p class="work-index-pager">
+          <a href="gap-power-reviews.html">prev</a>
+          <span>/</span>
+          <a href="dr-teals.html">next</a>
+        </p>
+      </div>
+      <div class="project-grid work-index-grid">
         <a class="project" href="teachers-lounge.html">
           <img src="assets/teachers-lounge.png" alt="" />
           <span class="project-title">Teachers' Lounge</span>
@@ -114,15 +330,124 @@
           <img src="assets/dr-teals.jpg" alt="" />
           <span class="project-title">Dr Teal's Package Design</span>
         </a>
-        </div>
-      </section>
+      </div>
+    </section>
+
+    <div
+      class="lightbox"
+      id="lightbox"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image preview"
+    >
+      <button
+        type="button"
+        class="lightbox-close"
+        data-lightbox-close
+        aria-label="Close"
+      >
+        ×
+      </button>
+      <img class="lightbox-image" id="lightbox-image" src="" alt="" />
+    </div>
 
     <footer class="site-footer">
       <p>Ciani Foy © 2026. All Rights Reserved.</p>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/cianifoy/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="mailto:cianifoy@gmail.com">Email</a>
+                        <div class="social-links">
+        <a
+          href="https://www.linkedin.com/in/cianifoy/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+                                        <svg
+            class="social-icon social-icon--linkedin"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#111111"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path fill="none" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect fill="none" x="2" y="9" width="4" height="12" />
+            <circle fill="none" cx="4" cy="4" r="2" />
+          </svg>
+        </a>
+        <a href="mailto:cianifoy@gmail.com" aria-label="Email">
+          <svg
+            class="social-icon social-icon--email"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              fill="currentColor"
+              d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
+            />
+          </svg>
+        </a>
       </div>
     </footer>
+    <script>
+      (() => {
+        const bar = document.getElementById("reading-progress-bar");
+        if (!bar) return;
+
+        const update = () => {
+          const scrollTop = window.scrollY || document.documentElement.scrollTop;
+          const height =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+          const progress = height > 0 ? Math.min(scrollTop / height, 1) : 0;
+          bar.style.transform = `scaleX(${progress})`;
+        };
+
+        update();
+        window.addEventListener("scroll", update, { passive: true });
+        window.addEventListener("resize", update);
+      })();
+
+      (() => {
+        const lightbox = document.getElementById("lightbox");
+        const image = document.getElementById("lightbox-image");
+        if (!lightbox || !image) return;
+
+        const open = (src, alt) => {
+          image.src = src;
+          image.alt = alt || "";
+          lightbox.hidden = false;
+          document.body.style.overflow = "hidden";
+        };
+
+        const close = () => {
+          lightbox.hidden = true;
+          image.src = "";
+          document.body.style.overflow = "";
+        };
+
+        document.querySelectorAll("[data-lightbox-trigger]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            open(btn.dataset.lightboxSrc, btn.dataset.lightboxAlt);
+          });
+        });
+
+        lightbox.addEventListener("click", (event) => {
+          if (
+            event.target === lightbox ||
+            event.target.hasAttribute("data-lightbox-close")
+          ) {
+            close();
+          }
+        });
+
+        window.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !lightbox.hidden) close();
+        });
+      })();
+    </script>
   </body>
 </html>

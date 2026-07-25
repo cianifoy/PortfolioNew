@@ -3,16 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dr Teal&#x27;s Package Design — Ciani Foy</title>
+    <title>Dr Teal's Package Design — Ciani Foy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Outfit:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Outfit:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .case-longform {
+        font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
+      }
+
+      .case-longform .case-title {
+        font-size: clamp(1.4rem, 2.8vw, 1.85rem);
+      }
+
+      .reading-progress-bar {
+        background: #3c3060;
+      }
+    </style>
   </head>
   <body>
+    <div class="reading-progress" aria-hidden="true">
+      <div class="reading-progress-bar" id="reading-progress-bar"></div>
+    </div>
     <header class="site-header">
       <a class="logo" href="index.html" aria-label="Ciani Foy">
         <img src="assets/logo.jpg" alt="Ciani Foy" />
@@ -24,61 +43,209 @@
       </nav>
     </header>
 
-    <main class="case">
-<header class="case-header">
-        <h1 class="case-title">Dr Teal&#x27;s Package Design</h1>
-        <p class="case-summary">A redesign of Dr. Teal’s Lavender Foaming Bath packaging to embody the product essence and appeal to a more youthful audience while expanding the brand’s demographic reach.</p>
-        <dl class="case-meta">
-          <div>
-            <dt>Role</dt>
-            <dd>Package redesign</dd>
-          </div>
-          <div>
-            <dt>Team</dt>
-            <dd>Independent project</dd>
-          </div>
-        </dl>
+    <main class="case case-longform">
+      <header class="case-header">
+        <h1 class="case-title">
+          <a
+            href="https://www.amazon.com/Dr-Teals-Foaming-Soothe-Lavender/dp/B0080D1Q52"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Dr teal’s foaming bath soap</a
+          >
+        </h1>
+        <p class="case-note">
+          *click link to see original package design
+        </p>
       </header>
 
-      <figure class="case-cover">
-        <img src="assets/dr-teals.jpg" alt="Dr Teal&#x27;s Package Design cover" />
-      </figure>
+      <section class="case-section">
+        <h2>challenge</h2>
+        <p>
+          Redesign Dr. Teal’s Lavender Foaming Bath packaging design to embody
+          the overall essence. In addition, make the design appeal to a more
+          youthful audience to expand the market demographic.
+        </p>
+      </section>
 
-      <div class="case-body">
-        <section class="case-section">
-          <h2>Goal</h2>
-          <p>Elevate the packaging so it feels luxurious, relaxing, and approachable—matching what customers say they feel when they use the product.</p>
-        </section>
-        <section class="case-section">
-          <h2>Research</h2>
-          <p>Amazon reviews surfaced keywords like luxurious, relaxing, affordable, and not overpowering. Competitive packaging also suggested the original bottle felt bulky.</p>
-        </section>
-        <section class="case-section">
-          <h2>Direction</h2>
-          <p>A deeper purple bottle, refined typography hierarchy, removal of dense bullet points, and illustrated elements create a younger, more atmospheric shelf presence.</p>
-        </section>
-      </div>
+      <section class="case-section">
+        <h2>Background</h2>
+        <p>
+          Dr Teal’s is a renowned brand known by women who are older and value
+          the Dr Teal’s brand as a whole. Dr Teal’s is not very popular among
+          many young people, so I want to expand the target audience to
+          accommodate women of all ages. To elevate the product, I wanted to
+          make the product look more youthful and fresher.
+        </p>
+        <p>
+          During my research, I wanted to see what current customers thought of
+          the product by reading reviews on Amazon. From the reviews I took key
+          words that would shape the design essence including: luxurious,
+          relaxing, affordable, and not overpowering. Looking at the current
+          design, while I notice that the plastic material aids in its
+          affordability, the placement of words and images does not give off
+          luxurious or relaxing energy. The lack of space and cluster of words
+          is overwhelming to the eye.
+        </p>
+        <figure class="case-figure">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/dr-teals/quote-01.png"
+            data-lightbox-alt="Customer review quote about Dr Teal’s"
+            aria-label="Open review quote 1"
+          >
+            <img
+              src="assets/dr-teals/quote-01.png"
+              alt="Customer review quote about Dr Teal’s"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+        <figure class="case-figure">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/dr-teals/quote-02.png"
+            data-lightbox-alt="Customer review quote about Dr Teal’s"
+            aria-label="Open review quote 2"
+          >
+            <img
+              src="assets/dr-teals/quote-02.png"
+              alt="Customer review quote about Dr Teal’s"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+      </section>
 
-      <div class="case-gallery">
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/4f961a8f-5aef-42cd-98dd-63e30647a286/drtealsquote-01.png?format=1500w" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/057cd8bc-0d61-464d-b1f9-08caaa489a0c/drtealsquote-02.png?format=1500w" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/fed869f0-19d9-40a8-82f7-26638c5897ea/DrTealsMockup_Finale.jpg?format=1500w" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/1631119216556-LRS05HB06538GUA1HG29/BackTeals.png?format=1500w" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/c711fb3c-4605-434f-bd9a-9d74c143dbfe/DrTeals_Mockup_Foy_Final.jpg?format=1500w" alt="" loading="lazy" />
-      </div>
-</main>
+      <section class="case-section">
+        <h2>Design goals</h2>
+        <ul class="case-list">
+          <li>
+            Change bottle shape. Original is too bulky and awkward looking
+            compared to competitors
+          </li>
+          <li>Make bottle color a deep purple instead of a navy blue</li>
+          <li>Get rid of bullet points on original bottle</li>
+          <li>
+            Make the overall design match the ambiance it gives off when
+            consumers use it
+          </li>
+        </ul>
+      </section>
 
-
-      <section class="work-index" aria-label="Work navigation">
-        <div class="work-index-bar">
-          <a href="index.html">Back to Work</a>
-          <p class="work-index-pager">
-            <a href="client-work.html">prev</a>
-            <span>/</span>
-            <a href="teachers-lounge.html">next</a>
-          </p>
+      <section class="case-section">
+        <h2>Product</h2>
+        <p>
+          In my design I wanted to convey what customers felt to what they saw
+          visually on the product. To give the product a youthful look, I
+          lessened the weight on the font of the title, played with the
+          hierarchy of words, got rid of the bullet points, and added an
+          illustrated element. To add to the relaxing element, I changed the
+          white background to a darker one that resembled a nighttime sky and
+          also related visually to other “soothe and sleep” products sold by Dr
+          Teal’s.
+        </p>
+        <figure class="case-figure">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/dr-teals/mockup-finale.jpg"
+            data-lightbox-alt="Dr Teal’s redesigned packaging mockup"
+            aria-label="Open packaging mockup"
+          >
+            <img
+              src="assets/dr-teals/mockup-finale.jpg"
+              alt="Dr Teal’s redesigned packaging mockup"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+        <div class="case-figure-pair case-figure-pair-aligned">
+          <figure class="case-figure">
+            <button
+              type="button"
+              class="case-cover-trigger"
+              data-lightbox-trigger
+              data-lightbox-src="assets/dr-teals/back-label.png"
+              data-lightbox-alt="Dr Teal’s redesigned back of label"
+              aria-label="Open back of label"
+            >
+              <img
+                src="assets/dr-teals/back-label.png"
+                alt="Dr Teal’s redesigned back of label"
+                loading="lazy"
+              />
+            </button>
+            <figcaption>Back of Label</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <button
+              type="button"
+              class="case-cover-trigger"
+              data-lightbox-trigger
+              data-lightbox-src="assets/dr-teals/mockup-foy.jpg"
+              data-lightbox-alt="Dr Teal’s packaging product shot"
+              aria-label="Open product shot"
+            >
+              <img
+                src="assets/dr-teals/mockup-foy.jpg"
+                alt="Dr Teal’s packaging product shot"
+                loading="lazy"
+              />
+            </button>
+          </figure>
         </div>
-        <div class="project-grid work-index-grid">
+      </section>
+
+      <section class="case-section">
+        <h2>Branding</h2>
+        <div class="case-figure-pair case-figure-pair-branding">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/dr-teals/fonts.png"
+            data-lightbox-alt="Dr Teal’s packaging typography"
+            aria-label="Open typography"
+          >
+            <img
+              src="assets/dr-teals/fonts.png"
+              alt="Dr Teal’s packaging typography"
+              loading="lazy"
+            />
+          </button>
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/dr-teals/color-palette.png"
+            data-lightbox-alt="Dr Teal’s color palette"
+            aria-label="Open color palette"
+          >
+            <img
+              src="assets/dr-teals/color-palette.png"
+              alt="Dr Teal’s color palette"
+              loading="lazy"
+            />
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <section class="work-index" aria-label="Work navigation">
+      <div class="work-index-bar">
+        <a href="index.html">Back to Work</a>
+        <p class="work-index-pager">
+          <a href="client-work.html">prev</a>
+          <span>/</span>
+          <a href="teachers-lounge.html">next</a>
+        </p>
+      </div>
+      <div class="project-grid work-index-grid">
         <a class="project" href="teachers-lounge.html">
           <img src="assets/teachers-lounge.png" alt="" />
           <span class="project-title">Teachers' Lounge</span>
@@ -115,15 +282,124 @@
           <img src="assets/dr-teals.jpg" alt="" />
           <span class="project-title">Dr Teal's Package Design</span>
         </a>
-        </div>
-      </section>
+      </div>
+    </section>
+
+    <div
+      class="lightbox"
+      id="lightbox"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image preview"
+    >
+      <button
+        type="button"
+        class="lightbox-close"
+        data-lightbox-close
+        aria-label="Close"
+      >
+        ×
+      </button>
+      <img class="lightbox-image" id="lightbox-image" src="" alt="" />
+    </div>
 
     <footer class="site-footer">
       <p>Ciani Foy © 2026. All Rights Reserved.</p>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/cianifoy/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="mailto:cianifoy@gmail.com">Email</a>
+                        <div class="social-links">
+        <a
+          href="https://www.linkedin.com/in/cianifoy/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+                                        <svg
+            class="social-icon social-icon--linkedin"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#111111"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path fill="none" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect fill="none" x="2" y="9" width="4" height="12" />
+            <circle fill="none" cx="4" cy="4" r="2" />
+          </svg>
+        </a>
+        <a href="mailto:cianifoy@gmail.com" aria-label="Email">
+          <svg
+            class="social-icon social-icon--email"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              fill="currentColor"
+              d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
+            />
+          </svg>
+        </a>
       </div>
     </footer>
+    <script>
+      (() => {
+        const bar = document.getElementById("reading-progress-bar");
+        if (!bar) return;
+
+        const update = () => {
+          const scrollTop = window.scrollY || document.documentElement.scrollTop;
+          const height =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+          const progress = height > 0 ? Math.min(scrollTop / height, 1) : 0;
+          bar.style.transform = `scaleX(${progress})`;
+        };
+
+        update();
+        window.addEventListener("scroll", update, { passive: true });
+        window.addEventListener("resize", update);
+      })();
+
+      (() => {
+        const lightbox = document.getElementById("lightbox");
+        const image = document.getElementById("lightbox-image");
+        if (!lightbox || !image) return;
+
+        const open = (src, alt) => {
+          image.src = src;
+          image.alt = alt || "";
+          lightbox.hidden = false;
+          document.body.style.overflow = "hidden";
+        };
+
+        const close = () => {
+          lightbox.hidden = true;
+          image.src = "";
+          document.body.style.overflow = "";
+        };
+
+        document.querySelectorAll("[data-lightbox-trigger]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            open(btn.dataset.lightboxSrc, btn.dataset.lightboxAlt);
+          });
+        });
+
+        lightbox.addEventListener("click", (event) => {
+          if (
+            event.target === lightbox ||
+            event.target.hasAttribute("data-lightbox-close")
+          ) {
+            close();
+          }
+        });
+
+        window.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !lightbox.hidden) close();
+        });
+      })();
+    </script>
   </body>
 </html>

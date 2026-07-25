@@ -6,13 +6,99 @@
     <title>Dexter — Ciani Foy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Outfit:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Outfit:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .case-longform {
+        font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
+      }
+
+      .reading-progress-bar {
+        background: #305870;
+      }
+
+      .case-longform .case-title {
+        font-size: clamp(1.4rem, 2.8vw, 1.85rem);
+      }
+
+      .case-longform .case-cover {
+        max-width: none;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .case-figure-pair-demo {
+        grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+        align-items: center;
+      }
+
+      .case-figure-spaced {
+        margin-top: clamp(4rem, 8vw, 6.5rem);
+      }
+
+      .case-meta-flush {
+        margin-top: 0.75rem;
+        margin-bottom: clamp(2.5rem, 5vw, 4rem);
+      }
+
+      .case-section.case-section-follow:has(> h2) {
+        margin-top: clamp(1.75rem, 3vw, 2.5rem);
+      }
+
+      .case-longform .case-callout {
+        margin-top: clamp(1.75rem, 3.5vw, 2.5rem);
+        margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
+      }
+
+      .case-section-split {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(9rem, 17rem);
+        gap: clamp(1.5rem, 4vw, 3rem);
+        align-items: start;
+      }
+
+      .case-section-split-wide {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+        align-items: start;
+      }
+
+      .case-section-split .case-split-aside {
+        margin: 0;
+      }
+
+      .case-section-split .case-split-aside img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      @media (max-width: 700px) {
+        .case-section-split,
+        .case-section-split-wide {
+          grid-template-columns: 1fr;
+        }
+
+        .case-split-aside {
+          max-width: 14rem;
+        }
+
+        .case-section-split-wide .case-split-aside {
+          max-width: none;
+        }
+      }
+    </style>
   </head>
   <body>
+    <div class="reading-progress" aria-hidden="true">
+      <div class="reading-progress-bar" id="reading-progress-bar"></div>
+    </div>
     <header class="site-header">
       <a class="logo" href="index.html" aria-label="Ciani Foy">
         <img src="assets/logo.jpg" alt="Ciani Foy" />
@@ -24,61 +110,524 @@
       </nav>
     </header>
 
-    <main class="case">
-<header class="case-header">
-        <h1 class="case-title">Dexter</h1>
-        <p class="case-summary">Dexter simplifies mealtime management for caregivers of children with type 1 diabetes—bringing glucose data, insulin dosing, recipes, favorites, and carb tracking into one calm, connected experience.</p>
-        <dl class="case-meta">
-          <div>
-            <dt>Role</dt>
-            <dd>Wireframes, mockups, prototype, and final design</dd>
-          </div>
-          <div>
-            <dt>Team</dt>
-            <dd>Product Manager, Project Manager, UX Research, Impact Specialist, and Technical Architect</dd>
-          </div>
-        </dl>
+    <main class="case case-longform">
+      <header class="case-header">
+        <h1 class="case-title">DEXTER</h1>
       </header>
 
       <figure class="case-cover">
-        <img src="assets/dexter.jpg" alt="Dexter cover" />
+        <button
+          type="button"
+          class="case-cover-trigger"
+          data-lightbox-trigger
+          data-lightbox-src="assets/dexter/final-product.png"
+          data-lightbox-alt="Dexter app final product screens"
+          aria-label="Open Dexter final product image"
+        >
+          <img
+            src="assets/dexter/final-product.png"
+            alt="Dexter app final product screens"
+          />
+        </button>
       </figure>
 
-      <div class="case-body">
-        <section class="case-section">
-          <h2>Problem</h2>
-          <p>How might we streamline mealtime management for parents and caregivers of children who have type 1 diabetes?</p>
-        </section>
-        <section class="case-section">
-          <h2>Research</h2>
-          <p>A survey of 25 caregivers and affinity mapping revealed stress around carb counting accuracy, burnout, need for personalized information, and tools for real-time glucose management.</p>
-        </section>
-        <section class="case-section">
-          <h2>Outcome</h2>
-          <p>Within a six-week healthcare hackathon track, the team delivered a product demo and pitch grounded in research, personas, wireframes, prototyping, and usability testing.</p>
-        </section>
-      </div>
+      <p class="case-summary">
+        The focus of Dexter is to simplify mealtime management into one seamless
+        app, where caregivers can access real-time glucose data, calculate
+        insulin doses, build homemade recipes, save favorite meals, and track
+        carbs with ease. With Dexter, we aim to restore peace of mind and bring
+        back the joy of mealtime for families navigating type 1 diabetes.
+      </p>
 
-      <div class="case-gallery">
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/85df0f85-1c4a-43bf-91a3-a0dbff9d4361/Screenshot+2024-12-10+at+12.55.26%E2%80%AFPM.jpg?format=1500w" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/d1addee6-76b3-409f-9e05-3b8807eb020d/event_125394_original-1.png?format=1500w" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/26d741f2-36a5-43ab-b75d-0a4621eaca9e/Dexter++-+Page+1+Frame+1.jpg?format=1500w" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/eb4bcda3-509e-4f24-bf7e-d070723c1a97/Dexter++-+Page+1+Frame+2.jpg?format=1500w" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/20c255cd-f422-4eda-b5c2-4c4b34044306/Screenshot+2024-12-16+at+3.22.12%E2%80%AFPM.jpg?format=1500w" alt="" loading="lazy" />
-      </div>
-</main>
-
-
-      <section class="work-index" aria-label="Work navigation">
-        <div class="work-index-bar">
-          <a href="index.html">Back to Work</a>
-          <p class="work-index-pager">
-            <a href="glossier-app.html">prev</a>
-            <span>/</span>
-            <a href="old-navy.html">next</a>
+      <section class="case-section case-section-split">
+        <div class="case-split-copy">
+          <h2>Problem Statement</h2>
+          <p>
+            How might we streamline mealtime management for parents and
+            caregivers of children who have type 1 diabetes?
           </p>
         </div>
-        <div class="project-grid work-index-grid">
+        <figure class="case-split-aside">
+          <img
+            src="assets/dexter/award.png"
+            alt="Innovation Jam award badge"
+            loading="lazy"
+          />
+        </figure>
+      </section>
+
+      <section class="case-section case-section-follow">
+        <h2>Final Product</h2>
+        <dl class="case-meta case-meta-four case-meta-flush">
+          <div>
+            <dt>My Role</dt>
+            <dd>UX Designer</dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd>Figma, Adobe Illustrator, Adobe Photoshop, and Lucidspark</dd>
+          </div>
+          <div>
+            <dt>Collaborators</dt>
+            <dd>
+              Product Manager, Project Manager, UX Research, Impact Specialist,
+              and Technical Architect
+            </dd>
+          </div>
+          <div>
+            <dt>Contributions</dt>
+            <dd>Wireframes, mockups, prototype, and final design</dd>
+          </div>
+          <div>
+            <dt>Duration</dt>
+            <dd>6 weeks</dd>
+          </div>
+          <div>
+            <dt>Year</dt>
+            <dd>2024</dd>
+          </div>
+        </dl>
+        <h2>Challenge</h2>
+        <ul class="case-list">
+          <li>
+            Create an innovative design experience of your choice in the
+            healthcare technology track
+          </li>
+          <li>
+            Solve a current problem in the healthcare field utilizing the main
+            pillars of the design process including user research, persona
+            formation, wireframing, prototyping, and usability testing
+          </li>
+          <li>
+            Within six weeks develop a sound product demo and business pitch to
+            share with a panel of judges to win money to further build out your
+            team’s venture
+          </li>
+        </ul>
+      </section>
+
+      <section class="case-section">
+        <h2>User Research &amp; Key insights</h2>
+        <p>
+          First, we conducted research to gain a better understanding of what
+          pain points our potential users face pertaining to mealtime management
+          and insulin dosage. We conducted a survey and received 25 responses in
+          total. From the survey responses we received, our UX Researcher
+          created an affinity map to best group similar needs and find key
+          themes.
+        </p>
+        <p class="case-callout">💡 Affinity Map</p>
+        <p>
+          We asked: What are the primary challenges you face caring for a
+          pediatric patient with type 1 diabetes?
+        </p>
+        <figure class="case-figure">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/dexter/challenge-1.jpg"
+            data-lightbox-alt="Caregiver research quote"
+            aria-label="Open research quote 1"
+          >
+            <img
+              src="assets/dexter/challenge-1.jpg"
+              alt="Caregiver research quote"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+        <figure class="case-figure">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/dexter/challenge-2.jpg"
+            data-lightbox-alt="Caregiver research quote"
+            aria-label="Open research quote 2"
+          >
+            <img
+              src="assets/dexter/challenge-2.jpg"
+              alt="Caregiver research quote"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+        <figure class="case-figure">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/dexter/challenge-3.jpg"
+            data-lightbox-alt="User research insights graphic"
+            aria-label="Open research insights graphic"
+          >
+            <img
+              src="assets/dexter/challenge-3.jpg"
+              alt="User research insights graphic"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+        <p>
+          The quotes above represented frequent sentiments in relation to
+          caregiver’s experiences caring for pediatric patients with type 1
+          diabetes. A common sentiment and pain point among our survey
+          participants was wondering if they are counting carbs correctly or if
+          they are finding the correct amount of carbs for food items.
+        </p>
+        <p class="case-callout">💡 Key Themes</p>
+        <ul class="case-list">
+          <li>
+            <strong>Caregiver Strain and Support Needs:</strong> Caregivers
+            experience significant challenges such as burnout, stress, lack of
+            sleep, and concerns about miscalculations. There is a strong desire
+            for a supportive community of other caregivers.
+          </li>
+          <li>
+            <strong>Need for Accessible, Personalized Information:</strong>
+            Caregivers value having easy access to accurate, personalized
+            information that is tailored to their child’s specific needs. They
+            seek clear communication with doctors and tools for better managing
+            aspects like trends and meal planning.
+          </li>
+          <li>
+            <strong>Tools for Blood Glucose Management:</strong> Caregivers want
+            solutions that help keep blood glucose levels in check, including
+            tools for tracking insulin, real-time data sharing, and reminders
+            for unhealthy glucose levels.
+          </li>
+          <li>
+            <strong>Concerns Over Separation and Communication:</strong>
+            Caregivers worry about their child’s well-being when they’re not
+            together and appreciate tools that facilitate communication with
+            both the child and other caregivers. They also want greater general
+            awareness and education about T1D.
+          </li>
+          <li>
+            <strong>Financial and Supply Challenges:</strong> Caregivers face
+            financial burdens and accessibility issues related to the cost and
+            availability of necessary medical supplies for managing T1D.
+          </li>
+          <li>
+            <strong>Desire for Convenient Carb Counting Tools:</strong>
+            Caregivers want an easy-to-use carb counting tool with a large,
+            reliable database of foods to help them quickly find relevant
+            information for managing their child’s diet.
+          </li>
+        </ul>
+      </section>
+
+      <section class="case-section">
+        <h2>Personas</h2>
+        <p>
+          After conducting our user research, we created a primary and secondary
+          persona. Our primary persona, Susan, had needs that surrounded having
+          an application that integrated CGM data in real time, had a database
+          of new and frequently created meals, and carb counting/tracking to
+          name a few. Our secondary persona, Austin, is Susan’s child who had
+          frustrations and needs of his own. Austin struggles with his new
+          diagnosis, adjusting to a different lifestyle, and managing the
+          expectations his mother has for him and his health.
+        </p>
+        <div class="case-figure-pair">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/dexter/persona-1.png"
+            data-lightbox-alt="Primary persona Susan"
+            aria-label="Open persona Susan"
+          >
+            <img
+              src="assets/dexter/persona-1.png"
+              alt="Primary persona Susan"
+              loading="lazy"
+            />
+          </button>
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/dexter/persona-2.png"
+            data-lightbox-alt="Secondary persona Austin"
+            aria-label="Open persona Austin"
+          >
+            <img
+              src="assets/dexter/persona-2.png"
+              alt="Secondary persona Austin"
+              loading="lazy"
+            />
+          </button>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Competitive Analysis</h2>
+        <p>
+          In developing Dexter, we conducted a competitive analysis of three
+          popular type 1 diabetes management apps:
+        </p>
+        <ul class="case-list">
+          <li>MySugr</li>
+          <li>CalorieKing</li>
+          <li>MyFitnessPal</li>
+        </ul>
+        <p>
+          While these apps offer helpful tools, none fully meet the complex
+          needs of caregivers managing pediatric type 1 diabetes. We identified
+          a gap: caregivers need a comprehensive tool that addresses all aspects
+          of mealtime management. We created Dexter to be that solution.
+        </p>
+        <figure class="case-figure">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/dexter/competitive.png"
+            data-lightbox-alt="Competitive analysis of diabetes management apps"
+            aria-label="Open competitive analysis"
+          >
+            <img
+              src="assets/dexter/competitive.png"
+              alt="Competitive analysis of diabetes management apps"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>Information Architecture</h2>
+        <p>
+          The sitemap was created to act as a guide of how we would lay out our
+          app, and how our users would navigate through it. The sitemap also
+          allowed us to prioritize our information architecture and determine
+          which pages would be the most pertinent for our users.
+        </p>
+        <figure class="case-figure">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/dexter/info-arch.jpg"
+            data-lightbox-alt="Dexter information architecture sitemap"
+            aria-label="Open information architecture"
+          >
+            <img
+              src="assets/dexter/info-arch.jpg"
+              alt="Dexter information architecture sitemap"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>User Flows</h2>
+        <div class="case-embed">
+          <iframe
+            title="Dexter prototype"
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FzSX7ZZotjRHgrv6xB3Lser%2FDexter%3Fnode-id%3D381-1001%26page-id%3D381%253A889%26scaling%3Dscale-down%26starting-point-node-id%3D381%253A1001"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Wireframes</h2>
+        <p>
+          After gathering insights from users and identifying Dexter’s unique
+          value add in terms of features, I started sketching frames that
+          encompassed all new information we gained.
+        </p>
+        <div class="case-figure-pair">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/dexter/user-flow-1.jpg"
+            data-lightbox-alt="Dexter user flow diagram"
+            aria-label="Open user flow 1"
+          >
+            <img
+              src="assets/dexter/user-flow-1.jpg"
+              alt="Dexter user flow diagram"
+              loading="lazy"
+            />
+          </button>
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/dexter/user-flow-2.png"
+            data-lightbox-alt="Dexter user flow diagram"
+            aria-label="Open user flow 2"
+          >
+            <img
+              src="assets/dexter/user-flow-2.png"
+              alt="Dexter user flow diagram"
+              loading="lazy"
+            />
+          </button>
+        </div>
+        <figure class="case-figure">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/dexter/wireframes.png"
+            data-lightbox-alt="Dexter wireframes"
+            aria-label="Open wireframes"
+          >
+            <img
+              src="assets/dexter/wireframes.png"
+              alt="Dexter wireframes"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+      </section>
+
+      <section class="case-section case-section-split case-section-split-wide">
+        <div class="case-split-copy">
+          <h2>Design Solutions</h2>
+          <ul class="case-list">
+            <li>
+              <strong>Recipe Builder and Food Logger:</strong> snap pictures of
+              ingredients, input measurements, and allow Dexter to calculate the
+              total carbs in any homemade meal.
+            </li>
+            <li>
+              <strong
+                >Extensive Food Database for Accurate Carb Counting:</strong
+              >
+              includes a comprehensive food database, covering restaurant items,
+              fast food, and store-bought products.
+            </li>
+            <li>
+              <strong>Simplified Insulin Dosage Calculator:</strong> For
+              mealtime dosing, caregivers can easily add the meal’s carbohydrate
+              content either manually or from our food log and recipe builder.
+            </li>
+            <li>
+              <strong>Low BG Corrections:</strong> log and save effective low BG
+              correction options, like 8 ounces of orange juice or 4 glucose
+              tabs.
+            </li>
+          </ul>
+        </div>
+        <figure class="case-split-aside">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/dexter/design-solutions.png"
+            data-lightbox-alt="Dexter design solutions screens"
+            aria-label="Open design solutions"
+          >
+            <img
+              src="assets/dexter/design-solutions.png"
+              alt="Dexter design solutions screens"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>App Demo &amp; Final design</h2>
+        <div class="case-figure-pair case-figure-pair-demo">
+          <figure class="case-figure">
+            <img
+              src="assets/dexter/app-mascot.jpg"
+              alt="Dexter dog mascot"
+              loading="lazy"
+            />
+          </figure>
+          <figure class="case-figure">
+            <img
+              src="assets/dexter/app-demo.gif"
+              alt="Dexter app demo screen recording"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+        <figure class="case-figure case-figure-spaced">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/dexter/final-mockup.png"
+            data-lightbox-alt="Dexter final mockup"
+            aria-label="Open final mockup"
+          >
+            <img
+              src="assets/dexter/final-mockup.png"
+              alt="Dexter final mockup"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>future iterations</h2>
+        <ul class="case-list">
+          <li>
+            Because my team and I were working under a time constraint, we had
+            to further streamline the process. In the future we would like to
+            conduct focus groups with caregivers of type 1 diabetic patients and
+            users who are type 1 diabetic to do usability testing. Through
+            testing and user feedback, we will see where we can further iterate
+            and measure if we met the needs of our user base.
+          </li>
+          <li>
+            We want to build out additional features such as the information tab
+            where we educate new caregivers of patients with type 1 diabetes to
+            help them get acclimated to a new health transition/diagnosis. The
+            information tab will also serve as a way to highlight pertinent
+            research done in the field and mitigate any misinformation
+            surrounding type 1 diabetes.
+          </li>
+        </ul>
+      </section>
+
+      <section class="case-section">
+        <h2>Learnings &amp; Takeaways</h2>
+        <ul class="case-list">
+          <li>
+            Do not lean on your original assumptions – after research and
+            customer discovery take what you have learned and implement it. In
+            the beginning, my team and I assumed that our users wanted all these
+            features and from combing through our data during affinity mapping
+            we realized that they don’t care about certain features we deemed as
+            important. They had larger pain points they wanted addressed.
+          </li>
+          <li>
+            Gather feedback throughout each iteration of the product. Opening
+            the floor to constructive criticism in the beginning will allow you
+            to find any use cases you missed.
+          </li>
+          <li>
+            When pitching to business stakeholders lead with impact and solidify
+            your narrative for a seamless delivery.
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <section class="work-index" aria-label="Work navigation">
+      <div class="work-index-bar">
+        <a href="index.html">Back to Work</a>
+        <p class="work-index-pager">
+          <a href="glossier-app.html">prev</a>
+          <span>/</span>
+          <a href="old-navy.html">next</a>
+        </p>
+      </div>
+      <div class="project-grid work-index-grid">
         <a class="project" href="teachers-lounge.html">
           <img src="assets/teachers-lounge.png" alt="" />
           <span class="project-title">Teachers' Lounge</span>
@@ -115,15 +664,124 @@
           <img src="assets/dr-teals.jpg" alt="" />
           <span class="project-title">Dr Teal's Package Design</span>
         </a>
-        </div>
-      </section>
+      </div>
+    </section>
+
+    <div
+      class="lightbox"
+      id="lightbox"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image preview"
+    >
+      <button
+        type="button"
+        class="lightbox-close"
+        data-lightbox-close
+        aria-label="Close"
+      >
+        ×
+      </button>
+      <img class="lightbox-image" id="lightbox-image" src="" alt="" />
+    </div>
 
     <footer class="site-footer">
       <p>Ciani Foy © 2026. All Rights Reserved.</p>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/cianifoy/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="mailto:cianifoy@gmail.com">Email</a>
+                        <div class="social-links">
+        <a
+          href="https://www.linkedin.com/in/cianifoy/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+                                        <svg
+            class="social-icon social-icon--linkedin"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#111111"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path fill="none" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect fill="none" x="2" y="9" width="4" height="12" />
+            <circle fill="none" cx="4" cy="4" r="2" />
+          </svg>
+        </a>
+        <a href="mailto:cianifoy@gmail.com" aria-label="Email">
+          <svg
+            class="social-icon social-icon--email"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              fill="currentColor"
+              d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
+            />
+          </svg>
+        </a>
       </div>
     </footer>
+    <script>
+      (() => {
+        const bar = document.getElementById("reading-progress-bar");
+        if (!bar) return;
+
+        const update = () => {
+          const scrollTop = window.scrollY || document.documentElement.scrollTop;
+          const height =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+          const progress = height > 0 ? Math.min(scrollTop / height, 1) : 0;
+          bar.style.transform = `scaleX(${progress})`;
+        };
+
+        update();
+        window.addEventListener("scroll", update, { passive: true });
+        window.addEventListener("resize", update);
+      })();
+
+      (() => {
+        const lightbox = document.getElementById("lightbox");
+        const image = document.getElementById("lightbox-image");
+        if (!lightbox || !image) return;
+
+        const open = (src, alt) => {
+          image.src = src;
+          image.alt = alt || "";
+          lightbox.hidden = false;
+          document.body.style.overflow = "hidden";
+        };
+
+        const close = () => {
+          lightbox.hidden = true;
+          image.src = "";
+          document.body.style.overflow = "";
+        };
+
+        document.querySelectorAll("[data-lightbox-trigger]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            open(btn.dataset.lightboxSrc, btn.dataset.lightboxAlt);
+          });
+        });
+
+        lightbox.addEventListener("click", (event) => {
+          if (
+            event.target === lightbox ||
+            event.target.hasAttribute("data-lightbox-close")
+          ) {
+            close();
+          }
+        });
+
+        window.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !lightbox.hidden) close();
+        });
+      })();
+    </script>
   </body>
 </html>

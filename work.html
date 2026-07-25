@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Outfit:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Outfit:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -24,29 +24,483 @@
       </nav>
     </header>
 
-    <main class="page">
-      <h1 class="page-title reveal">Passion</h1>
-      <div class="page-body reveal reveal-delay-1">
-        <p>
-          Personal and exploratory work across branding, digital art,
-          photography, and fashion design.
-        </p>
-      </div>
+    <main class="passion-page">
+      <section class="passion-section" aria-labelledby="photography-heading">
+        <h1 id="photography-heading" class="passion-heading">Photography</h1>
+        <div class="passion-photo">
+          <div class="passion-photo-set" aria-label="Photography gallery">
+            <button
+              type="button"
+              class="passion-shot passion-shot--a"
+              data-lightbox-trigger
+              data-lightbox-src="assets/passion/photo/01.webp"
+              data-lightbox-alt="Photography work"
+            >
+              <img
+                src="assets/passion/photo/01.webp"
+                alt="Photography work"
+                loading="lazy"
+              />
+            </button>
+            <button
+              type="button"
+              class="passion-shot passion-shot--b"
+              data-lightbox-trigger
+              data-lightbox-src="assets/passion/photo/02.webp"
+              data-lightbox-alt="Photography work"
+            >
+              <img
+                src="assets/passion/photo/02.webp"
+                alt="Photography work"
+                loading="lazy"
+              />
+            </button>
+            <button
+              type="button"
+              class="passion-shot passion-shot--c"
+              data-lightbox-trigger
+              data-lightbox-src="assets/passion/photo/03.webp"
+              data-lightbox-alt="Photography work"
+            >
+              <img
+                src="assets/passion/photo/03.webp"
+                alt="Photography work"
+                loading="lazy"
+              />
+            </button>
+            <button
+              type="button"
+              class="passion-shot passion-shot--d"
+              data-lightbox-trigger
+              data-lightbox-src="assets/passion/photo/04.webp"
+              data-lightbox-alt="Photography work"
+            >
+              <img
+                src="assets/passion/photo/04.webp"
+                alt="Photography work"
+                loading="lazy"
+              />
+            </button>
+            <button
+              type="button"
+              class="passion-shot passion-shot--e"
+              data-lightbox-trigger
+              data-lightbox-src="assets/passion/photo/05.webp"
+              data-lightbox-alt="Photography work"
+            >
+              <img
+                src="assets/passion/photo/05.webp"
+                alt="Photography work"
+                loading="lazy"
+              />
+            </button>
+          </div>
+
+          <div class="passion-row passion-row--full">
+            <button
+              type="button"
+              class="passion-shot"
+              data-lightbox-trigger
+              data-lightbox-src="assets/passion/photo/06.webp"
+              data-lightbox-alt="Photography work"
+            >
+              <img
+                src="assets/passion/photo/06.webp"
+                alt="Photography work"
+                loading="lazy"
+              />
+            </button>
+          </div>
+
+          <div class="passion-row passion-row--pair">
+            <button
+              type="button"
+              class="passion-shot"
+              data-lightbox-trigger
+              data-lightbox-src="assets/passion/photo/07.webp"
+              data-lightbox-alt="Photography work"
+            >
+              <img
+                src="assets/passion/photo/07.webp"
+                alt="Photography work"
+                loading="lazy"
+              />
+            </button>
+            <button
+              type="button"
+              class="passion-shot"
+              data-lightbox-trigger
+              data-lightbox-src="assets/passion/photo/08.webp"
+              data-lightbox-alt="Photography work"
+            >
+              <img
+                src="assets/passion/photo/08.webp"
+                alt="Photography work"
+                loading="lazy"
+              />
+            </button>
+          </div>
+
+          <div class="passion-row passion-row--full">
+            <button
+              type="button"
+              class="passion-shot"
+              data-lightbox-trigger
+              data-lightbox-src="assets/passion/photo/09.webp"
+              data-lightbox-alt="Photography work"
+            >
+              <img
+                src="assets/passion/photo/09.webp"
+                alt="Photography work"
+                loading="lazy"
+              />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="passion-section" aria-labelledby="america-heading">
+        <h1 id="america-heading" class="passion-heading">THIS IS AMERICA</h1>
+        <div class="passion-copy">
+          <p>
+            Series titled “Break Free.” Work displayed in Charlotte Mint Museum
+            (2018).
+          </p>
+          <p>
+            This series travels through time. It’s a prediction of today. It’s a
+            prediction of how the youth are going to rise up and dismantle
+            systemic racism and oppression throughout the United States
+            government. It starts out with grief in black and white and then
+            progresses through color – red symbolizing anger, blue for sadness,
+            and then back to red because the cycle of police brutality keeps
+            repeating. The series ends in a burst of color because everyone came
+            together to fight the injustices that have permeated all systems of
+            America from the justice system to education.
+          </p>
+        </div>
+
+        <div
+          class="passion-slider"
+          data-passion-slider
+          aria-roledescription="carousel"
+          aria-label="This Is America series"
+        >
+          <button
+            type="button"
+            class="passion-slider-nav passion-slider-nav--prev"
+            data-slider-prev
+            aria-label="Previous image"
+          >
+            ‹
+          </button>
+          <div class="passion-slider-viewport">
+            <div class="passion-slider-track" data-slider-track></div>
+          </div>
+          <button
+            type="button"
+            class="passion-slider-nav passion-slider-nav--next"
+            data-slider-next
+            aria-label="Next image"
+          >
+            ›
+          </button>
+        </div>
+      </section>
+
+      <section class="passion-section" aria-labelledby="digital-heading">
+        <h1 id="digital-heading" class="passion-heading">Digital Art</h1>
+        <div class="passion-digital">
+          <div class="passion-digital-cols">
+            <div class="passion-digital-col">
+              <button
+                type="button"
+                class="passion-shot"
+                data-lightbox-trigger
+                data-lightbox-src="assets/passion/digital/01.webp"
+                data-lightbox-alt="Digital art"
+              >
+                <img
+                  src="assets/passion/digital/01.webp"
+                  alt="Digital art"
+                  loading="lazy"
+                />
+              </button>
+              <button
+                type="button"
+                class="passion-shot"
+                data-lightbox-trigger
+                data-lightbox-src="assets/passion/digital/02.webp"
+                data-lightbox-alt="Digital art"
+              >
+                <img
+                  src="assets/passion/digital/02.webp"
+                  alt="Digital art"
+                  loading="lazy"
+                />
+              </button>
+              <button
+                type="button"
+                class="passion-shot"
+                data-lightbox-trigger
+                data-lightbox-src="assets/passion/digital/03.webp"
+                data-lightbox-alt="Digital art"
+              >
+                <img
+                  src="assets/passion/digital/03.webp"
+                  alt="Digital art"
+                  loading="lazy"
+                />
+              </button>
+            </div>
+            <div class="passion-digital-col">
+              <button
+                type="button"
+                class="passion-shot"
+                data-lightbox-trigger
+                data-lightbox-src="assets/passion/digital/04.webp"
+                data-lightbox-alt="Digital art"
+              >
+                <img
+                  src="assets/passion/digital/04.webp"
+                  alt="Digital art"
+                  loading="lazy"
+                />
+              </button>
+              <button
+                type="button"
+                class="passion-shot"
+                data-lightbox-trigger
+                data-lightbox-src="assets/passion/digital/05.webp"
+                data-lightbox-alt="Digital art"
+              >
+                <img
+                  src="assets/passion/digital/05.webp"
+                  alt="Digital art"
+                  loading="lazy"
+                />
+              </button>
+              <button
+                type="button"
+                class="passion-shot"
+                data-lightbox-trigger
+                data-lightbox-src="assets/passion/digital/06.webp"
+                data-lightbox-alt="Digital art"
+              >
+                <img
+                  src="assets/passion/digital/06.webp"
+                  alt="Digital art"
+                  loading="lazy"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="passion-row passion-row--full">
+            <button
+              type="button"
+              class="passion-shot"
+              data-lightbox-trigger
+              data-lightbox-src="assets/passion/digital/07.webp"
+              data-lightbox-alt="Digital art"
+            >
+              <img
+                src="assets/passion/digital/07.webp"
+                alt="Digital art"
+                loading="lazy"
+              />
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
       <p>Ciani Foy © 2026. All Rights Reserved.</p>
-      <div class="social-links">
+                        <div class="social-links">
         <a
           href="https://www.linkedin.com/in/cianifoy/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
         >
-          LinkedIn
+                                        <svg
+            class="social-icon social-icon--linkedin"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#111111"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path fill="none" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect fill="none" x="2" y="9" width="4" height="12" />
+            <circle fill="none" cx="4" cy="4" r="2" />
+          </svg>
         </a>
-        <a href="mailto:cianifoy@gmail.com" aria-label="Email">Email</a>
+        <a href="mailto:cianifoy@gmail.com" aria-label="Email">
+          <svg
+            class="social-icon social-icon--email"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              fill="currentColor"
+              d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
+            />
+          </svg>
+        </a>
       </div>
     </footer>
+
+    <div
+      class="lightbox"
+      id="lightbox"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image preview"
+    >
+      <button
+        type="button"
+        class="lightbox-close"
+        data-lightbox-close
+        aria-label="Close"
+      >
+        ×
+      </button>
+      <img class="lightbox-image" id="lightbox-image" src="" alt="" />
+    </div>
+
+    <script>
+      (() => {
+        const americaSlides = Array.from({ length: 12 }, (_, i) => {
+          const n = String(i + 1).padStart(2, "0");
+          return {
+            src: `assets/passion/america/${n}.webp`,
+            alt: "This Is America series artwork",
+          };
+        });
+
+        const slider = document.querySelector("[data-passion-slider]");
+        if (slider) {
+          let index = 0;
+          const track = slider.querySelector("[data-slider-track]");
+
+          americaSlides.forEach((slide) => {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "passion-shot passion-slider-slide";
+            btn.dataset.lightboxTrigger = "";
+            btn.dataset.lightboxSrc = slide.src;
+            btn.dataset.lightboxAlt = slide.alt;
+            btn.innerHTML = `<img src="${slide.src}" alt="${slide.alt}" draggable="false" />`;
+            track.appendChild(btn);
+          });
+
+          const slides = () =>
+            [...track.querySelectorAll(".passion-slider-slide")];
+
+          const viewport = slider.querySelector(".passion-slider-viewport");
+
+          const offsetFor = (i) =>
+            slides()
+              .slice(0, i)
+              .reduce((sum, el) => sum + el.getBoundingClientRect().width, 0);
+
+          const maxOffset = () =>
+            Math.max(
+              0,
+              track.scrollWidth - viewport.getBoundingClientRect().width
+            );
+
+          const apply = (i) => {
+            index = Math.max(0, Math.min(i, americaSlides.length - 1));
+            const offset = Math.min(offsetFor(index), maxOffset());
+            track.style.transform = `translateX(-${offset}px)`;
+          };
+
+          const atEnd = () =>
+            Math.min(offsetFor(index), maxOffset()) >= maxOffset() - 1;
+
+          slider
+            .querySelector("[data-slider-prev]")
+            .addEventListener("click", () => {
+              if (index <= 0) {
+                index = americaSlides.length - 1;
+                track.style.transform = `translateX(-${maxOffset()}px)`;
+                return;
+              }
+              apply(index - 1);
+            });
+
+          slider
+            .querySelector("[data-slider-next]")
+            .addEventListener("click", () => {
+              if (atEnd()) {
+                apply(0);
+                return;
+              }
+              const next = index + 1;
+              if (offsetFor(next) >= maxOffset()) {
+                index = next;
+                track.style.transform = `translateX(-${maxOffset()}px)`;
+                return;
+              }
+              apply(next);
+            });
+
+          window.addEventListener("resize", () => apply(index));
+
+          const images = [...track.querySelectorAll("img")];
+          Promise.all(
+            images.map(
+              (img) =>
+                img.complete ||
+                new Promise((resolve) => {
+                  img.addEventListener("load", resolve, { once: true });
+                  img.addEventListener("error", resolve, { once: true });
+                })
+            )
+          ).then(() => apply(0));
+        }
+
+        const lightbox = document.getElementById("lightbox");
+        const image = document.getElementById("lightbox-image");
+        if (!lightbox || !image) return;
+
+        const open = (src, alt) => {
+          image.src = src;
+          image.alt = alt || "";
+          lightbox.hidden = false;
+        };
+
+        const close = () => {
+          lightbox.hidden = true;
+          image.src = "";
+          image.alt = "";
+        };
+
+        document.querySelectorAll("[data-lightbox-trigger]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            open(btn.dataset.lightboxSrc, btn.dataset.lightboxAlt);
+          });
+        });
+
+        lightbox.addEventListener("click", (event) => {
+          if (
+            event.target === lightbox ||
+            event.target.hasAttribute("data-lightbox-close")
+          ) {
+            close();
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !lightbox.hidden) close();
+        });
+      })();
+    </script>
   </body>
 </html>

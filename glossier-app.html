@@ -250,11 +250,20 @@
         <h2>Wireframes</h2>
         <h3>Low-Fi Wireframes</h3>
         <figure class="case-figure">
-          <img
-            src="assets/glossier/wireframes.webp"
-            alt="Low-fidelity Glossier app wireframes"
-            loading="lazy"
-          />
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/glossier/wireframes.webp"
+            data-lightbox-alt="Low-fidelity Glossier app wireframes"
+            aria-label="Open Glossier wireframes image"
+          >
+            <img
+              src="assets/glossier/wireframes.webp"
+              alt="Low-fidelity Glossier app wireframes"
+              loading="lazy"
+            />
+          </button>
         </figure>
       </section>
 
@@ -267,36 +276,42 @@
           components, I made sure to stay true to Glossier’s current brand
           identity.
         </p>
+        <figure class="case-figure">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/glossier/component-library.webp"
+            data-lightbox-alt="Glossier app component library"
+            aria-label="Open Glossier component library image"
+          >
+            <img
+              src="assets/glossier/component-library.webp"
+              alt="Glossier app component library"
+              loading="lazy"
+            />
+          </button>
+        </figure>
       </section>
 
       <section class="case-section">
-        <figure class="case-figure">
-          <img
-            src="assets/glossier/feature.webp"
-            alt="Glossier AR try-on feature"
-            loading="lazy"
-          />
-        </figure>
         <h2>Feature Highlight</h2>
         <p>Glossier AR Try-On technology</p>
-      </section>
-
-      <section class="case-section">
         <figure class="case-figure">
           <img
-            src="assets/glossier/prototype.webp"
-            alt="Glossier app prototype screens"
+            src="assets/glossier/ar-try-on.webp"
+            alt="Glossier AR Try-On technology feature"
             loading="lazy"
           />
-          <figcaption>
-            Testing with users to gain insights on the overall design,
-            interactions, and interest in an app experience
-          </figcaption>
         </figure>
       </section>
 
       <section class="case-section">
         <h2>Prototype</h2>
+        <p>
+          Testing with users to gain insights on the overall design,
+          interactions, and interest in an app experience
+        </p>
         <div class="case-embed">
           <iframe
             title="Glossier Mobile App prototype"
@@ -402,14 +417,42 @@
 
     <footer class="site-footer">
       <p>Ciani Foy © 2026. All Rights Reserved.</p>
-      <div class="social-links">
+                        <div class="social-links">
         <a
           href="https://www.linkedin.com/in/cianifoy/"
           target="_blank"
           rel="noopener noreferrer"
-          >LinkedIn</a
+          aria-label="LinkedIn"
         >
-        <a href="mailto:cianifoy@gmail.com">Email</a>
+                                        <svg
+            class="social-icon social-icon--linkedin"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#111111"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path fill="none" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect fill="none" x="2" y="9" width="4" height="12" />
+            <circle fill="none" cx="4" cy="4" r="2" />
+          </svg>
+        </a>
+        <a href="mailto:cianifoy@gmail.com" aria-label="Email">
+          <svg
+            class="social-icon social-icon--email"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              fill="currentColor"
+              d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
+            />
+          </svg>
+        </a>
       </div>
     </footer>
     <script>

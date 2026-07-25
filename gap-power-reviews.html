@@ -6,13 +6,28 @@
     <title>Gap Inc. Power Reviews — Ciani Foy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Outfit:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Outfit:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .case-longform {
+        font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
+      }
+
+      .reading-progress-bar {
+        background: #1a3a6b;
+      }
+    </style>
   </head>
   <body>
+    <div class="reading-progress" aria-hidden="true">
+      <div class="reading-progress-bar" id="reading-progress-bar"></div>
+    </div>
     <header class="site-header">
       <a class="logo" href="index.html" aria-label="Ciani Foy">
         <img src="assets/logo.jpg" alt="Ciani Foy" />
@@ -24,60 +39,166 @@
       </nav>
     </header>
 
-    <main class="case">
-<header class="case-header">
+    <main class="case case-longform">
+      <header class="case-header">
         <h1 class="case-title">Gap Inc. Power Reviews</h1>
-        <p class="case-summary">Improved Power Reviews across Gap Inc. brands by adding review search, helpfulness voting, and smarter sorting—so shoppers can find trustworthy feedback faster.</p>
-        <dl class="case-meta">
-          <div>
-            <dt>Role</dt>
-            <dd>UX Designer, Gap Inc.</dd>
-          </div>
-          <div>
-            <dt>Team</dt>
-            <dd>Gap Inc. — Navigation / Power Reviews</dd>
-          </div>
-        </dl>
       </header>
 
-      <figure class="case-cover">
-        <img src="assets/gap.png" alt="Gap Inc. Power Reviews cover" />
+      <p class="case-summary">
+        During my tenure at Gap Inc. as a UX Designer, one of the tracks that I
+        focused on was navigation for Gap, Athleta, Banana Republic, and Old
+        Navy. Navigation includes search, SEO, filtering/sorting, and much more
+        when it comes to an e-commerce website. The most rewarding part of my
+        role was researching, strategizing, and designing methods to help
+        customers find and purchase products in an efficient way that would
+        ultimately increase the net-promoter score.
+      </p>
+      <p class="case-summary">
+        One feature that I worked on was improving the use of Power Reviews, a
+        UGC vendor dedicated to providing customer feedback, by adding the
+        ability to search terms found in customer generated reviews, introducing
+        “was this helpful to you” voting to each review entry, and sorting by
+        the “most helpful” reviews.
+      </p>
+
+      <figure class="case-figure case-video">
+        <video
+          src="assets/gap/power-reviews.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          aria-label="Gap Inc. Power Reviews product demo"
+        ></video>
       </figure>
 
-      <div class="case-body">
-        <section class="case-section">
-          <h2>Context</h2>
-          <p>During my tenure at Gap Inc., I focused on navigation across Gap, Athleta, Banana Republic, and Old Navy—including search, SEO, filtering, and sorting.</p>
-        </section>
-        <section class="case-section">
-          <h2>Solution</h2>
-          <p>Enhancements included a brand-aligned review search box, helpfulness voting with on-brand thumb icons, and sorting by most helpful so useful UGC rises to the top.</p>
-        </section>
-        <section class="case-section">
-          <h2>Why it matters</h2>
-          <p>Gap Inc. aims to stay authentic with customers. Letting shoppers search terms like “fit” or “comfort” makes purchase decisions clearer and builds trust.</p>
-        </section>
-      </div>
+      <section class="case-section">
+        <h2>Objectives</h2>
+        <ul class="case-list">
+          <li>
+            Adding a search box that follows design branding guidelines for each
+            brands opting to use the feature
+          </li>
+          <li>
+            Adhering to correct spacing and alignment for mobile and desktop for
+            added filtering capabilities like the search box
+          </li>
+          <li>
+            Choosing a style for the thumb icons that are synonymous for each
+            brand
+          </li>
+          <li>
+            Implementing review voting on whether customer review feedback was
+            helpful or not
+          </li>
+        </ul>
+      </section>
 
-      <div class="case-gallery">
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/5e3a83c5-3874-45d0-8d85-0de52fef7a45/Group+16.png?format=1500w" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/4d0e1710-46dd-4b0a-b264-1c83822c8889/Group+15.png?format=1500w" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/c3c93fd0-8822-4659-8a34-837ddeff14b7/Group+13.png?format=1500w" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/6436f3c6-ba18-44b5-b399-3de9cf1ce812/Group+14.png?format=1500w" alt="" loading="lazy" />
-      </div>
-</main>
-
-
-      <section class="work-index" aria-label="Work navigation">
-        <div class="work-index-bar">
-          <a href="index.html">Back to Work</a>
-          <p class="work-index-pager">
-            <a href="old-navy.html">prev</a>
-            <span>/</span>
-            <a href="client-work.html">next</a>
-          </p>
+      <section class="case-section">
+        <h2>Athleta</h2>
+        <div class="case-figure-pair">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/gap/athleta-1.webp"
+            data-lightbox-alt="Athleta Power Reviews search for fit"
+            aria-label="Open Athleta reviews image"
+          >
+            <img
+              src="assets/gap/athleta-1.webp"
+              alt="Athleta Power Reviews with search for fit"
+              loading="lazy"
+            />
+          </button>
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/gap/athleta-2.webp"
+            data-lightbox-alt="Athleta Power Reviews sorted by most helpful"
+            aria-label="Open Athleta reviews sorted image"
+          >
+            <img
+              src="assets/gap/athleta-2.webp"
+              alt="Athleta Power Reviews sorted by most helpful"
+              loading="lazy"
+            />
+          </button>
         </div>
-        <div class="project-grid work-index-grid">
+        <p>
+          The search term “fit” is highlighted to allow users to find reviews
+          that describe the fit of the item. Customer reviews are also sorted by
+          “the most helpful” to bring feedback other shoppers found useful to
+          the top of the search.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>Banana Republic</h2>
+        <div class="case-figure-pair">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/gap/banana-1.webp"
+            data-lightbox-alt="Banana Republic Power Reviews search for comfort"
+            aria-label="Open Banana Republic reviews image"
+          >
+            <img
+              src="assets/gap/banana-1.webp"
+              alt="Banana Republic Power Reviews with search for comfort"
+              loading="lazy"
+            />
+          </button>
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/gap/banana-2.webp"
+            data-lightbox-alt="Banana Republic Power Reviews most helpful sorting"
+            aria-label="Open Banana Republic reviews sorted image"
+          >
+            <img
+              src="assets/gap/banana-2.webp"
+              alt="Banana Republic Power Reviews sorted by most helpful"
+              loading="lazy"
+            />
+          </button>
+        </div>
+        <p>
+          The search term “comfort” and the sorting capability “most helpful”
+          are chosen in both images, highlighting the newest features found on
+          Banana Republic’s review section.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>Why?</h2>
+        <p>
+          The “why” is the most important part and the reasoning why these
+          features were added to the review section to begin with. As a company,
+          Gap Inc. strives to be authentic to their customers 100% of the time
+          to ensure trust in all products. Giving shoppers the ability to search
+          terms such as “fit” or “comfort” makes the purchase decisioning
+          process that much quicker. In addition, allowing users to vote whether
+          the review was helpful or not – and filtering by the most helpful –
+          increases scanability over reviews and boosts beneficial customer
+          feedback to make confident purchasing decisions.
+        </p>
+      </section>
+    </main>
+
+    <section class="work-index" aria-label="Work navigation">
+      <div class="work-index-bar">
+        <a href="index.html">Back to Work</a>
+        <p class="work-index-pager">
+          <a href="old-navy.html">prev</a>
+          <span>/</span>
+          <a href="client-work.html">next</a>
+        </p>
+      </div>
+      <div class="project-grid work-index-grid">
         <a class="project" href="teachers-lounge.html">
           <img src="assets/teachers-lounge.png" alt="" />
           <span class="project-title">Teachers' Lounge</span>
@@ -114,15 +235,124 @@
           <img src="assets/dr-teals.jpg" alt="" />
           <span class="project-title">Dr Teal's Package Design</span>
         </a>
-        </div>
-      </section>
+      </div>
+    </section>
+
+    <div
+      class="lightbox"
+      id="lightbox"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image preview"
+    >
+      <button
+        type="button"
+        class="lightbox-close"
+        data-lightbox-close
+        aria-label="Close"
+      >
+        ×
+      </button>
+      <img class="lightbox-image" id="lightbox-image" src="" alt="" />
+    </div>
 
     <footer class="site-footer">
       <p>Ciani Foy © 2026. All Rights Reserved.</p>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/cianifoy/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="mailto:cianifoy@gmail.com">Email</a>
+                        <div class="social-links">
+        <a
+          href="https://www.linkedin.com/in/cianifoy/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+                                        <svg
+            class="social-icon social-icon--linkedin"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#111111"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path fill="none" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect fill="none" x="2" y="9" width="4" height="12" />
+            <circle fill="none" cx="4" cy="4" r="2" />
+          </svg>
+        </a>
+        <a href="mailto:cianifoy@gmail.com" aria-label="Email">
+          <svg
+            class="social-icon social-icon--email"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              fill="currentColor"
+              d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
+            />
+          </svg>
+        </a>
       </div>
     </footer>
+    <script>
+      (() => {
+        const bar = document.getElementById("reading-progress-bar");
+        if (!bar) return;
+
+        const update = () => {
+          const scrollTop = window.scrollY || document.documentElement.scrollTop;
+          const height =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+          const progress = height > 0 ? Math.min(scrollTop / height, 1) : 0;
+          bar.style.transform = `scaleX(${progress})`;
+        };
+
+        update();
+        window.addEventListener("scroll", update, { passive: true });
+        window.addEventListener("resize", update);
+      })();
+
+      (() => {
+        const lightbox = document.getElementById("lightbox");
+        const image = document.getElementById("lightbox-image");
+        if (!lightbox || !image) return;
+
+        const open = (src, alt) => {
+          image.src = src;
+          image.alt = alt || "";
+          lightbox.hidden = false;
+          document.body.style.overflow = "hidden";
+        };
+
+        const close = () => {
+          lightbox.hidden = true;
+          image.src = "";
+          document.body.style.overflow = "";
+        };
+
+        document.querySelectorAll("[data-lightbox-trigger]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            open(btn.dataset.lightboxSrc, btn.dataset.lightboxAlt);
+          });
+        });
+
+        lightbox.addEventListener("click", (event) => {
+          if (
+            event.target === lightbox ||
+            event.target.hasAttribute("data-lightbox-close")
+          ) {
+            close();
+          }
+        });
+
+        window.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !lightbox.hidden) close();
+        });
+      })();
+    </script>
   </body>
 </html>
