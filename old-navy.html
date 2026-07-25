@@ -4,15 +4,285 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Old Navy HamNav Subcategories — Ciani Foy</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Outfit:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Outfit:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .case-longform {
+        font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
+      }
+
+      .reading-progress-bar {
+        background: #00205b;
+      }
+
+      .case-longform .case-cover {
+        max-width: none;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .case-longform .case-title {
+        font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+      }
+
+      .case-ab-caption {
+        margin-top: 0.65rem;
+        font-size: 18px;
+        line-height: 1.5;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      .case-method-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(1.25rem, 3vw, 2.5rem);
+        margin-top: 0.5rem;
+      }
+
+      .case-method-grid h3 {
+        margin-top: 0;
+      }
+
+      .case-feedback-split {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        gap: clamp(0.35rem, 1vw, 0.65rem);
+        align-items: center;
+        margin-top: clamp(2rem, 3.5vw, 2.75rem);
+      }
+
+      .case-feedback-phones {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(0.75rem, 2vw, 1.25rem);
+        min-width: 0;
+        max-width: 32rem;
+        margin-left: clamp(3.5rem, 8vw, 7rem);
+      }
+
+      .case-feedback-phones img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .case-feedback-copy {
+        min-width: 0;
+        padding-top: 0;
+      }
+
+      .case-feedback-copy p + p {
+        margin-top: 1rem;
+      }
+
+      .case-longform .case-section.case-section-spaced {
+        margin-top: clamp(4rem, 7vw, 5.5rem);
+      }
+
+      .case-spaced-copy {
+        margin-top: clamp(1.75rem, 3vw, 2.5rem);
+      }
+
+      @media (max-width: 800px) {
+        .case-method-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .case-feedback-split {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      body.password-locked {
+        overflow: hidden;
+        background: #eeeeee;
+      }
+
+      body.password-locked > :not(.password-gate) {
+        display: none !important;
+      }
+
+      .password-gate {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+        background: #eeeeee;
+      }
+
+      body.password-locked .password-gate {
+        display: flex;
+      }
+
+      .password-gate-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        width: min(860px, calc(100vw - 2rem));
+      }
+
+      .password-gate-title {
+        width: min(100%, 820px);
+        margin: 0 0 0.25rem;
+        line-height: 0;
+      }
+
+      .password-gate-title img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .password-gate-icon {
+        width: 52px;
+        height: 52px;
+        border: 1.5px solid #8a8a8a;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: #8a8a8a;
+      }
+
+      .password-gate-icon svg {
+        width: 20px;
+        height: 20px;
+        display: block;
+      }
+
+      .password-gate-form {
+        position: relative;
+        width: min(100%, 320px);
+      }
+
+      .password-gate-form input {
+        width: 100%;
+        height: 44px;
+        padding: 0 2.75rem 0 0.9rem;
+        border: 1px solid #1a1a1a;
+        background: #fff;
+        font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
+        font-size: 15px;
+        color: #1a1a1a;
+        outline: none;
+        box-sizing: border-box;
+      }
+
+      .password-gate-form input::placeholder {
+        color: #b0b0b0;
+      }
+
+      .password-gate-form button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 44px;
+        height: 44px;
+        border: 0;
+        background: transparent;
+        color: #b0b0b0;
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        padding: 0;
+      }
+
+      .password-gate-form button:hover,
+      .password-gate-form button:focus-visible {
+        color: #666;
+      }
+
+      .password-gate-form button svg {
+        width: 18px;
+        height: 18px;
+        display: block;
+      }
+
+      .password-gate-error {
+        margin: 0.65rem 0 0;
+        font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
+        font-size: 13px;
+        color: #b33;
+        text-align: center;
+      }
+
+      .password-gate-error:empty {
+        display: none;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
   </head>
-  <body>
+  <body class="password-locked">
+    <script>
+      if (sessionStorage.getItem("old-navy-unlocked") === "1") {
+        document.body.classList.remove("password-locked");
+      }
+    </script>
+    <div class="password-gate" id="password-gate" role="dialog" aria-modal="true" aria-label="Password required">
+      <div class="password-gate-inner">
+        <h2 class="password-gate-title">
+          <img
+            src="assets/oracle/enter-password.png"
+            alt="Enter Password"
+            width="1513"
+            height="265"
+          />
+        </h2>
+        <div class="password-gate-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 8V7a5 5 0 0 0-10 0v1H5v14h14V8h-2Zm-8 0V7a3 3 0 0 1 6 0v1H9Zm3 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/>
+          </svg>
+        </div>
+        <form class="password-gate-form" id="password-form" autocomplete="off">
+          <label class="visually-hidden" for="password-input">Password</label>
+          <input
+            id="password-input"
+            type="password"
+            name="password"
+            placeholder="Password"
+            autocomplete="current-password"
+            required
+          />
+          <button type="submit" aria-label="Submit password">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <p class="password-gate-error" id="password-error" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <div class="reading-progress" aria-hidden="true">
+      <div class="reading-progress-bar" id="reading-progress-bar"></div>
+    </div>
     <header class="site-header">
       <a class="logo" href="index.html" aria-label="Ciani Foy">
         <img src="assets/logo.jpg" alt="Ciani Foy" />
@@ -24,53 +294,489 @@
       </nav>
     </header>
 
-    <main class="case">
-<header class="case-header">
-        <h1 class="case-title">Old Navy HamNav Subcategories</h1>
-        <p class="case-summary">Navigation work for Old Navy focused on hamburger navigation subcategories—helping shoppers move through product categories with clearer hierarchy and findability.</p>
-        <dl class="case-meta">
-          <div>
-            <dt>Role</dt>
-            <dd>UX design — navigation</dd>
-          </div>
-          <div>
-            <dt>Team</dt>
-            <dd>Gap Inc.</dd>
-          </div>
-        </dl>
+    <main class="case case-longform">
+      <header class="case-header">
+        <h1 class="case-title">
+          Old Navy: Subcategories in Hamburger Navigation
+        </h1>
       </header>
 
+      <p class="case-summary">
+        The hamburger navigation is a prime tool on mobile for searching
+        products on e-commerce websites. The introduction of subcategories will
+        further refine the search to help customers find exactly what they are
+        looking for earlier in the funnel. Retail companies such as Uniqlo and
+        Urban Outfitters adopt the use of subcategories to show the breadth and
+        diversity of products within their product departments.
+      </p>
+
       <figure class="case-cover">
-        <img src="assets/old-navy.jpg" alt="Old Navy HamNav Subcategories cover" />
+        <button
+          type="button"
+          class="case-cover-trigger"
+          data-lightbox-trigger
+          data-lightbox-src="assets/old-navy/banner.webp"
+          data-lightbox-alt="Old Navy hamburger navigation subcategories"
+        >
+          <img
+            src="assets/old-navy/banner.webp"
+            alt="Old Navy hamburger navigation subcategories"
+          />
+        </button>
       </figure>
 
-      <div class="case-body">
-        <section class="case-section">
-          <h2>Overview</h2>
-          <p>As part of navigation work across Gap Inc. brands, this project improves how Old Navy’s mobile hamburger navigation surfaces subcategories for faster browsing.</p>
-        </section>
-        <section class="case-section">
-          <h2>Note</h2>
-          <p>Detailed process work for this case study is password-protected on the original site. This page shares a public overview with the project cover.</p>
-        </section>
-      </div>
+      <section class="case-section">
+        <h2>Problem Statement</h2>
+        <p>
+          How might we implement a subcategory experience for Old Navy’s
+          navigation that has greater conversion and better key performance
+          indicators compared to the first rollout of the feature?
+        </p>
+      </section>
 
-      <div class="case-gallery">
-          <img src="assets/old-navy.jpg" alt="" loading="lazy" />
-      </div>
-</main>
+      <section class="case-section">
+        <h2>Challenge</h2>
+        <ul class="case-list">
+          <li>
+            Create an experience that implements subcategories within the
+            hamburger navigation that directly correlates to the subcategories
+            found on the PDP
+          </li>
+          <li>
+            Build an experience that resonates with customers and has better
+            conversion compared to the previous adoption
+          </li>
+          <li>
+            Implement an innovative design that will stand out against
+            competitors currently adopting the feature
+          </li>
+        </ul>
+      </section>
 
+      <section class="case-section">
+        <h2>Design Goals</h2>
+        <ul class="case-list">
+          <li>
+            Introduce breadcrumbs to the header menu as the user navigates
+            across different subcategories
+          </li>
+          <li>
+            Enact a condensed navigational view. Instead of expanding all
+            categories, display women’s categories only. The other categories
+            will be collapsed and users can choose what they expand instead of
+            overwhelming them all at once
+          </li>
+          <li>
+            Forgo the initial “Shop by Department Menu” header when you first
+            click on the HamNav. Reshaping the format leaves room for formatting
+            breadcrumbs
+          </li>
+          <li>
+            Allow users to adopt the idea of “yes and...” If users have the
+            choice to choose more than one of their favorite subcategories (i.e.
+            skinny jeans, loose jeans, and overalls) they can have a more
+            personalized experience
+          </li>
+        </ul>
+      </section>
 
-      <section class="work-index" aria-label="Work navigation">
-        <div class="work-index-bar">
-          <a href="index.html">Back to Work</a>
-          <p class="work-index-pager">
-            <a href="dexter.html">prev</a>
-            <span>/</span>
-            <a href="gap-power-reviews.html">next</a>
-          </p>
+      <section class="case-section">
+        <h2>Final Product</h2>
+        <dl class="case-meta case-meta-four">
+          <div>
+            <dt>Tools</dt>
+            <dd>Figma</dd>
+          </div>
+          <div>
+            <dt>Duration</dt>
+            <dd>1 month</dd>
+          </div>
+          <div>
+            <dt>My Role</dt>
+            <dd>UX Designer</dd>
+          </div>
+          <div>
+            <dt>Year</dt>
+            <dd>2022</dd>
+          </div>
+          <div>
+            <dt>Collaborators</dt>
+            <dd>
+              Product Manager, UX Research, Consumer Insights, Engineers, and
+              Brand Stakeholders
+            </dd>
+          </div>
+          <div>
+            <dt>Contributions</dt>
+            <dd>Wireframes, mockups, prototype, and final design for handoff</dd>
+          </div>
+        </dl>
+        <div class="case-figure-pair">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/old-navy/final-black.webp"
+            data-lightbox-alt="Old Navy HamNav final product mockup"
+          >
+            <img
+              src="assets/old-navy/final-black.webp"
+              alt="Old Navy HamNav final product mockup"
+              loading="lazy"
+            />
+          </button>
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/old-navy/final-white.webp"
+            data-lightbox-alt="Old Navy HamNav final product mockup"
+          >
+            <img
+              src="assets/old-navy/final-white.webp"
+              alt="Old Navy HamNav final product mockup"
+              loading="lazy"
+            />
+          </button>
         </div>
-        <div class="project-grid work-index-grid">
+        <p>
+          In the experience I created, I shifted the idea of allowing the
+          shopper to choose one subcategory, similar to competitors, to allow
+          them to choose multiple to narrow their search. This new feature will
+          allow users to have a more personalized experience by introducing a
+          hybrid between filtering and searching earlier in the shopping funnel.
+          This feature will also allow users to spend less time searching for
+          exactly what they want and present them with what Old Navy currently
+          has.
+        </p>
+        <p class="case-spaced-copy">
+          Overall, my hypothesis is the add to bag conversion will increase
+          because the bounce rate will exponentially decrease when shoppers are
+          able to shop for exactly what they are looking for without extra
+          hassle.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>A/B Test</h2>
+        <p>
+          To the left is a similar experience designed a couple years ago
+          utilizing single-select versus multi-select. To the right is the
+          multi-select experience my team and I designed. To evaluate which
+          experience Old Navy customers resonated with more, a preference test
+          was conducted by the Consumer Insights team.
+        </p>
+        <div class="case-figure-pair">
+          <figure class="case-figure" style="margin: 0">
+            <button
+              type="button"
+              class="case-cover-trigger"
+              data-lightbox-trigger
+              data-lightbox-src="assets/old-navy/ab-white.webp"
+              data-lightbox-alt="Prototype Blue single-select experience"
+            >
+              <img
+                src="assets/old-navy/ab-white.webp"
+                alt="Prototype Blue single-select experience"
+                loading="lazy"
+              />
+            </button>
+            <p class="case-ab-caption">Prototype Blue</p>
+          </figure>
+          <figure class="case-figure" style="margin: 0">
+            <button
+              type="button"
+              class="case-cover-trigger"
+              data-lightbox-trigger
+              data-lightbox-src="assets/old-navy/ab-black.webp"
+              data-lightbox-alt="Prototype Green multi-select experience"
+            >
+              <img
+                src="assets/old-navy/ab-black.webp"
+                alt="Prototype Green multi-select experience"
+                loading="lazy"
+              />
+            </button>
+            <p class="case-ab-caption">Prototype Green</p>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Methodology</h2>
+        <div class="case-method-grid">
+          <div>
+            <h3>Research Objectives</h3>
+            <ul class="case-list">
+              <li>
+                Understand user preference between hamburger navigation
+                experience with multi-select subcategories and with
+                single-select subcategories when browsing for jeans.
+              </li>
+              <li>
+                Determine customer sentiment related to the use of checkboxes and
+                the “Done” button in multi-subcategory selection.
+              </li>
+              <li>
+                Discover any pain points related to multi-select subcategory
+                navigation experience.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3>Approach</h3>
+            <ul class="case-list">
+              <li>Remote unmoderated usability test</li>
+              <li>5-15 minute sessions</li>
+              <li>
+                Participants completed two navigation flows using two different
+                prototypes (multi select subcategories and single select
+                subcategory).
+              </li>
+              <li>Prototypes were alternated to eliminate any bias.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Sample</h3>
+            <ul class="case-list">
+              <li>n = 50</li>
+              <li>All mobile shoppers</li>
+              <li>All shopped/browsed apparel P12 months</li>
+              <li>
+                All shopped/browsed Gap Inc. brands in the past 12 months
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Summary of Findings</h2>
+        <p>
+          The multi-select subcategory navigation experience was preferred by
+          almost all
+        </p>
+        <ul class="case-list">
+          <li>
+            Selecting more than one subcategory early in the navigation process
+            saved participants time they would normally spend filtering on the
+            category page.
+          </li>
+        </ul>
+        <p>
+          The majority of participants reported they they were likely to shop
+          2-3 jeans subcategories at the same time
+        </p>
+        <ul class="case-list">
+          <li>
+            It was important for participants to see both tried and true and new
+            styles without being shown an overwhelming about of options
+          </li>
+        </ul>
+        <figure class="case-figure">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/old-navy/findings.webp"
+            data-lightbox-alt="Summary of preference test findings"
+          >
+            <img
+              src="assets/old-navy/findings.webp"
+              alt="Summary of preference test findings"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+        <p>
+          The multi-select subcategory navigation was preferred by almost all.
+          Participants appreciated being able to select more than one style
+          option before pressing Done. It made them feel like they had a more
+          controlled shopping experience.
+        </p>
+        <p>
+          Participants preferred narrowing their search results by selecting
+          multiple jean styles early in the navigation process. Participants
+          claimed they saved time they would normally spend filtering on the
+          category page.
+        </p>
+        <p>Testimonials from Participant on the multi-select prototype.</p>
+      </section>
+
+      <section class="case-section">
+        <h2>Feedback from Participants</h2>
+        <p>
+          The jeans VI Banner created confusion for some when landing on the
+          results page
+        </p>
+        <ul class="case-list">
+          <li>
+            Participants expected to immediately see search results after
+            clicking “done”, and seeing subcategories that they did not select
+            created uncertainty that their menu selections had been applied.
+          </li>
+        </ul>
+        <div class="case-feedback-split">
+          <div class="case-feedback-phones">
+            <button
+              type="button"
+              class="case-cover-trigger"
+              data-lightbox-trigger
+              data-lightbox-src="assets/old-navy/feedback-1.webp"
+              data-lightbox-alt="Results page with VI banner"
+            >
+              <img
+                src="assets/old-navy/feedback-1.webp"
+                alt="Results page with VI banner"
+                loading="lazy"
+              />
+            </button>
+            <button
+              type="button"
+              class="case-cover-trigger"
+              data-lightbox-trigger
+              data-lightbox-src="assets/old-navy/feedback-2.webp"
+              data-lightbox-alt="Expected filtered results view"
+            >
+              <img
+                src="assets/old-navy/feedback-2.webp"
+                alt="Expected filtered results view"
+                loading="lazy"
+              />
+            </button>
+          </div>
+          <div class="case-feedback-copy">
+            <p>
+              When participants clicked “done” they saw the screen on the far
+              left. Multiple customers reported that they expected to see the
+              screen that just shows their number of items and the selections
+              they filtered.
+            </p>
+            <p>
+              For the next iteration I made sure to note that I needed to improve
+              the experience by having it scroll directly to the customers
+              selections or to shorten the Women’s Jeans VI banner.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section case-section-spaced">
+        <h2>Testimonials from Participants</h2>
+        <p>
+          Comments and feedback were recorded from participants to share with
+          the stakeholders and other cross functional partners. Comments touched
+          on the visual design and functionality of the product feature.
+        </p>
+        <div class="case-figure-pair">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/old-navy/testimonial-1.webp"
+            data-lightbox-alt="Participant testimonial"
+          >
+            <img
+              src="assets/old-navy/testimonial-1.webp"
+              alt="Participant testimonial"
+              loading="lazy"
+            />
+          </button>
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/old-navy/testimonial-2.webp"
+            data-lightbox-alt="Participant testimonial"
+          >
+            <img
+              src="assets/old-navy/testimonial-2.webp"
+              alt="Participant testimonial"
+              loading="lazy"
+            />
+          </button>
+        </div>
+        <figure class="case-figure">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/old-navy/testimonial-3.webp"
+            data-lightbox-alt="Participant testimonials collage"
+          >
+            <img
+              src="assets/old-navy/testimonial-3.webp"
+              alt="Participant testimonials collage"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>Prototype</h2>
+        <div class="case-video">
+          <video
+            controls
+            playsinline
+            preload="metadata"
+            src="assets/old-navy/prototype.mp4"
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Future Iterations</h2>
+        <ul class="case-list">
+          <li>
+            In a future iteration I would like to shrink the VI banner so when
+            users click the “done” button they instantly see their results versus
+            a banner that they can continue to filter on. Another solution could
+            be scrolling automatically to the results and skipping over the VI
+            banner altogether.
+          </li>
+          <li>
+            I would like to test the feature for two weeks in a live environment
+            to see if the general consensus of the experience is positive, and if
+            there is more feedback/data from customers on the functionality of
+            subcategories in the hamburger navigation. Furthermore, the data will
+            help us determine if this feature should be adopted by other brands
+            such as Athleta and Gap.
+          </li>
+        </ul>
+      </section>
+
+      <section class="case-section">
+        <h2>Learnings &amp; Takeaways</h2>
+        <ul class="case-list">
+          <li>Create an MVP and a North Star</li>
+          <li>Don’t be afraid to speak up and advocate for your design decisions</li>
+          <li>
+            Present your ideas throughout the ideation process and include
+            engineers in the initial process/design presentation meeting
+          </li>
+          <li>
+            Build and strengthen cross-functional relationships with others
+            outside of the UX organization (PMs, Engineers, Customer Insights)
+          </li>
+          <li>Over-document for easy handoff</li>
+          <li>Communicate Constantly</li>
+        </ul>
+      </section>
+    </main>
+
+    <section class="work-index" aria-label="Work navigation">
+      <div class="work-index-bar">
+        <a href="index.html">Back to Work</a>
+        <p class="work-index-pager">
+          <a href="dexter.html">prev</a>
+          <span>/</span>
+          <a href="gap-power-reviews.html">next</a>
+        </p>
+      </div>
+      <div class="project-grid work-index-grid">
         <a class="project" href="teachers-lounge.html">
           <img src="assets/teachers-lounge.png" alt="" />
           <span class="project-title">Teachers' Lounge</span>
@@ -107,19 +813,38 @@
           <img src="assets/dr-teals.jpg" alt="" />
           <span class="project-title">Dr Teal's Package Design</span>
         </a>
-        </div>
-      </section>
+      </div>
+    </section>
+
+    <div
+      class="lightbox"
+      id="lightbox"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image preview"
+    >
+      <button
+        type="button"
+        class="lightbox-close"
+        data-lightbox-close
+        aria-label="Close"
+      >
+        ×
+      </button>
+      <img class="lightbox-image" id="lightbox-image" src="" alt="" />
+    </div>
 
     <footer class="site-footer">
       <p>Ciani Foy © 2026. All Rights Reserved.</p>
-                        <div class="social-links">
+      <div class="social-links">
         <a
           href="https://www.linkedin.com/in/cianifoy/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
         >
-                                        <svg
+          <svg
             class="social-icon social-icon--linkedin"
             viewBox="0 0 24 24"
             fill="none"
@@ -130,7 +855,10 @@
             aria-hidden="true"
             focusable="false"
           >
-            <path fill="none" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+            <path
+              fill="none"
+              d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"
+            />
             <rect fill="none" x="2" y="9" width="4" height="12" />
             <circle fill="none" cx="4" cy="4" r="2" />
           </svg>
@@ -150,5 +878,95 @@
         </a>
       </div>
     </footer>
+
+    <script>
+      (() => {
+        const PASSWORD = "Anirtak1";
+        const STORAGE_KEY = "old-navy-unlocked";
+        const form = document.getElementById("password-form");
+        const input = document.getElementById("password-input");
+        const error = document.getElementById("password-error");
+
+        const unlock = () => {
+          document.body.classList.remove("password-locked");
+          sessionStorage.setItem(STORAGE_KEY, "1");
+          if (error) error.textContent = "";
+        };
+
+        if (sessionStorage.getItem(STORAGE_KEY) === "1") {
+          unlock();
+        } else if (input) {
+          input.focus();
+        }
+
+        form?.addEventListener("submit", (event) => {
+          event.preventDefault();
+          if (input?.value === PASSWORD) {
+            unlock();
+            return;
+          }
+          if (error) error.textContent = "Incorrect password";
+          if (input) {
+            input.value = "";
+            input.focus();
+          }
+        });
+      })();
+
+      (() => {
+        const bar = document.getElementById("reading-progress-bar");
+        if (!bar) return;
+
+        const update = () => {
+          const doc = document.documentElement;
+          const scrollTop = doc.scrollTop || document.body.scrollTop;
+          const height = doc.scrollHeight - doc.clientHeight;
+          const progress = height > 0 ? scrollTop / height : 0;
+          bar.style.transform = `scaleX(${progress})`;
+        };
+
+        update();
+        window.addEventListener("scroll", update, { passive: true });
+        window.addEventListener("resize", update);
+      })();
+
+      (() => {
+        const lightbox = document.getElementById("lightbox");
+        const image = document.getElementById("lightbox-image");
+        if (!lightbox || !image) return;
+
+        const open = (src, alt) => {
+          image.src = src;
+          image.alt = alt || "";
+          lightbox.hidden = false;
+          document.body.style.overflow = "hidden";
+        };
+
+        const close = () => {
+          lightbox.hidden = true;
+          image.src = "";
+          document.body.style.overflow = "";
+        };
+
+        document.querySelectorAll("[data-lightbox-trigger]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            open(btn.dataset.lightboxSrc, btn.dataset.lightboxAlt);
+          });
+        });
+
+        lightbox.addEventListener("click", (event) => {
+          if (
+            event.target === lightbox ||
+            event.target.hasAttribute("data-lightbox-close")
+          ) {
+            close();
+          }
+        });
+
+        window.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !lightbox.hidden) close();
+        });
+      })();
+    </script>
   </body>
 </html>

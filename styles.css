@@ -880,6 +880,7 @@ main.page {
 
 .case-longform .case-section h2 {
   font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+  margin-bottom: 1.15rem;
 }
 
 .case-longform .case-section .case-figure + h2 {
@@ -888,7 +889,7 @@ main.page {
 
 .case-longform .case-section h3 {
   font-size: 1.05rem;
-  margin-bottom: 0.65rem;
+  margin-bottom: 1rem;
 }
 
 .case-figure {
@@ -1049,9 +1050,9 @@ main.page {
 .case-embed {
   margin: 2rem 0 0;
   width: 100%;
-  aspect-ratio: 16 / 10;
-  min-height: 32rem;
-  background: #f7f7f7;
+  aspect-ratio: 16 / 9;
+  min-height: 28rem;
+  background: transparent;
   overflow: hidden;
 }
 
@@ -1321,7 +1322,7 @@ main.page {
   border-top: 1px solid var(--line);
   font-size: 16px;
   color: #111111;
-  background: #f5e0e0;
+  background: #ffffff;
 }
 
 .social-links {

@@ -4,15 +4,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anchor — Ciani Foy</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Outfit:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Outfit:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .case-longform {
+        font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
+      }
+
+      .reading-progress-bar {
+        background: #3a6e8f;
+      }
+
+      .case-longform .case-title {
+        font-size: clamp(1.35rem, 2.7vw, 1.75rem);
+      }
+
+      .case-longform .case-cover {
+        max-width: none;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .case-longform .case-figure-pair + h3,
+      .case-longform .case-figure + h3 {
+        margin-top: clamp(2.5rem, 4.5vw, 3.75rem);
+      }
+
+      .case-usability-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(1.75rem, 4vw, 3.5rem);
+        align-items: start;
+        margin-top: 0.35rem;
+      }
+
+      .case-usability-grid h3 {
+        margin-top: 0;
+      }
+
+      .case-list + h3 {
+        margin-top: clamp(2rem, 3.5vw, 2.75rem);
+      }
+
+      .case-longform .case-section h3.case-heading-spaced {
+        margin-top: clamp(2.25rem, 4vw, 3.25rem);
+      }
+
+      .case-spaced-copy {
+        margin-top: clamp(1.75rem, 3vw, 2.5rem);
+      }
+
+      .case-longform .case-section h2.case-subheading {
+        margin-top: clamp(3rem, 5.5vw, 4.5rem);
+      }
+
+      @media (max-width: 700px) {
+        .case-usability-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body>
+    <div class="reading-progress" aria-hidden="true">
+      <div class="reading-progress-bar" id="reading-progress-bar"></div>
+    </div>
     <header class="site-header">
       <a class="logo" href="index.html" aria-label="Ciani Foy">
         <img src="assets/logo.jpg" alt="Ciani Foy" />
@@ -24,60 +91,582 @@
       </nav>
     </header>
 
-    <main class="case">
-<header class="case-header">
+    <main class="case case-longform">
+      <header class="case-header">
         <h1 class="case-title">Anchor</h1>
-        <p class="case-summary">Anchor is a centralized platform that streamlines the jobs and internship search process for University of Michigan School of Information students—bringing critical career resources into one intuitive experience.</p>
-        <dl class="case-meta">
-          <div>
-            <dt>Role</dt>
-            <dd>User flows (events), wireframes (events page), prototype, usability testing, and branding</dd>
-          </div>
-          <div>
-            <dt>Team</dt>
-            <dd>3 UX Designers</dd>
-          </div>
-        </dl>
       </header>
 
       <figure class="case-cover">
-        <img src="assets/anchor.png" alt="Anchor cover" />
+        <button
+          type="button"
+          class="case-cover-trigger"
+          data-lightbox-trigger
+          data-lightbox-src="assets/anchor/cover.webp"
+          data-lightbox-alt="Anchor cover"
+        >
+          <img src="assets/anchor/cover.webp" alt="Anchor cover" />
+        </button>
       </figure>
 
-      <div class="case-body">
-        <section class="case-section">
-          <h2>Problem</h2>
-          <p>How might we leverage and reorganize UMSI’s resources and network to increase success finding internships and post-graduate opportunities while decreasing cognitive load for overwhelmed students?</p>
-        </section>
-        <section class="case-section">
-          <h2>Research</h2>
-          <p>We conducted eight in-depth interviews with UMSI students across diverse academic tracks, then synthesized insights into themes and three personas that guided design decisions.</p>
-        </section>
-        <section class="case-section">
-          <h2>Process</h2>
-          <p>Information architecture, sitemap prioritization, iterative design, and usability testing covered tasks like finding mentors, registering for events, applying through alumni referrals, and saving job listings.</p>
-        </section>
-      </div>
+      <p class="case-summary">
+        Designed as a centralized platform, Anchor streamlines the jobs and
+        internship search process, enabling students to focus on their goals
+        without the stress of managing disjointed tools. Guided by a
+        user-centered design process, we integrated critical resources into a
+        single, intuitive platform tailored to the needs of University of
+        Michigan - School of Information (UMSI) students.
+      </p>
 
-      <div class="case-gallery">
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/3fead800-75e0-4793-9879-5b75e7c08684/Frame+10+%284%29.png?format=1500w" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/1e6bcef3-1ff2-4afa-b083-7a57e2e46968/AnchorDesignIterations.gif" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/f4062732-51de-448c-8e39-b4add5b134b3/Mockup+-+Anchor+Job+Page.png?format=1500w" alt="" loading="lazy" />
-          <img src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/596535ce-becb-4b6a-a3ef-5c11961ff18c/Mockup+-+Anchor+Job+Page+2.png?format=1500w" alt="" loading="lazy" />
-      </div>
-</main>
-
-
-      <section class="work-index" aria-label="Work navigation">
-        <div class="work-index-bar">
-          <a href="index.html">Back to Work</a>
-          <p class="work-index-pager">
-            <a href="oracle-health.html">prev</a>
-            <span>/</span>
-            <a href="glossier-app.html">next</a>
-          </p>
+      <dl class="case-meta case-meta-four">
+        <div>
+          <dt>Tools</dt>
+          <dd>Figma and FigJam</dd>
         </div>
-        <div class="project-grid work-index-grid">
+        <div>
+          <dt>Collaborators</dt>
+          <dd>3 UX Designers</dd>
+        </div>
+        <div>
+          <dt>Year</dt>
+          <dd>2024</dd>
+        </div>
+        <div>
+          <dt>Contributions</dt>
+          <dd>
+            user flows (events), wireframes (events page), prototype, usability
+            testing, and branding
+          </dd>
+        </div>
+      </dl>
+
+      <section class="case-section">
+        <h2>Problem Statement</h2>
+        <p>
+          How might we leverage and reorganize University of Michigan - School of
+          Information’s (UMSI) resources and network to increase the success rate
+          of finding internships and post-graduate opportunities while decreasing
+          the cognitive load for overwhelmed students?
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>Challenge</h2>
+        <p>
+          Jobs and internships are a cornerstone of the student experience,
+          providing opportunities to gain real-world skills and build
+          professional networks. However, for many students at the University of
+          Michigan - School of Information (UMSI), navigating the job and
+          internship process is an overwhelming challenge. Resources such as job
+          boards, career events, and mentorship programs are scattered across
+          multiple platforms, creating a fragmented and inefficient system. This
+          disorganization often leaves students juggling competing priorities,
+          missing deadlines, and feeling unsupported in their career journeys.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>User Research &amp; Key Insights</h2>
+        <p>
+          To understand the challenges students face, we conducted eight
+          in-depth user interviews with UMSI students representing diverse
+          academic tracks and personal backgrounds. These interviews provided a
+          rich foundation of qualitative data that shaped the design of Anchor.
+          We intentionally selected participants to reflect a diverse user base,
+          including international students, first-years, and students
+          transitioning into new fields. This diversity helped us uncover a range
+          of pain points and opportunities.
+        </p>
+        <h3 class="case-heading-spaced">💡 Key Themes</h3>
+        <p>
+          From the interviews, four dominant themes emerged, each shaping the
+          design priorities for Anchor:
+        </p>
+        <figure class="case-figure">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/anchor/key-themes.webp"
+            data-lightbox-alt="Anchor key research themes"
+          >
+            <img
+              src="assets/anchor/key-themes.webp"
+              alt="Anchor key research themes"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>User Personas</h2>
+        <p>
+          To ensure that our solution reflected real user needs, we synthesized
+          our insights into three personas, each representing distinct user
+          groups. These personas guided our design decisions, keeping user needs
+          at the center of every feature.
+        </p>
+        <figure class="case-figure">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/anchor/personas.webp"
+            data-lightbox-alt="Anchor user personas"
+          >
+            <img
+              src="assets/anchor/personas.webp"
+              alt="Anchor user personas"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>Information Architecture</h2>
+        <p>
+          The sitemap was created to act as a map of how we would lay out our
+          website and how our users would navigate through it. The sitemap also
+          allowed us to prioritize our information architecture and determine
+          which pages would be the most important for our user base.
+        </p>
+        <figure class="case-figure">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/anchor/sitemap.webp"
+            data-lightbox-alt="Anchor sitemap and information architecture"
+          >
+            <img
+              src="assets/anchor/sitemap.webp"
+              alt="Anchor sitemap and information architecture"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>User Flow Diagrams</h2>
+        <div class="case-embed">
+          <iframe
+            title="Anchor Figma prototype"
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FrrzGNB4XcRH8wrXcYi8dU1%2FSI-582-Project---Anchor%3Fnode-id%3D1492-25679%26page-id%3D1492%253A13890%26scaling%3Dscale-down-width%26starting-point-node-id%3D1492%253A25653"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Usability Testing</h2>
+        <div class="case-usability-grid">
+          <div>
+            <h3>Testing Protocol</h3>
+            <p>We conducted usability testing with tasks like:</p>
+            <ul class="case-list">
+              <li>Finding and connecting with a mentor.</li>
+              <li>Registering for group mentorship sessions or events.</li>
+              <li>Applying for jobs through alumni referrals.</li>
+              <li>Saving job listings and updating skills on profiles.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Participants</h3>
+            <p>
+              Participants included undergraduate and graduate students from
+              diverse MSI tracks, including MHI, Big Data, Agile Development, and
+              LAKES, recruited through personal connections. Testing sessions
+              were conducted over Zoom (15–20 minutes each) and recorded using
+              Loom. One in-person session was also recorded. Participants
+              interacted with low-fidelity prototypes built in Figma. These
+              observations allowed us to validate design hypotheses before
+              moving into product development, ensuring our solutions aligned
+              with user needs.
+            </p>
+          </div>
+        </div>
+        <div class="case-embed">
+          <iframe
+            title="Anchor usability testing Figma prototype"
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FrrzGNB4XcRH8wrXcYi8dU1%2FSI-582-Project---Anchor%3Fnode-id%3D1728-41168%26page-id%3D1728%253A27699%26scaling%3Dscale-down%26starting-point-node-id%3D1728%253A41168"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Results and Key Feedback</h2>
+        <p>
+          Metrics tracked during testing included error rates, success rates,
+          and time on task. Key insights and feedback included:
+        </p>
+        <ul class="case-list">
+          <li>
+            <strong>Feed Tab Introduction:</strong> Initially, the resources tab
+            lacked a social angle and was difficult for students to navigate.
+            Replacing it with a feed format — highlighting primary, secondary,
+            and tertiary connections — aligned better with modern data
+            consumption habits of students and enhanced retention metrics like
+            daily active users. We borrowed elements of social feed from common
+            social media apps, by implementing the Jakob’s Law. This change
+            aimed to improve user retention and daily active users.
+          </li>
+          <li>
+            <strong>Search and Filters for Personalization:</strong> Users
+            disliked scrolling through long job lists. We implemented a search
+            bar and advanced filters, leveraging principles like Hick’s Law
+            (reducing cognitive load) and Selective Attention to personalize job
+            and event results. This change aimed to improve click-through rates.
+          </li>
+        </ul>
+        <h3>Participant Quotes</h3>
+        <ul class="case-list">
+          <li>
+            “Last time I used UMSI career resources was when they first
+            introduced them to us during orientation.”
+          </li>
+          <li>“I find the UMSI resources difficult to navigate.”</li>
+          <li>
+            “I try and find alumni with similar career trajectories so I can
+            follow their footsteps.”
+          </li>
+        </ul>
+        <p>
+          These insights confirmed the need for a social-first and intuitive
+          design approach.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>Design Iterations</h2>
+        <p>
+          Based on the feedback, we introduced significant design improvements:
+        </p>
+        <ul class="case-list">
+          <li>
+            <strong>Feed Tab:</strong> Replacing the static resources page with
+            a dynamic feed featuring connections and personalized content.
+          </li>
+          <li>
+            <strong>Search and Filters:</strong> Simplified job searches with
+            easy-to-use filters and a prominent search bar, focusing on
+            personalization.
+          </li>
+          <li>
+            <strong>High-Fidelity Prototypes:</strong> Refined visual designs
+            with a consistent style guide, improving usability and aesthetics.
+          </li>
+          <li>
+            <strong>Referral Cards:</strong> Redesigned flows to highlight
+            critical features like referral cards to ensure visibility and ease
+            of use.
+          </li>
+        </ul>
+        <p class="case-spaced-copy">
+          Before-and-after visuals of these changes highlighted their impact on
+          usability and alignment with user needs.
+        </p>
+        <figure class="case-figure">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/1e6bcef3-1ff2-4afa-b083-7a57e2e46968/AnchorDesignIterations.gif"
+            alt="Anchor design iterations before and after"
+            loading="lazy"
+          />
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>Final Design</h2>
+        <p>
+          The usability testing and iterations resulted in a more intuitive and
+          user-friendly platform. The final high-fidelity prototype addressed
+          user pain points effectively and was ready for deployment, promising
+          to enhance retention, engagement, and overall satisfaction.
+        </p>
+        <p>
+          The final design of Anchor embodies a seamless fusion of design
+          thinking principles and Nielsen Norman’s usability heuristics to
+          create an empowering, accessible, and intuitive platform for MSI
+          students. By reimagining CareerLink, Anchor transforms the student
+          experience into one that fosters connection, clarity, and career
+          readiness.
+        </p>
+        <h2 class="case-subheading">Key Features</h2>
+        <h3>Event Details</h3>
+        <p>
+          The Event Details page serves as the primary touchpoint for students
+          evaluating networking opportunities with alumni and industry
+          professionals. Once a student discovers an event, this page provides
+          the context, logistics, and registration tools needed to confidently
+          commit to attending. The experience was designed to reduce uncertainty
+          around professional networking events by making information easy to
+          find, registration straightforward, and scheduling transparent.
+        </p>
+        <div class="case-figure-pair">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/anchor/mockup-1.webp"
+            data-lightbox-alt="Anchor event details mockup"
+          >
+            <img
+              src="assets/anchor/mockup-1.webp"
+              alt="Anchor event details mockup"
+              loading="lazy"
+            />
+          </button>
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/anchor/mockup-2.webp"
+            data-lightbox-alt="Anchor event details mockup"
+          >
+            <img
+              src="assets/anchor/mockup-2.webp"
+              alt="Anchor event details mockup"
+              loading="lazy"
+            />
+          </button>
+        </div>
+        <h3>2. Mentorship Dashboard</h3>
+        <p>
+          Anchor’s Mentorship Dashboard is a cornerstone feature designed to
+          address inefficiencies in alumni engagement. Through a formal
+          mentorship program, students can establish ongoing relationships with
+          alumni beyond one-off coffee chats. This functionality leverages
+          insights from user interviews, where students highlighted the need for
+          deeper mentorship connections and transparency in alumni career paths.
+          Alumni profiles on Anchor include customizable sections where they can
+          specify their expectations for mentees, such as relevant coursework,
+          projects, or skills. This transparency allows students to align their
+          goals and curriculum with industry demands, fostering tailored and
+          effective career development.
+        </p>
+        <div class="case-figure-pair">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/anchor/mockup-3.webp"
+            data-lightbox-alt="Anchor mentorship dashboard mockup"
+          >
+            <img
+              src="assets/anchor/mockup-3.webp"
+              alt="Anchor mentorship dashboard mockup"
+              loading="lazy"
+            />
+          </button>
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/anchor/mockup-4.webp"
+            data-lightbox-alt="Anchor mentorship dashboard mockup"
+          >
+            <img
+              src="assets/anchor/mockup-4.webp"
+              alt="Anchor mentorship dashboard mockup"
+              loading="lazy"
+            />
+          </button>
+        </div>
+        <h3>3. Application Tracker</h3>
+        <p>
+          The Application Tracker streamlines the internship and job application
+          process by providing a cohesive space to track deadlines, application
+          statuses, and employer feedback. User research revealed the fragmented
+          nature of existing systems like CareerLink and Handshake, which often
+          required students to navigate multiple platforms and log in multiple
+          times. Anchor consolidates these processes into a single, intuitive
+          interface, reducing redundancy and confusion. To further address
+          participant concerns about tech industry cycles and deadlines, the
+          tracker includes timeline structures and reminders tailored to
+          internship cycles, offering students clarity and reducing stress.
+        </p>
+        <div class="case-figure-pair">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/anchor/mockup-5.webp"
+            data-lightbox-alt="Anchor application tracker mockup"
+          >
+            <img
+              src="assets/anchor/mockup-5.webp"
+              alt="Anchor application tracker mockup"
+              loading="lazy"
+            />
+          </button>
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/anchor/mockup-6.webp"
+            data-lightbox-alt="Anchor application tracker mockup"
+          >
+            <img
+              src="assets/anchor/mockup-6.webp"
+              alt="Anchor application tracker mockup"
+              loading="lazy"
+            />
+          </button>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Project Impact</h2>
+        <p>
+          Comments like “Anchor feels like the tool I’ve always needed”
+          underscore the platform’s success in aligning with user needs. By
+          integrating user feedback into iterative design, Anchor embodies
+          design thinking’s emphasis on empathy, prototyping, and testing to
+          create meaningful solutions.
+        </p>
+        <div class="case-figure-pair">
+          <figure class="case-figure" style="margin: 0">
+            <button
+              type="button"
+              class="case-cover-trigger"
+              data-lightbox-trigger
+              data-lightbox-src="assets/anchor/testimonial-1.webp"
+              data-lightbox-alt="Testimonial from student in the School of Information"
+            >
+              <img
+                src="assets/anchor/testimonial-1.webp"
+                alt="Testimonial from student in the School of Information"
+                loading="lazy"
+              />
+            </button>
+            <figcaption>
+              Testimonial from student in the School of Information.
+            </figcaption>
+          </figure>
+          <figure class="case-figure" style="margin: 0">
+            <button
+              type="button"
+              class="case-cover-trigger"
+              data-lightbox-trigger
+              data-lightbox-src="assets/anchor/testimonial-2.webp"
+              data-lightbox-alt="Testimonial from student in the School of Information"
+            >
+              <img
+                src="assets/anchor/testimonial-2.webp"
+                alt="Testimonial from student in the School of Information"
+                loading="lazy"
+              />
+            </button>
+            <figcaption>
+              Testimonial from student in the School of Information
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Conclusion</h2>
+        <p>
+          Anchor reimagines the career navigation process, transforming it into
+          a supportive, accessible, and empowering experience for MSI students.
+          By addressing key pain points with innovative, thoughtful design,
+          Anchor sets a new standard for how career platforms can serve students
+          effectively. It not only provides a solution but also inspires
+          confidence and connection in its users, ensuring their long-term
+          career success.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>Future Iterations</h2>
+        <p>
+          Looking ahead, Anchor has significant potential for growth and
+          improvement:
+        </p>
+        <ul class="case-list">
+          <li>
+            <strong>Developing a Mobile-First Approach:</strong> Our team
+            understands the importance of mobile-first and in a future iteration
+            of this platform we want to design the mobile web interface and a
+            mobile application. This iteration will ensure that Anchor enhances
+            accessibility to the platform on-the-go.
+          </li>
+          <li>
+            <strong>Advanced Mentorship and Career Support:</strong> Expanding
+            the mentorship feature with advanced matching algorithms can provide
+            greater personalization, ensuring students connect with mentors
+            aligned to their unique goals and career aspirations. Incorporating
+            career-enhancing tools such as resume reviews, mock interviews, and
+            portfolio showcases would further support students in preparing for
+            competitive opportunities.
+          </li>
+          <li>
+            <strong>AI-Driven Skill Development and Career Tracking:</strong>
+            Introducing AI-driven functionalities can elevate Anchor’s
+            capabilities, such as integrating algorithms to recommend Coursera
+            courses for skill development tailored to individual gaps. A skill
+            tracker feature could compile and analyze students’ strengths and
+            areas for growth, providing actionable insights to help them stay
+            competitive in the job market. Redesigning the career tracker to
+            offer deeper insights and enhanced usability would create a more
+            intuitive and robust tool for managing applications and tracking
+            progress.
+          </li>
+          <li>
+            <strong
+              >Comprehensive Conference and Networking Opportunities:</strong
+            >
+            Additionally, Anchor could benefit from developing an in-depth
+            conference feature, offering students detailed information about
+            relevant events, participating companies, and opportunities to
+            engage directly with recruiters. These future enhancements would
+            further Anchor’s mission to empower students with the tools and
+            resources needed to achieve career success, solidifying its position
+            as an indispensable platform in the career development landscape.
+          </li>
+        </ul>
+      </section>
+
+      <section class="case-section">
+        <h2>Learnings &amp; Takeaways</h2>
+        <ul class="case-list">
+          <li>
+            Do not fall into the false-consensus effect. You are not the user.
+            Start the research process with user interviews to learn more about
+            the user’s wants and needs versus starting the research phase during
+            usability testing. This will better inform your design and eliminate
+            creator bias when designing for a population you identify with.
+          </li>
+          <li>
+            Constant feedback throughout the design process from peers and team
+            members will greatly improve the design in stages versus being
+            overloaded with iterations towards the end.
+          </li>
+          <li>
+            Establishing a design system and style guide will streamline
+            workflow, ultimately improving consistency, agility, and
+            collaboration among team members.
+          </li>
+        </ul>
+        <p class="case-credit">
+          Credit (to my amazing team): Feyi Apampa, Sabrina May, and Niket Kamat
+          Satoskar
+        </p>
+      </section>
+    </main>
+
+    <section class="work-index" aria-label="Work navigation">
+      <div class="work-index-bar">
+        <a href="index.html">Back to Work</a>
+        <p class="work-index-pager">
+          <a href="oracle-health.html">prev</a>
+          <span>/</span>
+          <a href="glossier-app.html">next</a>
+        </p>
+      </div>
+      <div class="project-grid work-index-grid">
         <a class="project" href="teachers-lounge.html">
           <img src="assets/teachers-lounge.png" alt="" />
           <span class="project-title">Teachers' Lounge</span>
@@ -114,19 +703,38 @@
           <img src="assets/dr-teals.jpg" alt="" />
           <span class="project-title">Dr Teal's Package Design</span>
         </a>
-        </div>
-      </section>
+      </div>
+    </section>
+
+    <div
+      class="lightbox"
+      id="lightbox"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image preview"
+    >
+      <button
+        type="button"
+        class="lightbox-close"
+        data-lightbox-close
+        aria-label="Close"
+      >
+        ×
+      </button>
+      <img class="lightbox-image" id="lightbox-image" src="" alt="" />
+    </div>
 
     <footer class="site-footer">
       <p>Ciani Foy © 2026. All Rights Reserved.</p>
-                        <div class="social-links">
+      <div class="social-links">
         <a
           href="https://www.linkedin.com/in/cianifoy/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
         >
-                                        <svg
+          <svg
             class="social-icon social-icon--linkedin"
             viewBox="0 0 24 24"
             fill="none"
@@ -137,7 +745,10 @@
             aria-hidden="true"
             focusable="false"
           >
-            <path fill="none" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+            <path
+              fill="none"
+              d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"
+            />
             <rect fill="none" x="2" y="9" width="4" height="12" />
             <circle fill="none" cx="4" cy="4" r="2" />
           </svg>
@@ -157,5 +768,62 @@
         </a>
       </div>
     </footer>
+
+    <script>
+      (() => {
+        const bar = document.getElementById("reading-progress-bar");
+        if (!bar) return;
+
+        const update = () => {
+          const doc = document.documentElement;
+          const scrollTop = doc.scrollTop || document.body.scrollTop;
+          const height = doc.scrollHeight - doc.clientHeight;
+          const progress = height > 0 ? scrollTop / height : 0;
+          bar.style.transform = `scaleX(${progress})`;
+        };
+
+        update();
+        window.addEventListener("scroll", update, { passive: true });
+        window.addEventListener("resize", update);
+      })();
+
+      (() => {
+        const lightbox = document.getElementById("lightbox");
+        const image = document.getElementById("lightbox-image");
+        if (!lightbox || !image) return;
+
+        const open = (src, alt) => {
+          image.src = src;
+          image.alt = alt || "";
+          lightbox.hidden = false;
+          document.body.style.overflow = "hidden";
+        };
+
+        const close = () => {
+          lightbox.hidden = true;
+          image.src = "";
+          document.body.style.overflow = "";
+        };
+
+        document.querySelectorAll("[data-lightbox-trigger]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            open(btn.dataset.lightboxSrc, btn.dataset.lightboxAlt);
+          });
+        });
+
+        lightbox.addEventListener("click", (event) => {
+          if (
+            event.target === lightbox ||
+            event.target.hasAttribute("data-lightbox-close")
+          ) {
+            close();
+          }
+        });
+
+        window.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !lightbox.hidden) close();
+        });
+      })();
+    </script>
   </body>
 </html>

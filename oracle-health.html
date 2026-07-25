@@ -4,15 +4,257 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Oracle Health — Ciani Foy</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Outfit:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Outfit:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .case-longform {
+        font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
+      }
+
+      .reading-progress-bar {
+        background: #483890;
+      }
+
+      .case-longform .case-cover {
+        max-width: none;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .case-longform .case-title {
+        font-size: clamp(1.35rem, 2.7vw, 1.75rem);
+      }
+
+      .case-findings-split {
+        display: grid;
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+        gap: clamp(1.5rem, 4vw, 3rem);
+        align-items: center;
+        margin-top: 0.5rem;
+      }
+
+      .case-findings-split img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .case-figure-gif {
+        width: 112%;
+        max-width: none;
+        margin-left: -6%;
+      }
+
+      .case-figure-gif img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .case-figure + p {
+        margin-top: clamp(1.5rem, 3vw, 2.25rem);
+      }
+
+      @media (max-width: 700px) {
+        .case-findings-split {
+          grid-template-columns: 1fr;
+        }
+
+        .case-figure-gif {
+          width: 100%;
+          margin-left: 0;
+        }
+      }
+
+      body.password-locked {
+        overflow: hidden;
+        background: #eeeeee;
+      }
+
+      body.password-locked > :not(.password-gate) {
+        display: none !important;
+      }
+
+      .password-gate {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+        background: #eeeeee;
+      }
+
+      body.password-locked .password-gate {
+        display: flex;
+      }
+
+      .password-gate-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        width: min(860px, calc(100vw - 2rem));
+      }
+
+      .password-gate-title {
+        width: min(100%, 820px);
+        margin: 0 0 0.25rem;
+        line-height: 0;
+      }
+
+      .password-gate-title img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .password-gate-icon {
+        width: 52px;
+        height: 52px;
+        border: 1.5px solid #8a8a8a;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: #8a8a8a;
+      }
+
+      .password-gate-icon svg {
+        width: 20px;
+        height: 20px;
+        display: block;
+      }
+
+      .password-gate-form {
+        position: relative;
+        width: min(100%, 320px);
+      }
+
+      .password-gate-form input {
+        width: 100%;
+        height: 44px;
+        padding: 0 2.75rem 0 0.9rem;
+        border: 1px solid #1a1a1a;
+        background: #fff;
+        font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
+        font-size: 15px;
+        color: #1a1a1a;
+        outline: none;
+        box-sizing: border-box;
+      }
+
+      .password-gate-form input::placeholder {
+        color: #b0b0b0;
+      }
+
+      .password-gate-form button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 44px;
+        height: 44px;
+        border: 0;
+        background: transparent;
+        color: #b0b0b0;
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        padding: 0;
+      }
+
+      .password-gate-form button:hover,
+      .password-gate-form button:focus-visible {
+        color: #666;
+      }
+
+      .password-gate-form button svg {
+        width: 18px;
+        height: 18px;
+        display: block;
+      }
+
+      .password-gate-error {
+        margin: 0.65rem 0 0;
+        font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
+        font-size: 13px;
+        color: #b33;
+        text-align: center;
+      }
+
+      .password-gate-error:empty {
+        display: none;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
   </head>
-  <body>
+  <body class="password-locked">
+    <script>
+      if (sessionStorage.getItem("oracle-health-unlocked") === "1") {
+        document.body.classList.remove("password-locked");
+      }
+    </script>
+    <div class="password-gate" id="password-gate" role="dialog" aria-modal="true" aria-label="Password required">
+      <div class="password-gate-inner">
+        <h2 class="password-gate-title">
+          <img
+            src="assets/oracle/enter-password.png"
+            alt="Enter Password"
+            width="1513"
+            height="265"
+          />
+        </h2>
+        <div class="password-gate-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 8V7a5 5 0 0 0-10 0v1H5v14h14V8h-2Zm-8 0V7a3 3 0 0 1 6 0v1H9Zm3 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/>
+          </svg>
+        </div>
+        <form class="password-gate-form" id="password-form" autocomplete="off">
+          <label class="visually-hidden" for="password-input">Password</label>
+          <input
+            id="password-input"
+            type="password"
+            name="password"
+            placeholder="Password"
+            autocomplete="current-password"
+            required
+          />
+          <button type="submit" aria-label="Submit password">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <p class="password-gate-error" id="password-error" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <div class="reading-progress" aria-hidden="true">
+      <div class="reading-progress-bar" id="reading-progress-bar"></div>
+    </div>
     <header class="site-header">
       <a class="logo" href="index.html" aria-label="Ciani Foy">
         <img src="assets/logo.jpg" alt="Ciani Foy" />
@@ -24,53 +266,293 @@
       </nav>
     </header>
 
-    <main class="case">
-<header class="case-header">
+    <main class="case case-longform">
+      <header class="case-header">
         <h1 class="case-title">Oracle Health</h1>
-        <p class="case-summary">A healthcare product case study focused on improving clinical and patient-facing digital experiences. Full project details are protected on the live portfolio.</p>
-        <dl class="case-meta">
-          <div>
-            <dt>Role</dt>
-            <dd>UX design</dd>
-          </div>
-          <div>
-            <dt>Team</dt>
-            <dd>Oracle Health</dd>
-          </div>
-        </dl>
       </header>
 
       <figure class="case-cover">
-        <img src="assets/oracle-health.png" alt="Oracle Health cover" />
+        <button
+          type="button"
+          class="case-cover-trigger"
+          data-lightbox-trigger
+          data-lightbox-src="assets/oracle/cover.webp"
+          data-lightbox-alt="Oracle Health cover"
+        >
+          <img src="assets/oracle/cover.webp" alt="Oracle Health cover" />
+        </button>
       </figure>
 
-      <div class="case-body">
-        <section class="case-section">
-          <h2>Overview</h2>
-          <p>Oracle Health explores thoughtful UX for complex healthcare workflows—prioritizing clarity, trust, and usable interfaces in high-stakes environments.</p>
-        </section>
-        <section class="case-section">
-          <h2>Note</h2>
-          <p>Detailed process work for this case study is password-protected on the original site. This page shares a public overview with the project cover.</p>
-        </section>
-      </div>
+      <p class="case-summary">
+        In Summer 2025, I had the opportunity to intern with the Oracle Health
+        (formerly Cerner) &amp; AI UX Design team. For my project I was tasked
+        with exploring virtual care solutions to support rapid response and
+        decision making in disaster zones. In 12 weeks, I designed a two-part
+        solution that would help patients find the best route of care based on
+        their symptoms and frontline health providers connect with patients when
+        wifi connectivity was spotty and/or limited because of a natural
+        disaster.
+      </p>
 
-      <div class="case-gallery">
-          <img src="assets/oracle-health.png" alt="" loading="lazy" />
-      </div>
-</main>
-
-
-      <section class="work-index" aria-label="Work navigation">
-        <div class="work-index-bar">
-          <a href="index.html">Back to Work</a>
-          <p class="work-index-pager">
-            <a href="teachers-lounge.html">prev</a>
-            <span>/</span>
-            <a href="anchor.html">next</a>
-          </p>
+      <dl class="case-meta case-meta-four">
+        <div>
+          <dt>Tools</dt>
+          <dd>Figma &amp; FigJam</dd>
         </div>
-        <div class="project-grid work-index-grid">
+        <div>
+          <dt>Collaborators</dt>
+          <dd>Product Managers, Human Factors Researchers &amp; UX Designers</dd>
+        </div>
+        <div>
+          <dt>Timeline</dt>
+          <dd>12 weeks</dd>
+        </div>
+        <div>
+          <dt>Year</dt>
+          <dd>2025</dd>
+        </div>
+      </dl>
+
+      <section class="case-section">
+        <h2>Problem Statement</h2>
+        <p>
+          In the grand scheme of disaster – during and after – local hospitals
+          and urgent care clinics can be overwhelmed with a massive influx of
+          patients and face inconsistent access to infrastructure that provides
+          those services. Many patients and evacuees will seek medical help,
+          which could overload an already stretched system.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>How Might We</h2>
+        <p>
+          How might we ensure patients can access timely, appropriate, and
+          continuous care during disasters even as systems and frontline health
+          providers face disruptions and increased demand?
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>Problem Areas &amp; Exploration</h2>
+        <p>
+          In the discovery phase, I researched different problem areas in
+          emergency situations that would help me define the wide scope of my
+          problem statement. Areas I explored included access to healthcare,
+          obtaining prescriptions, receiving medical advice, and educational
+          resources in the realm of disaster response.
+        </p>
+        <figure class="case-figure">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/oracle/problem-areas.webp"
+            data-lightbox-alt="Problem areas brainstorm for patients in disasters"
+          >
+            <img
+              src="assets/oracle/problem-areas.webp"
+              alt="Problem areas brainstorm for patients in disasters"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+        <p>
+          In the beginning of my research, I focused heavily on mobile
+          applications that provided helpful services to patients during
+          disasters. I conducted a competitive analysis to compare the services
+          offered, search experience, and unique features of each app. From my
+          analysis, I started brainstorming what Oracle Health’s own disaster
+          preparedness app could look like.
+        </p>
+        <p>
+          After presenting my first set of findings and receiving feedback from
+          my team, I found that an emergency preparedness app was not the best
+          direction in order to solve the core of my problem. I also discovered
+          that what I presented had to be embedded within an existing Oracle
+          Health platform such as the patient portal. Next, I pivoted and went
+          back to the drawing board, taking inspiration from some secondary
+          research I had gathered.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>Key Findings</h2>
+        <div class="case-findings-split">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/oracle/hearts.webp"
+            data-lightbox-alt="Oracle Health illustration"
+          >
+            <img
+              src="assets/oracle/hearts.webp"
+              alt="Oracle Health illustration"
+              loading="lazy"
+            />
+          </button>
+          <div>
+            <p>From the research I gathered needs that patients had included:</p>
+            <ul class="case-list">
+              <li>
+                Access to health services (“when will your facilities be
+                open...?”)
+              </li>
+              <li>
+                Appointment scheduling (“I need to reschedule my appointment...I
+                can’t leave my home”)
+              </li>
+              <li>
+                Prescription refills (“My regular pharmacy is closed...can you
+                send my prescription to [x] pharmacy?”)
+              </li>
+              <li>
+                Medical advice (“I’m experiencing frequent headaches, aches in
+                my muscles, and dizziness...”)
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Clarity of Purpose Statement</h2>
+        <p>
+          Looking at the culmination of research and data, I proposed a clarity
+          of purpose statement based off of one of Oracle Health’s personas,
+          Ashley Harris.
+        </p>
+        <figure class="case-figure">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/oracle/patient-quote.webp"
+            data-lightbox-alt="Patient persona clarity of purpose quote"
+          >
+            <img
+              src="assets/oracle/patient-quote.webp"
+              alt="Patient persona clarity of purpose quote"
+              loading="lazy"
+            />
+          </button>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>Scenario &amp; Prototype</h2>
+        <div class="case-embed">
+          <iframe
+            title="Oracle Health Figma prototype"
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F7YgkcEXJdTtxjxJ0CI8rNT%2FOracle-Health-Design-Internship%3Fpage-id%3D33%253A28474%26node-id%3D33-30252%26scaling%3Dscale-down%26starting-point-node-id%3D33%253A30252"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Final Solution</h2>
+        <p>
+          For the first part of my solution, I created a conversational AI model
+          that gives patients recommendations on the care they can receive based
+          on their symptoms. The second part of the solution includes messaging
+          as a way for patients to virtually connect and have an appointment
+          with their providers during a disaster. Currently, the patient portal
+          only supports video visits as an appointment – which isn’t always
+          reliable or ideal during emergency situations.
+        </p>
+        <figure class="case-figure case-figure-gif">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/10f0f67f-0801-42f5-85c3-4cb2734cf58a/OH1Final.gif"
+            alt="Oracle Health conversational AI solution demo"
+            loading="lazy"
+          />
+        </figure>
+        <figure class="case-figure case-figure-gif">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/5dd456df47a0a84372865bc5/59946c85-56bd-470f-990a-ba61f5f3dde6/UpdatedHealth.gif"
+            alt="Oracle Health messaging solution demo"
+            loading="lazy"
+          />
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>Next Steps</h2>
+        <ul class="case-list">
+          <li>
+            Having conversations with patients and providers to understand and
+            test the viability of this solution
+          </li>
+          <li>
+            Establishing the necessary boundaries and parameters of how message
+            visits will operate in the patient portal
+          </li>
+          <li>
+            Sharing with the broader clinical team to gauge interest and further
+            feedback for refinement in the future
+          </li>
+        </ul>
+      </section>
+
+      <section class="case-section">
+        <h2>Learnings &amp; Takeaways</h2>
+        <ul class="case-list">
+          <li>
+            Incorporating continuous feedback from mentors and peers leads to
+            stronger, more refined designs at every stage
+          </li>
+          <li>
+            Stay open-minded and ready to adapt at any moment — good design
+            often comes from unexpected directions
+          </li>
+          <li>
+            Keep the user at the center of every decision to ensure meaningful,
+            intuitive experiences
+          </li>
+        </ul>
+        <div class="case-figure-pair">
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/oracle/learning-1.webp"
+            data-lightbox-alt="Oracle Health internship photo"
+          >
+            <img
+              src="assets/oracle/learning-1.webp"
+              alt="Oracle Health internship photo"
+              loading="lazy"
+            />
+          </button>
+          <button
+            type="button"
+            class="case-cover-trigger"
+            data-lightbox-trigger
+            data-lightbox-src="assets/oracle/learning-2.webp"
+            data-lightbox-alt="Oracle Health internship photo"
+          >
+            <img
+              src="assets/oracle/learning-2.webp"
+              alt="Oracle Health internship photo"
+              loading="lazy"
+            />
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <section class="work-index" aria-label="Work navigation">
+      <div class="work-index-bar">
+        <a href="index.html">Back to Work</a>
+        <p class="work-index-pager">
+          <a href="teachers-lounge.html">prev</a>
+          <span>/</span>
+          <a href="anchor.html">next</a>
+        </p>
+      </div>
+      <div class="project-grid work-index-grid">
         <a class="project" href="teachers-lounge.html">
           <img src="assets/teachers-lounge.png" alt="" />
           <span class="project-title">Teachers' Lounge</span>
@@ -107,19 +589,38 @@
           <img src="assets/dr-teals.jpg" alt="" />
           <span class="project-title">Dr Teal's Package Design</span>
         </a>
-        </div>
-      </section>
+      </div>
+    </section>
+
+    <div
+      class="lightbox"
+      id="lightbox"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image preview"
+    >
+      <button
+        type="button"
+        class="lightbox-close"
+        data-lightbox-close
+        aria-label="Close"
+      >
+        ×
+      </button>
+      <img class="lightbox-image" id="lightbox-image" src="" alt="" />
+    </div>
 
     <footer class="site-footer">
       <p>Ciani Foy © 2026. All Rights Reserved.</p>
-                        <div class="social-links">
+      <div class="social-links">
         <a
           href="https://www.linkedin.com/in/cianifoy/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
         >
-                                        <svg
+          <svg
             class="social-icon social-icon--linkedin"
             viewBox="0 0 24 24"
             fill="none"
@@ -130,7 +631,10 @@
             aria-hidden="true"
             focusable="false"
           >
-            <path fill="none" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+            <path
+              fill="none"
+              d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"
+            />
             <rect fill="none" x="2" y="9" width="4" height="12" />
             <circle fill="none" cx="4" cy="4" r="2" />
           </svg>
@@ -150,5 +654,95 @@
         </a>
       </div>
     </footer>
+
+    <script>
+      (() => {
+        const PASSWORD = "Anirtak1";
+        const STORAGE_KEY = "oracle-health-unlocked";
+        const form = document.getElementById("password-form");
+        const input = document.getElementById("password-input");
+        const error = document.getElementById("password-error");
+
+        const unlock = () => {
+          document.body.classList.remove("password-locked");
+          sessionStorage.setItem(STORAGE_KEY, "1");
+          if (error) error.textContent = "";
+        };
+
+        if (sessionStorage.getItem(STORAGE_KEY) === "1") {
+          unlock();
+        } else if (input) {
+          input.focus();
+        }
+
+        form?.addEventListener("submit", (event) => {
+          event.preventDefault();
+          if (input?.value === PASSWORD) {
+            unlock();
+            return;
+          }
+          if (error) error.textContent = "Incorrect password";
+          if (input) {
+            input.value = "";
+            input.focus();
+          }
+        });
+      })();
+
+      (() => {
+        const bar = document.getElementById("reading-progress-bar");
+        if (!bar) return;
+
+        const update = () => {
+          const doc = document.documentElement;
+          const scrollTop = doc.scrollTop || document.body.scrollTop;
+          const height = doc.scrollHeight - doc.clientHeight;
+          const progress = height > 0 ? scrollTop / height : 0;
+          bar.style.transform = `scaleX(${progress})`;
+        };
+
+        update();
+        window.addEventListener("scroll", update, { passive: true });
+        window.addEventListener("resize", update);
+      })();
+
+      (() => {
+        const lightbox = document.getElementById("lightbox");
+        const image = document.getElementById("lightbox-image");
+        if (!lightbox || !image) return;
+
+        const open = (src, alt) => {
+          image.src = src;
+          image.alt = alt || "";
+          lightbox.hidden = false;
+          document.body.style.overflow = "hidden";
+        };
+
+        const close = () => {
+          lightbox.hidden = true;
+          image.src = "";
+          document.body.style.overflow = "";
+        };
+
+        document.querySelectorAll("[data-lightbox-trigger]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            open(btn.dataset.lightboxSrc, btn.dataset.lightboxAlt);
+          });
+        });
+
+        lightbox.addEventListener("click", (event) => {
+          if (
+            event.target === lightbox ||
+            event.target.hasAttribute("data-lightbox-close")
+          ) {
+            close();
+          }
+        });
+
+        window.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !lightbox.hidden) close();
+        });
+      })();
+    </script>
   </body>
 </html>
