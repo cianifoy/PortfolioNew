@@ -16,6 +16,10 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <style>
+      :root {
+        --reading-progress-color: #e11d2e;
+      }
+
       /* Prefer Proxima Nova when available via Adobe Fonts / system */
       .case-longform {
         font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", Helvetica,
@@ -36,7 +40,7 @@
   </head>
   <body>
     <div class="reading-progress" aria-hidden="true">
-      <div class="reading-progress-bar" id="reading-progress-bar"></div>
+      <div class="reading-progress-bar" id="reading-progress-bar" style="background: #e11d2e"></div>
     </div>
     <header class="site-header">
       <a class="logo" href="index.html" aria-label="Ciani Foy">

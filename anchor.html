@@ -20,9 +20,8 @@
         font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", Helvetica,
           Arial, sans-serif;
       }
-
-      .reading-progress-bar {
-        background: #3a6e8f;
+      :root {
+        --reading-progress-color: #3a6e8f;
       }
 
       .case-longform .case-title {
@@ -78,7 +77,7 @@
   </head>
   <body>
     <div class="reading-progress" aria-hidden="true">
-      <div class="reading-progress-bar" id="reading-progress-bar"></div>
+      <div class="reading-progress-bar" id="reading-progress-bar" style="background: #3a6e8f"></div>
     </div>
     <header class="site-header">
       <a class="logo" href="index.html" aria-label="Ciani Foy">

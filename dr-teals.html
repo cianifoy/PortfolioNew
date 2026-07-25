@@ -24,15 +24,14 @@
       .case-longform .case-title {
         font-size: clamp(1.4rem, 2.8vw, 1.85rem);
       }
-
-      .reading-progress-bar {
-        background: #3c3060;
+      :root {
+        --reading-progress-color: #3c3060;
       }
     </style>
   </head>
   <body>
     <div class="reading-progress" aria-hidden="true">
-      <div class="reading-progress-bar" id="reading-progress-bar"></div>
+      <div class="reading-progress-bar" id="reading-progress-bar" style="background: #3c3060"></div>
     </div>
     <header class="site-header">
       <a class="logo" href="index.html" aria-label="Ciani Foy">
