@@ -169,8 +169,8 @@ img {
   object-position: 28% center;
 }
 
-.project img[src*="old-navy.jpg"] {
-  object-position: 5.5% 49%;
+.project img[src*="old-navy-thumb.jpg"] {
+  object-position: center center;
 }
 
 .project img[src*="dexter.jpg"] {
