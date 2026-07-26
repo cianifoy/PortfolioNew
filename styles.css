@@ -1296,6 +1296,16 @@ main.page {
   font-size: 0.95rem;
 }
 
+.case-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.case-credit a:hover {
+  opacity: 0.7;
+}
+
 @media (max-width: 900px) {
   .case-phones {
     max-width: 100%;
@@ -1488,7 +1498,9 @@ main.page {
 .passion-copy {
   max-width: none;
   margin-bottom: clamp(1.75rem, 3.5vw, 2.5rem);
-  font-size: 1.05rem;
+  font-family: var(--font-proxima);
+  font-size: 18px;
+  font-weight: 400;
   line-height: 1.75;
   color: var(--muted);
 }
