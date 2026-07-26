@@ -604,9 +604,10 @@ main.page {
 }
 
 .case-longform .case-cover {
-  max-width: 58rem;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: none;
+  width: calc(100% + 2 * var(--page-inline));
+  margin-left: calc(-1 * var(--page-inline));
+  margin-right: calc(-1 * var(--page-inline));
 }
 
 .case-longform .case-cover a {
