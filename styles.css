@@ -217,6 +217,38 @@ main.page {
   padding: clamp(2.5rem, 5vw, 4.5rem) var(--page-inline) 4rem;
 }
 
+.about-intro {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: rise 0.8s ease forwards;
+}
+
+.about-section {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: rise 0.7s ease forwards;
+}
+
+.about-section:nth-of-type(2) {
+  animation-delay: 0.1s;
+}
+
+.about-section:nth-of-type(3) {
+  animation-delay: 0.18s;
+}
+
+.about-section:nth-of-type(4) {
+  animation-delay: 0.26s;
+}
+
+.about-section:nth-of-type(5) {
+  animation-delay: 0.34s;
+}
+
+.about-section:nth-of-type(6) {
+  animation-delay: 0.42s;
+}
+
 .about-page {
   position: relative;
   overflow-x: clip;
@@ -1419,7 +1451,10 @@ main.page {
   .reveal-delay-2,
   .reveal-delay-3,
   .project,
-  .hero-intro {
+  .hero-intro,
+  .about-intro,
+  .about-section,
+  .passion-section {
     animation: none;
     opacity: 1;
     transform: none;
@@ -1480,6 +1515,24 @@ main.page {
 /* Passion / Series */
 .passion-page {
   padding: clamp(2.5rem, 5vw, 4rem) var(--page-inline) 4rem;
+}
+
+.passion-section {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: rise 0.75s ease forwards;
+}
+
+.passion-section:nth-of-type(1) {
+  animation-delay: 0.05s;
+}
+
+.passion-section:nth-of-type(2) {
+  animation-delay: 0.16s;
+}
+
+.passion-section:nth-of-type(3) {
+  animation-delay: 0.28s;
 }
 
 .passion-section + .passion-section {
