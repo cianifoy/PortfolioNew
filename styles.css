@@ -1618,7 +1618,8 @@ main.page {
 .passion-slider-slide {
   flex: 0 0 auto;
   height: clamp(220px, 32vw, 420px);
-  width: auto;
+  width: auto !important;
+  max-width: none;
   border-radius: 0;
 }
 

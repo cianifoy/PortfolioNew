@@ -196,7 +196,164 @@
             ‹
           </button>
           <div class="passion-slider-viewport">
-            <div class="passion-slider-track" data-slider-track></div>
+            <div class="passion-slider-track" data-slider-track>
+              <button
+                type="button"
+                class="passion-shot passion-slider-slide"
+                data-lightbox-trigger
+                data-lightbox-src="assets/passion/america/01.webp"
+                data-lightbox-alt="This Is America series artwork"
+              >
+                <img
+                  src="assets/passion/america/01.webp"
+                  alt="This Is America series artwork"
+                  draggable="false"
+                />
+              </button>
+              <button
+                type="button"
+                class="passion-shot passion-slider-slide"
+                data-lightbox-trigger
+                data-lightbox-src="assets/passion/america/02.webp"
+                data-lightbox-alt="This Is America series artwork"
+              >
+                <img
+                  src="assets/passion/america/02.webp"
+                  alt="This Is America series artwork"
+                  draggable="false"
+                />
+              </button>
+              <button
+                type="button"
+                class="passion-shot passion-slider-slide"
+                data-lightbox-trigger
+                data-lightbox-src="assets/passion/america/03.webp"
+                data-lightbox-alt="This Is America series artwork"
+              >
+                <img
+                  src="assets/passion/america/03.webp"
+                  alt="This Is America series artwork"
+                  draggable="false"
+                />
+              </button>
+              <button
+                type="button"
+                class="passion-shot passion-slider-slide"
+                data-lightbox-trigger
+                data-lightbox-src="assets/passion/america/04.webp"
+                data-lightbox-alt="This Is America series artwork"
+              >
+                <img
+                  src="assets/passion/america/04.webp"
+                  alt="This Is America series artwork"
+                  draggable="false"
+                />
+              </button>
+              <button
+                type="button"
+                class="passion-shot passion-slider-slide"
+                data-lightbox-trigger
+                data-lightbox-src="assets/passion/america/05.webp"
+                data-lightbox-alt="This Is America series artwork"
+              >
+                <img
+                  src="assets/passion/america/05.webp"
+                  alt="This Is America series artwork"
+                  draggable="false"
+                />
+              </button>
+              <button
+                type="button"
+                class="passion-shot passion-slider-slide"
+                data-lightbox-trigger
+                data-lightbox-src="assets/passion/america/06.webp"
+                data-lightbox-alt="This Is America series artwork"
+              >
+                <img
+                  src="assets/passion/america/06.webp"
+                  alt="This Is America series artwork"
+                  draggable="false"
+                />
+              </button>
+              <button
+                type="button"
+                class="passion-shot passion-slider-slide"
+                data-lightbox-trigger
+                data-lightbox-src="assets/passion/america/07.webp"
+                data-lightbox-alt="This Is America series artwork"
+              >
+                <img
+                  src="assets/passion/america/07.webp"
+                  alt="This Is America series artwork"
+                  draggable="false"
+                />
+              </button>
+              <button
+                type="button"
+                class="passion-shot passion-slider-slide"
+                data-lightbox-trigger
+                data-lightbox-src="assets/passion/america/08.webp"
+                data-lightbox-alt="This Is America series artwork"
+              >
+                <img
+                  src="assets/passion/america/08.webp"
+                  alt="This Is America series artwork"
+                  draggable="false"
+                />
+              </button>
+              <button
+                type="button"
+                class="passion-shot passion-slider-slide"
+                data-lightbox-trigger
+                data-lightbox-src="assets/passion/america/09.webp"
+                data-lightbox-alt="This Is America series artwork"
+              >
+                <img
+                  src="assets/passion/america/09.webp"
+                  alt="This Is America series artwork"
+                  draggable="false"
+                />
+              </button>
+              <button
+                type="button"
+                class="passion-shot passion-slider-slide"
+                data-lightbox-trigger
+                data-lightbox-src="assets/passion/america/10.webp"
+                data-lightbox-alt="This Is America series artwork"
+              >
+                <img
+                  src="assets/passion/america/10.webp"
+                  alt="This Is America series artwork"
+                  draggable="false"
+                />
+              </button>
+              <button
+                type="button"
+                class="passion-shot passion-slider-slide"
+                data-lightbox-trigger
+                data-lightbox-src="assets/passion/america/11.webp"
+                data-lightbox-alt="This Is America series artwork"
+              >
+                <img
+                  src="assets/passion/america/11.webp"
+                  alt="This Is America series artwork"
+                  draggable="false"
+                />
+              </button>
+              <button
+                type="button"
+                class="passion-shot passion-slider-slide"
+                data-lightbox-trigger
+                data-lightbox-src="assets/passion/america/12.webp"
+                data-lightbox-alt="This Is America series artwork"
+              >
+                <img
+                  src="assets/passion/america/12.webp"
+                  alt="This Is America series artwork"
+                  draggable="false"
+                />
+              </button>
+            </div>
           </div>
           <button
             type="button"
@@ -377,32 +534,13 @@
 
     <script>
       (() => {
-        const americaSlides = Array.from({ length: 12 }, (_, i) => {
-          const n = String(i + 1).padStart(2, "0");
-          return {
-            src: `assets/passion/america/${n}.webp`,
-            alt: "This Is America series artwork",
-          };
-        });
-
         const slider = document.querySelector("[data-passion-slider]");
         if (slider) {
           let index = 0;
           const track = slider.querySelector("[data-slider-track]");
-
-          americaSlides.forEach((slide) => {
-            const btn = document.createElement("button");
-            btn.type = "button";
-            btn.className = "passion-shot passion-slider-slide";
-            btn.dataset.lightboxTrigger = "";
-            btn.dataset.lightboxSrc = slide.src;
-            btn.dataset.lightboxAlt = slide.alt;
-            btn.innerHTML = `<img src="${slide.src}" alt="${slide.alt}" draggable="false" />`;
-            track.appendChild(btn);
-          });
-
           const slides = () =>
             [...track.querySelectorAll(".passion-slider-slide")];
+          const slideCount = () => slides().length;
 
           const viewport = slider.querySelector(".passion-slider-viewport");
 
@@ -418,7 +556,8 @@
             );
 
           const apply = (i) => {
-            index = Math.max(0, Math.min(i, americaSlides.length - 1));
+            const last = Math.max(0, slideCount() - 1);
+            index = Math.max(0, Math.min(i, last));
             const offset = Math.min(offsetFor(index), maxOffset());
             track.style.transform = `translateX(-${offset}px)`;
           };
@@ -430,7 +569,7 @@
             .querySelector("[data-slider-prev]")
             .addEventListener("click", () => {
               if (index <= 0) {
-                index = americaSlides.length - 1;
+                index = Math.max(0, slideCount() - 1);
                 track.style.transform = `translateX(-${maxOffset()}px)`;
                 return;
               }
@@ -486,7 +625,12 @@
 
         document.querySelectorAll("[data-lightbox-trigger]").forEach((btn) => {
           btn.addEventListener("click", () => {
-            open(btn.dataset.lightboxSrc, btn.dataset.lightboxAlt);
+            const img = btn.querySelector("img");
+            const src =
+              img?.getAttribute("src") || btn.dataset.lightboxSrc || "";
+            const alt =
+              btn.dataset.lightboxAlt || img?.getAttribute("alt") || "";
+            open(src, alt);
           });
         });
 
