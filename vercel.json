@@ -1,0 +1,36 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/series",
+      "destination": "/work",
+      "permanent": true
+    },
+    {
+      "source": "/series/:path*",
+      "destination": "/work",
+      "permanent": true
+    },
+    {
+      "source": "/photography",
+      "destination": "/work",
+      "permanent": true
+    },
+    {
+      "source": "/photography/:path*",
+      "destination": "/work",
+      "permanent": true
+    },
+    {
+      "source": "/about-1",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/passion",
+      "destination": "/work",
+      "permanent": true
+    }
+  ]
+}
