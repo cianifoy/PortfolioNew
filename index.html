@@ -17,10 +17,18 @@
   </head>
   <body>
     <header class="site-header">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        Navigation
+      </button>
       <a class="logo" href="index.html" aria-label="Ciani Foy">
         <img src="assets/logo.jpg" alt="Ciani Foy" />
       </a>
-      <nav class="nav" aria-label="Primary">
+      <nav class="nav" id="site-nav" aria-label="Primary">
         <a href="index.html" aria-current="page">Work</a>
         <a href="work.html">Passion</a>
         <a href="about.html">About</a>
@@ -31,11 +39,10 @@
       <section class="hero-intro" aria-label="Introduction">
         <h1>
           Hi, I'm Ciani. I'm a
-          <span class="hero-role" id="hero-role">UX/UI Designer</span><span
-            class="hero-cursor"
-            aria-hidden="true"
-            >|</span
-          >
+          <span class="hero-role-line">
+            <span class="hero-role" id="hero-role">UX/UI Designer</span
+            ><span class="hero-cursor" aria-hidden="true">|</span>
+          </span>
         </h1>
       </section>
 
@@ -158,5 +165,6 @@
         setTimeout(tick, 1800);
       })();
     </script>
-  </body>
+      <script src="nav.js"></script>
+</body>
 </html>

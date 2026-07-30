@@ -21,10 +21,18 @@
       <img class="motif motif-flower" src="assets/about/hydrangea-motif.png" alt="" />
     </div>
     <header class="site-header">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        Navigation
+      </button>
       <a class="logo" href="index.html" aria-label="Ciani Foy">
         <img src="assets/logo.jpg" alt="Ciani Foy" />
       </a>
-      <nav class="nav" aria-label="Primary">
+      <nav class="nav" id="site-nav" aria-label="Primary">
         <a href="index.html">Work</a>
         <a href="work.html">Passion</a>
         <a href="about.html" aria-current="page">About</a>
@@ -268,5 +276,6 @@
         </a>
       </div>
     </footer>
-  </body>
+      <script src="nav.js"></script>
+</body>
 </html>
