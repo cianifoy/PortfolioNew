@@ -804,6 +804,29 @@ main.page {
   cursor: pointer;
 }
 
+@media (max-width: 700px) {
+  .lightbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    overflow: auto;
+  }
+
+  .lightbox-image {
+    max-width: calc(100vw - 2rem);
+    max-height: min(88vh, calc(100dvh - 2rem));
+    width: auto;
+    height: auto;
+    margin: auto;
+  }
+
+  .lightbox-close {
+    top: 0.75rem;
+    right: 0.85rem;
+  }
+}
+
 .case-award {
   font-size: 1rem;
   margin-bottom: 1.75rem;
