@@ -6,6 +6,9 @@
   --paper: #ffffff;
   --line: #e8e8e8;
   --page-inline: clamp(3rem, 14vw, 13rem);
+  /* Matches .logo img height; woven PNG content starts ~87px in on a 1024-tall asset */
+  --logo-height: clamp(12.5rem, 25vw, 19.5rem);
+  --logo-content-inset-inline: calc(var(--logo-height) * 87 / 1024);
   --font-display: "Didot", "Bodoni Moda", "Bodoni MT", "Times New Roman", serif;
   --font-body: "Outfit", sans-serif;
   --font-case: "Jost", "Futura Light", "Futura-Light", "Futura", "Century Gothic",
@@ -53,7 +56,7 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 2.5rem;
-  padding: 5rem var(--page-inline) 2rem;
+  padding: 1.5rem var(--page-inline) 0.5rem;
   position: relative;
 }
 
@@ -63,7 +66,7 @@ img {
 }
 
 .logo img {
-  height: clamp(2rem, 3.5vw, 2.85rem);
+  height: var(--logo-height);
   width: auto;
 }
 
@@ -119,7 +122,7 @@ img {
     gap: 0;
     row-gap: 0.85rem;
     text-align: center;
-    padding-top: 2.75rem;
+    padding-top: 1.25rem;
   }
 
   .nav-toggle {
@@ -174,8 +177,12 @@ img {
   }
 }
 
+body:has(.hero-intro) .site-header {
+  padding-bottom: 0.15rem;
+}
+
 .hero-intro {
-  padding: clamp(1.75rem, 4vw, 3rem) var(--page-inline)
+  padding: 0 var(--page-inline)
     clamp(1.25rem, 3vw, 2rem);
   animation: hero-fade 0.8s ease both;
 }
@@ -312,7 +319,7 @@ main.page {
 }
 
 .about {
-  padding: clamp(2.5rem, 5vw, 4.5rem) var(--page-inline) 4rem;
+  padding: clamp(1rem, 2.5vw, 1.75rem) var(--page-inline) 4rem;
 }
 
 .about-intro {
@@ -373,7 +380,7 @@ main.page {
 }
 
 .motif-stamps {
-  top: 10rem;
+  top: 18rem;
   right: -2rem;
   width: min(52vw, 34rem);
   opacity: 0.28;
@@ -911,7 +918,7 @@ main.page {
   font-size: 18px;
   font-weight: 400;
   line-height: 1.75;
-  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-top: clamp(1.25rem, 3vw, 2rem);
 }
 
 .case-longform .case-summary,
@@ -1607,7 +1614,7 @@ main.page {
 
 /* Passion / Series */
 .passion-page {
-  padding: clamp(2.5rem, 5vw, 4rem) var(--page-inline) 4rem;
+  padding: clamp(1rem, 2.5vw, 1.75rem) var(--page-inline) 4rem;
 }
 
 .passion-section {
