@@ -121,9 +121,9 @@ img {
     justify-items: center;
     align-items: start;
     gap: 0;
-    row-gap: 0.15rem;
+    row-gap: 0.75rem;
     text-align: center;
-    padding-top: 0.15rem;
+    padding-top: 1.25rem;
   }
 
   .nav-toggle {
@@ -131,7 +131,7 @@ img {
     order: 1;
     justify-self: center;
     padding-bottom: 0.3rem;
-    margin-bottom: 0.6rem;
+    margin-bottom: 2.25rem;
     border-bottom: 1px solid var(--line);
     width: 100%;
     text-align: center;
@@ -146,7 +146,7 @@ img {
     gap: 0.75rem;
     width: 100%;
     padding: 0.1rem 0 0.3rem;
-    margin-bottom: 0.6rem;
+    margin-bottom: 2.25rem;
     background: transparent;
     border: 0;
     border-bottom: 1px solid var(--line);
@@ -174,7 +174,7 @@ img {
   .logo {
     order: 3;
     margin-top: 0;
-    justify-self: start;
+    justify-self: center;
   }
 }
 
