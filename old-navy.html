@@ -97,182 +97,9 @@
           grid-template-columns: 1fr;
         }
       }
-
-      body.password-locked {
-        overflow: hidden;
-        background: #eeeeee;
-      }
-
-      body.password-locked > :not(.password-gate) {
-        display: none !important;
-      }
-
-      .password-gate {
-        display: none;
-        position: fixed;
-        inset: 0;
-        z-index: 9999;
-        align-items: center;
-        justify-content: center;
-        background: #eeeeee;
-      }
-
-      body.password-locked .password-gate {
-        display: flex;
-      }
-
-      .password-gate-inner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-        width: min(860px, calc(100vw - 2rem));
-      }
-
-      .password-gate-title {
-        width: min(100%, 820px);
-        margin: 0 0 0.25rem;
-        line-height: 0;
-      }
-
-      .password-gate-title img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      .password-gate-icon {
-        width: 52px;
-        height: 52px;
-        border: 1.5px solid #8a8a8a;
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        color: #8a8a8a;
-      }
-
-      .password-gate-icon svg {
-        width: 20px;
-        height: 20px;
-        display: block;
-      }
-
-      .password-gate-form {
-        position: relative;
-        width: min(100%, 320px);
-      }
-
-      .password-gate-form input {
-        width: 100%;
-        height: 44px;
-        padding: 0 2.75rem 0 0.9rem;
-        border: 1px solid #1a1a1a;
-        background: #fff;
-        font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", Helvetica,
-          Arial, sans-serif;
-        font-size: 15px;
-        color: #1a1a1a;
-        outline: none;
-        box-sizing: border-box;
-      }
-
-      .password-gate-form input::placeholder {
-        color: #b0b0b0;
-      }
-
-      .password-gate-form button {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 44px;
-        height: 44px;
-        border: 0;
-        background: transparent;
-        color: #b0b0b0;
-        cursor: pointer;
-        display: grid;
-        place-items: center;
-        padding: 0;
-      }
-
-      .password-gate-form button:hover,
-      .password-gate-form button:focus-visible {
-        color: #666;
-      }
-
-      .password-gate-form button svg {
-        width: 18px;
-        height: 18px;
-        display: block;
-      }
-
-      .password-gate-error {
-        margin: 0.65rem 0 0;
-        font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", Helvetica,
-          Arial, sans-serif;
-        font-size: 13px;
-        color: #b33;
-        text-align: center;
-      }
-
-      .password-gate-error:empty {
-        display: none;
-      }
-
-      .visually-hidden {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
-      }
     </style>
   </head>
-  <body class="password-locked">
-    <script>
-      if (sessionStorage.getItem("old-navy-unlocked") === "1") {
-        document.body.classList.remove("password-locked");
-      }
-    </script>
-    <div class="password-gate" id="password-gate" role="dialog" aria-modal="true" aria-label="Password required">
-      <div class="password-gate-inner">
-        <h2 class="password-gate-title">
-          <img
-            src="assets/oracle/enter-password.png"
-            alt="Enter Password"
-            width="1513"
-            height="265"
-          />
-        </h2>
-        <div class="password-gate-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17 8V7a5 5 0 0 0-10 0v1H5v14h14V8h-2Zm-8 0V7a3 3 0 0 1 6 0v1H9Zm3 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/>
-          </svg>
-        </div>
-        <form class="password-gate-form" id="password-form" autocomplete="off">
-          <label class="visually-hidden" for="password-input">Password</label>
-          <input
-            id="password-input"
-            type="password"
-            name="password"
-            placeholder="Password"
-            autocomplete="current-password"
-            required
-          />
-          <button type="submit" aria-label="Submit password">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <p class="password-gate-error" id="password-error" aria-live="polite"></p>
-        </form>
-      </div>
-    </div>
-
+  <body>
     <div class="reading-progress" aria-hidden="true">
       <div class="reading-progress-bar" id="reading-progress-bar" style="background: #00205b"></div>
     </div>
@@ -763,7 +590,7 @@
             outside of the UX organization (PMs, Engineers, Customer Insights)
           </li>
           <li>Over-document for easy handoff</li>
-          <li>Communicate Constantly</li>
+          <li>Communicate constantly</li>
         </ul>
       </section>
     </main>
@@ -881,39 +708,6 @@
     </footer>
 
     <script>
-      (() => {
-        const PASSWORD = "Anirtak1";
-        const STORAGE_KEY = "old-navy-unlocked";
-        const form = document.getElementById("password-form");
-        const input = document.getElementById("password-input");
-        const error = document.getElementById("password-error");
-
-        const unlock = () => {
-          document.body.classList.remove("password-locked");
-          sessionStorage.setItem(STORAGE_KEY, "1");
-          if (error) error.textContent = "";
-        };
-
-        if (sessionStorage.getItem(STORAGE_KEY) === "1") {
-          unlock();
-        } else if (input) {
-          input.focus();
-        }
-
-        form?.addEventListener("submit", (event) => {
-          event.preventDefault();
-          if (input?.value === PASSWORD) {
-            unlock();
-            return;
-          }
-          if (error) error.textContent = "Incorrect password";
-          if (input) {
-            input.value = "";
-            input.focus();
-          }
-        });
-      })();
-
       (() => {
         const bar = document.getElementById("reading-progress-bar");
         if (!bar) return;
