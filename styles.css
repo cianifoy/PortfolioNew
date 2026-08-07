@@ -7,7 +7,7 @@
   --line: #e8e8e8;
   --page-inline: clamp(3rem, 14vw, 13rem);
   /* Matches .logo img height; woven PNG content starts ~87px in on a 1024-tall asset */
-  --logo-height: clamp(12.5rem, 25vw, 19.5rem);
+  --logo-height: clamp(4.25rem, 9.5vw, 6.75rem);
   --logo-content-inset-inline: calc(var(--logo-height) * 87 / 1024);
   --font-display: "Didot", "Bodoni Moda", "Bodoni MT", "Times New Roman", serif;
   --font-body: "Outfit", sans-serif;
@@ -56,7 +56,7 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 2.5rem;
-  padding: 0.15rem var(--page-inline) 0.5rem;
+  padding: 0.15rem var(--page-inline) 1.75rem;
   position: relative;
 }
 
@@ -68,6 +68,7 @@ img {
 .logo img {
   height: var(--logo-height);
   width: auto;
+  opacity: 0.85;
 }
 
 .nav-toggle {
@@ -178,11 +179,11 @@ img {
 }
 
 body:has(.hero-intro) .site-header {
-  padding-bottom: 0.15rem;
+  padding-bottom: 1.75rem;
 }
 
 .hero-intro {
-  padding: 0 var(--page-inline)
+  padding: clamp(1.75rem, 4vw, 3rem) var(--page-inline)
     clamp(1.25rem, 3vw, 2rem);
   animation: hero-fade 0.8s ease both;
 }
@@ -319,7 +320,7 @@ main.page {
 }
 
 .about {
-  padding: clamp(1rem, 2.5vw, 1.75rem) var(--page-inline) 4rem;
+  padding: clamp(2.25rem, 4.5vw, 3.5rem) var(--page-inline) 4rem;
 }
 
 .about-intro {
@@ -380,7 +381,7 @@ main.page {
 }
 
 .motif-stamps {
-  top: 18rem;
+  top: 8rem;
   right: -2rem;
   width: min(52vw, 34rem);
   opacity: 0.28;
@@ -941,7 +942,7 @@ main.page {
   font-size: 18px;
   font-weight: 400;
   line-height: 1.75;
-  padding-top: clamp(1.25rem, 3vw, 2rem);
+  padding-top: clamp(2.25rem, 4.5vw, 3.5rem);
 }
 
 .case-longform .case-summary,
@@ -1648,7 +1649,7 @@ main.page {
 
 /* Passion / Series */
 .passion-page {
-  padding: clamp(1rem, 2.5vw, 1.75rem) var(--page-inline) 4rem;
+  padding: clamp(2.25rem, 4.5vw, 3.5rem) var(--page-inline) 4rem;
 }
 
 .passion-section {
